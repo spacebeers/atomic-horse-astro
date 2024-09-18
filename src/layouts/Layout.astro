@@ -1,0 +1,47 @@
+---
+
+import '../css/reset.css';
+import '../css/styles.css';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico">
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+ 		<title>{title} | Atomic Horse Ltd</title>
+		<meta name="description" content="Atomic Horse is an agency for designers who need expert web development for their projects.">
+		<meta name="keywords" content="Brighton, Portslade, Sussex, East Sussex, West Sussex, web design, web development, ecommerce, Hove, agency, wordpress, css, javascript">
+	</head>
+	<body>
+		<section class="wrapper">
+			<Header />
+			<slot />
+			<Footer />
+		</section>
+		<script is:inline src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+		<script is:inline src="https://cdn.jsdelivr.net/gh/manucaralmo/GlowCookies@3.1.8/src/glowCookies.min.js"></script>
+		<script is:inline>
+			glowCookies.start('en', {
+				style: 2,
+				analytics: 'UA-3539496-7',
+				border: 'none',
+				position: 'left',
+				policyLink: '/cookies'
+			});
+		</script>
+	</body>
+</html>

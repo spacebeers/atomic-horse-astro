@@ -1,0 +1,23 @@
+---
+interface Props {
+	theme: "DARK" | "LIGHT";
+}
+
+const { theme } = Astro.props;
+---
+
+<section class:list={['strip', { dark: theme === 'DARK', light: theme === 'LIGHT' }]}>
+	<slot />
+</section>
+<style>
+	.strip {
+		background: var(--palette-light);
+		color: var(--palette-dark);
+		padding: 3em 0;
+	}
+
+	.dark {
+		background: var(--palette-dark);
+		color: var(--palette-light);
+	}
+</style>

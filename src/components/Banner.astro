@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+import bannerBackground from "../assets/images/background-boom.png";
+import horse from '../animations/horse_looking.json';
+import Horse from './horse.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+<section class="hero full-bleed">
+	<section class="wrapper">
+		<h1>{title}</h1>
+		<Horse />
+		<dotlottie-player class="horse" src={JSON.stringify(horse)} background="transparent" speed="1" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+	</section>
+</section>
+
+<style>
+	.hero {
+		height: 65vh;
+		min-height: 65vh;
+		position: relative;
+		background-color: var(--palette-highlight);
+
+		h1 {
+			position: relative;
+			z-index: 2;
+		}
+
+		svg {
+			width: 200px;
+			height: auto;
+		}
+	}
+
+	.horse {
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		bottom: -34px;
+		right: 15vw;
+		transform: scaleX(-1);
+		z-index: 2;
+		filter: brightness(0.5);
+	}
+</style>
