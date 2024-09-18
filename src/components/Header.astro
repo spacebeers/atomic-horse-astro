@@ -1,4 +1,5 @@
 ---
+import { BASE } from '../utils/constants';
 import FullLogo from './FullLogo.astro';
 const pages = [
 	{
@@ -25,7 +26,7 @@ const pages = [
 			{
 				pages.map((page) => (
 					<li>
-						<a href={ page.path }>{ page.name }</a>
+						<a href={ `${BASE}${page.path}` }>{ page.name }</a>
 					</li>
 				))
 			}
