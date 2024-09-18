@@ -1,6 +1,7 @@
 :root {
     --brand-font: "Red Hat Display", sans-serif;
     --palette-dark: #090C08;
+    --palette-mid: #282828;
     --palette-light: #FFFFFF;
     --palette-blue: #0066FF;
     --palette-pink: #FA198B;
@@ -8,6 +9,7 @@
     --palette-highlight: var(--palette-pink);
     --palette-green: #AFFC41;
     --side-padding: 5vw;
+    --border-radius: 8px;
     
     /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,22,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
     /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,22,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */

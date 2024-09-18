@@ -1,29 +1,48 @@
 ---
 const year = new Date().getFullYear();
 ---
-<footer>    
-    <p>&copy; {year} Atomic Horse ltd</p>
-    <ul>
-        <li>
-            <a href="/cookies">Cookie Policy</a>
-        </li>
-    </ul>   
+<footer> 
+    <section class="contact-strip">
+        <div class="contact-block">
+            Contact strip
+        </div>
+    </section>
+    <section class="footer-main">
+        Main strip
+    </section>
+    <section class="footer-info">
+        <p>&copy; {year} Atomic Horse ltd | Company No: 11279925</p>
+        <p>This page emits just 0.08g of carbon | Eco hosted</p>
+    </section>
 </footer>
 <style>
     footer {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-top: 30px;
-        margin-bottom: 40px;
         font-size: var(--step--1);
     }
-    
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+
+    .contact-strip {
+        padding: var(--space-m) 0;
+    }
+
+    .contact-block {
+        background: var(--palette-mid);
+        border-radius: var(--border-radius);
+        padding: var(--space-m);
+    }
+
+    .footer-main {
+        border-top: 2px solid var(--palette-light);
+        padding: var(--space-l) 0;
+    }
+
+    .footer-info {
+        border-top: 2px solid var(--palette-light);
+        padding: var(--space-xs) 0;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
+
+        p {
+            font-size: var(--step--2);
+        }
     }
 </style>
