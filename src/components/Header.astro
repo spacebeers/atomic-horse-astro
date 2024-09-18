@@ -1,19 +1,66 @@
 ---
 import FullLogo from './FullLogo.astro';
+const pages = [
+	{
+		name: "Services",
+		path: 'services'
+	},
+	{
+		name: "Work",
+		path: 'work'
+	},
+	{
+		name: "Contact us",
+		path: 'contact-us'
+	},
+];
+
 ---
 <header>
 	<a href="/">
 		<FullLogo />
 	</a>
+	<nav>
+		<ul>
+			{
+				pages.map((page) => (
+					<li>
+						<a href={ page.path }>{ page.name }</a>
+					</li>
+				))
+			}
+		</ul>
+	</nav>
 </header>
 
 <style>
 	header {
 		background: transparent;
-		padding: var(--space-s) 0;
+		padding: var(--space-xs) 0;
+		display: flex;
+		justify-content: space-between;
 		
 		a {
 			text-decoration: none;
+		}
+
+		nav {
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				text-transform: uppercase;
+			}
+
+			li + li {
+				margin-left: var(--space-xs);
+			}
+
+			a {
+				font-size: var(--step--1);
+				color: var(--palette-light);
+			}
 		}
 	}
 </style>
