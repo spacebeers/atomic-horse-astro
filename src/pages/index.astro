@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
+import GradientContentStrip from "../components/GradientContentStrip.astro";
 ---
 
 <Layout title="Welcome">
@@ -13,49 +14,22 @@ import Banner from "../components/Banner.astro";
         Here at Atomic Horse we just want to help you, who ever you are, what
         ever you do to make the best of your online presence.
       </p>
-
-      <p>
-        Are you a small business who needs help getting on the internet property
-        ladder?
-      </p>
-
-      <p>
-        Want to update a tired old website with something modern, performant and
-        accessible?
-      </p>
-
-      <p>
-        Tired of paying someone to update your business website and want to do
-        it yourself?
-      </p>
-
-      <p>
-        Are you a designer who needs help turning your ideas into something
-        real?
-      </p>
-
-      <p>
-        Are you an agency looking for developers to get projects across the
-        line?
-      </p>
-
-      <p>
-        Our team of <a href="about.html">highly skilled developers</a> with over
-        15 years of agency and enterprise level experience are available to take
-        the project and run with it or embed themselves in your company until the
-        work is finished.
-      </p>
-
-      <p>
-        Whatever your needs - we would <span aria-label="love">❤️</span> to help
-        you.
-      </p>
     </section>
+    <GradientContentStrip>
+      <p class="tag">Some tag</p>
+      <h2 class="heading">Banner test</h2>
+
+      <p>Ut has commune epicurei perpetua, in sit mazim delenit. Te legere eloquentiam est, duo laudem impetus te. Ea summo feugait nec, noster placerat mea ad, mel et mucius nusquam offendit. Nec an eros molestie, ut nec expetenda efficiantur. Meis commune oportere vim et. Vide vituperata eloquentiam ius id.</p>
+
+      <p>Te has repudiare moderatius, pro persius splendide id. Legere sententiae percipitur vim ne. Sit in timeam aliquip, eum pericula vituperatoribus in. Quo ei delicata electram evertitur, habeo quodsi te vel. Qui suas semper labores et, doming probatus pri ei. Quo libris semper doctus te, persius ocurreret definitiones ut eam, magna modus cotidieque eu ius.</p>
+
+    </GradientContentStrip>
   </main>
 </Layout>
 
 <style>
   :root {
     --palette-highlight: var(--palette-blue);
+    --palette-contrast: var(--palette-light);
   }
 </style>

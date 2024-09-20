@@ -1,5 +1,4 @@
 ---
-import horse_looking from '../animations/horse_looking.json';
 import Horse from './Horse.astro';
 
 interface Props {
@@ -11,39 +10,40 @@ const { title } = Astro.props;
 <section class="hero full-bleed">
 	<section class="wrapper">
 		<h1>{title}</h1>
-		<Horse />
-		<dotlottie-player class="horse" src={JSON.stringify(horse_looking)} background="transparent" speed="1" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+		<div class="horse">
+			<Horse />
+		</div>
+		<svg viewBox="0 0 1200 213" fill="none" xmlns="http://www.w3.org/2000/svg" class="hill full-bleed" role="presentation">
+			<path d="M-22 156.778L1138.07 0.284901C1139.45 0.0982206 1140.86 0.277011 1142.16 0.803493L1215 30.4569V213H-22V156.778Z" fill="currentColor"/>
+		</svg>			
 	</section>
 </section>
 
 <style>
 	.hero {
-		height: 65vh;
-		min-height: 65vh;
+		min-height: 75vh;
 		position: relative;
 		background-color: var(--palette-highlight);
+		color: var(--palette-contrast);
+		padding-top: var(--space-3xl);
 
 		h1 {
-			position: relative;
-			z-index: 2;
+			font-size: var(--step-5);
 			margin: 0;
-			padding: 0;
-		}
-
-		svg {
-			width: 200px;
-			height: auto;
+			padding: 0 0 0 270px;
 		}
 	}
 
 	.horse {
-		width: 200px;
-		height: 200px;
 		position: absolute;
-		bottom: -34px;
-		right: 15vw;
-		transform: scaleX(-1);
-		z-index: 2;
-		filter: brightness(0.5);
+		bottom: 5vw;
+	}
+
+	.hill {
+		position: absolute;
+		bottom: -1px;
+		left: 0;
+		right: 0;
+		color: var(--palette-dark);
 	}
 </style>

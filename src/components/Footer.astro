@@ -1,10 +1,42 @@
 ---
+import { CALENDLY, EMAIL } from "../utils/constants";
+import Calendly from "./icons/Calendly.astro";
+import Email from "./icons/Email.astro";
+import Whatsapp from "./icons/Whatsapp.astro";
+
 const year = new Date().getFullYear();
 ---
 <footer> 
     <section class="contact-strip">
         <div class="contact-block">
-            Contact strip
+            <div class="contact-block__copy">
+                <p class="tag">Contact</p>
+                <h2 class="heading text-3">Get in touch</h2>
+
+                <p>Lorem ipsum dolor sit amet, ei simul salutatus duo, ea eam dignissim gubergren dissentiet, cum unum definiebas at. Te est vocent appetere concludaturque. Vix ex veritus interesset, in simul solet facete vix. Delectus consetetur mediocritatem est ad. Ei pri modo tantas, esse deleniti eu vel.</p>
+            </div>
+            <div class="contact-block__links">
+                <ul class="icon-list align-end">
+                    <li>
+                        <a href={`mailto:${EMAIL}`}>
+                            <Email />
+                            Email us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <Whatsapp />
+                            Chat with us
+                        </a>
+                    </li>
+                    <li>
+                        <a href={CALENDLY} target="_blank">
+                            <Calendly />
+                            Book a meeting
+                        </a>
+                    </li>
+                </ul>
+            </div>  
         </div>
     </section>
     <section class="footer-main">
@@ -28,7 +60,16 @@ const year = new Date().getFullYear();
         background: var(--palette-mid);
         border-radius: var(--border-radius);
         padding: var(--space-m);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-end;
     }
+
+    .contact-block__copy {
+        flex: 0 0 65%;
+    }
+    
 
     .footer-main {
         border-top: 2px solid var(--palette-light);
@@ -37,7 +78,7 @@ const year = new Date().getFullYear();
 
     .footer-info {
         border-top: 2px solid var(--palette-light);
-        padding: var(--space-xs) 0;
+        padding: var(--space-xs) 0 var(--space-m) 0;
         display: flex;
         justify-content: space-between;
 

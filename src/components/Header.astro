@@ -25,7 +25,7 @@ const pages = [
 		<ul>
 			{
 				pages.map((page) => (
-					<li>
+					<li class={Astro.url.pathname === page.path ? "active" : ""}>
 						<a href={ `${page.path}` }>{ page.name }</a>
 					</li>
 				))
@@ -56,6 +56,12 @@ const pages = [
 
 			li + li {
 				margin-left: var(--space-xs);
+			}
+
+			.active {
+				a {
+					color: var(--palette-highlight);
+				}
 			}
 
 			a {
