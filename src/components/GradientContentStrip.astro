@@ -8,7 +8,7 @@ interface Props {
 const { theme } = Astro.props;
 ---
 
-<section class:list={['gradient-strip', { dark: theme === 'DARK', light: theme === 'LIGHT' }, 'full-bleed']}>
+<section class:list={['gradient-strip', { dark: theme === 'DARK', light: theme === 'LIGHT' }, 'full-bleed', 'strip']}>
 	<div class="wrapper">
 		<div class="content">
 			<slot />
@@ -18,12 +18,23 @@ const { theme } = Astro.props;
 </section>
 <style>
 	.gradient-strip {
-		background-color: red;
-		background-image: url(/grass.svg);
-		background-repeat: repeat-x;
-		background-position-y: bottom;
-		background-size: auto 28px;
+		background: linear-gradient(180deg, #282828 60.54%, #8E8D8D 154%);
 		padding: var(--space-l) 0 var(--space-xl) 0;
+		position: relative;
+
+		&::after {
+			content: "";
+			background-image: url(/grass.svg);
+			background-repeat: repeat-x;
+			background-position-y: bottom;
+			background-size: auto 34px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			pointer-events: none;
+		}
 	}
 
 	.wrapper {

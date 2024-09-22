@@ -12,6 +12,12 @@
     --side-padding: 5vw;
     --border-radius: 8px;
     --animation-speed: 0.4s;
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+    --fw-xbold: 800;
+    --fw-black: 900;
     
     /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,22,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
     /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,22,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */

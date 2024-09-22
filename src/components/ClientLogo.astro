@@ -1,0 +1,11 @@
+---
+export interface Props {
+  svg: string;
+}
+
+const { svg, ...attributes } = Astro.props as Props;
+/* @vite-ignore */
+const { default: innerHTML } = await import(`/public/client-logos/${svg}.svg?raw`);
+---
+
+<Fragment {...attributes} set:html={innerHTML}></Fragment>

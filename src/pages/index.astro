@@ -2,13 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import GradientContentStrip from "../components/GradientContentStrip.astro";
+import Clients from "../components/Clients.astro";
 ---
 
 <Layout title="Welcome">
   <main>
-    <Banner title="Being useful since 2007" />
-    <section class="container">
-      <h2>A web development studio with a difference</h2>
+    <Banner title="Being useful since 2007" showHorse />
+    <section class="container text-center w-clamp-lg">
+      <h2 class="text-4 fw-normal">Techincal solutions to human problems</h2>
 
       <p>
         Here at Atomic Horse we just want to help you, who ever you are, what
@@ -24,6 +25,7 @@ import GradientContentStrip from "../components/GradientContentStrip.astro";
       <p>Te has repudiare moderatius, pro persius splendide id. Legere sententiae percipitur vim ne. Sit in timeam aliquip, eum pericula vituperatoribus in. Quo ei delicata electram evertitur, habeo quodsi te vel. Qui suas semper labores et, doming probatus pri ei. Quo libris semper doctus te, persius ocurreret definitiones ut eam, magna modus cotidieque eu ius.</p>
 
     </GradientContentStrip>
+    <Clients />
   </main>
 </Layout>
 

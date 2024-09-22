@@ -1,0 +1,104 @@
+---
+import ClientLogo from "./ClientLogo.astro";
+
+const clients = [
+	{
+		name: "Wave Plumbing & Bathrooms",
+		logo: 'WavePlumbing',
+		website: 'https://wave.plumbing'
+	},
+	{
+		name: "Sophie Tanner",
+		logo: 'SophieTanner',
+		website: 'https://sophietanner.co.uk'
+	},
+	{
+		name: "Mortgage Studio",
+		logo: 'MortgageStudio',
+		website: 'https://mortgage-studio.co.uk'
+	},
+	{
+		name: "Farleys House and Gallery",
+		logo: 'Farleys',
+		website: 'https://mortgage-studio.co.uk'
+	},
+	{
+		name: "Lee Miller Archives",
+		logo: 'LeeMiller',
+		website: 'https://mortgage-studio.co.uk'
+	},
+	{
+		name: "7thSense",
+		logo: '7thSense',
+		website: 'https://mortgage-studio.co.uk'
+	},
+	{
+		name: "Home James Cleaning Services",
+		logo: 'HomeJames',
+		website: 'https://mortgage-studio.co.uk'
+	},
+	{
+		name: "Eydens Auto locksmiths",
+		logo: 'Eydens',
+		website: 'https://mortgage-studio.co.uk'
+	},
+	{
+		name: "TCK",
+		logo: 'Tck',
+		website: 'https://mortgage-studio.co.uk'
+	},
+	{
+		name: "Car Keys Solutions",
+		logo: 'CKS',
+		website: 'https://mortgage-studio.co.uk'
+	},
+];
+
+---
+<section class="clients-component full-bleed strip">
+	<div class="wrapper">
+		<p class="tag">Clients</p>
+		<h2 class="heading">Some of our favourite clients</h2>
+		<ul class="scroller-list">
+			{
+				clients.map((client) => (
+					<li>
+						<a href={ `${client.website}` }>
+							<ClientLogo svg={client.logo} />
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</header>
+
+<style>
+	.clients-component {
+		background: var(--palette-highlight);
+		color: var(--palette-contrast);
+		padding: var(--space-m) 0;
+
+		a {
+			color: currentColor;
+		}
+	}
+
+	.scroller-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		align-items: center;
+		overflow: scroll;
+
+		a {
+			display: block;
+		}
+
+		svg {
+			width: 200px;
+			height: auto;
+		}
+	}
+</style>

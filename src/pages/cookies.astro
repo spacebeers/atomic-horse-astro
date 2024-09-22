@@ -1,24 +1,26 @@
 ---
+import Banner from "../components/Banner.astro";
 import Layout from "../layouts/Layout.astro";
 import { EMAIL } from "../utils/constants";
 ---
 
 <Layout title="Cookie Policy">
   <main class="content-page">
+    <Banner title="Cookie Policy" condense />
     <section class="wrapper">
       <p>
         This website uses cookies to ensure you get the best experience on our
         website.
       </p>
 
-      <h2>What are Cookies?</h2>
+      <h2 class="text-1 fw-medium">What are Cookies?</h2>
       <p>
         Cookies are small text files stored on your computer or mobile device by
         your web browser. They are widely used to make websites work more
         efficiently and to provide information to website owners.
       </p>
 
-      <h2>How We Use Cookies</h2>
+      <h2 class="text-1 fw-medium">How We Use Cookies</h2>
       <p>We use cookies for a variety of purposes, including:</p>
       <ul>
         <li>Keeping you signed in</li>
@@ -26,7 +28,7 @@ import { EMAIL } from "../utils/constants";
         <li>Customizing your experience</li>
       </ul>
 
-      <h2>Types of Cookies We Use</h2>
+      <h2 class="text-1 fw-medium">Types of Cookies We Use</h2>
       <p>
         We use both session and persistent cookies on our website. Session
         cookies are temporary and are deleted when you close your browser.
@@ -34,7 +36,7 @@ import { EMAIL } from "../utils/constants";
         deleted manually.
       </p>
 
-      <h2>Google Analytics</h2>
+      <h2 class="text-1 fw-medium">Google Analytics</h2>
       <p>
         We use Google Analytics to collect information about how visitors use
         our website. Google Analytics stores information about what pages you
@@ -52,19 +54,19 @@ import { EMAIL } from "../utils/constants";
         >.
       </p>
 
-      <h2>Your Choices Regarding Cookies</h2>
+      <h2 class="text-1 fw-medium">Your Choices Regarding Cookies</h2>
       <p>
         You can control and manage cookies in various ways. Please refer to your
         browser's help menu for instructions on how to do this.
       </p>
 
-      <h2>Changes to Our Cookies Policy</h2>
+      <h2 class="text-1 fw-medium">Changes to Our Cookies Policy</h2>
       <p>
         We may update our Cookies Policy from time to time. Any changes will be
         posted on this page.
       </p>
 
-      <h2>Contact Us</h2>
+      <h2 class="text-1 fw-medium">Contact Us</h2>
 
       <p>If you have any questions about our Cookies Policy, please <a href={`mailto:${EMAIL}`}>contact us</a>.</p>
     </section>
