@@ -72,10 +72,11 @@ const pages = [
       left: 0;
       z-index: 1;
       color: var(--palette-contrast);
-      transition: background var(--animation-speed) linear;
+      transition: background var(--animation-speed) linear, opacity var(--animation-speed) linear;
 
       &.stuck {
         background: var(--palette-dark);
+		opacity: 0.9;
         color: var(--palette-light);
 
         .logo {

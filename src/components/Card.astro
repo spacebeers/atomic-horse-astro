@@ -1,0 +1,35 @@
+---
+interface Props {
+	heading: string;
+	content: string;
+	imageSrc: string;
+	imageAlt: string;
+	link: string;
+}
+
+const { heading, content, imageSrc, imageAlt, link } = Astro.props;
+---
+
+<section class="card">
+	<img src={imageSrc} alt={imageAlt} />
+
+	<h2>{ heading }</h2>
+	<p class="line-clamp">{ content }</p>
+	<a href={link} class="button">Learn more</a>
+</section>
+<style>
+	.card {
+		img {
+			border-radius: var(--border-radius);
+			margin-bottom: var(--space-s);
+		}
+		
+		h2 {
+			margin-bottom: var(--space-s);
+		}
+
+		p {
+			margin-bottom: var(--space-l);
+		}
+	}
+</style>

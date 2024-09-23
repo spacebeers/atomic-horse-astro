@@ -97,16 +97,18 @@ const logoComponents: Record<string, any> = {
     <div class="swiper">
       <div class="swiper-wrapper">
         {
-          clients.sort(() => Math.random() - 0.5).map((client) => {
-            const LogoComponent = logoComponents[client.logo];
-            return (
-              <div class="swiper-slide">
-                <a href={client.website} target="_blank">
-                  <LogoComponent />
-                </a>
-              </div>
-            );
-          })
+          clients
+            .sort(() => Math.random() - 0.5)
+            .map((client) => {
+              const LogoComponent = logoComponents[client.logo];
+              return (
+                <div class="swiper-slide">
+                  <a href={client.website} target="_blank">
+                    <LogoComponent />
+                  </a>
+                </div>
+              );
+            })
         }
       </div>
     </div>
@@ -115,19 +117,19 @@ const logoComponents: Record<string, any> = {
 
 <script>
   import { Swiper } from "swiper";
-  import { Autoplay } from 'swiper/modules';
+  import { Autoplay } from "swiper/modules";
   const swiper = new Swiper(".swiper", {
-	modules: [ Autoplay ],
+    modules: [Autoplay],
     spaceBetween: 40,
     grabCursor: true,
     freeMode: true,
-	speed: 11000,
-	loop: true,
-	slidesPerView: "auto",
-	autoplay: {
-		delay: 0.5,
-		disableOnInteraction: false,
-	}
+    speed: 11000,
+    loop: true,
+    slidesPerView: "auto",
+    autoplay: {
+      delay: 0.5,
+      disableOnInteraction: false,
+    },
   });
 </script>
 
@@ -142,15 +144,15 @@ const logoComponents: Record<string, any> = {
     }
   }
 
-  .swiper {
-	-webkit-transition-timing-function: linear!important;
-	-o-transition-timing-function: linear!important;
-	transition-timing-function: linear!important;
-	margin-top: var(--space-m);
+  .swiper-wrapper {
+    -webkit-transition-timing-function: linear !important;
+    -o-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+    margin-top: var(--space-m);
   }
 
   .swiper-slide {
-	width: auto;
+    width: auto;
 
     a {
       display: block;

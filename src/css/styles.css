@@ -136,7 +136,15 @@ a {
     background: transparent;
     color: currentColor;
     padding: var(--space-2xs);
+    text-decoration: none;
 }
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }
 
 .mb--2 {
     margin-bottom: var(--step--2);
@@ -164,4 +172,16 @@ a {
   
   .mb-4 {
     margin-bottom: var(--step-4);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
   }

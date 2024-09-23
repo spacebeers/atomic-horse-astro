@@ -3,12 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import GradientContentStrip from "../components/GradientContentStrip.astro";
 import Clients from "../components/Clients.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Welcome">
   <main>
     <Banner title="Being useful since 2007" showHorse />
-    <section class="container text-center w-clamp-xl">
+    <section class="strip text-center w-clamp-xl">
       <h2 class="text-4 fw-normal mb-2">Techincal solutions to human problems</h2>
 
       <p>
@@ -16,15 +17,49 @@ import Clients from "../components/Clients.astro";
         ever you do to make the best of your online presence.
       </p>
     </section>
+    <section class="strip">
+      <div class="grid">
+        <div class="contents">
+          <p class="text-1">
+            Lorem ipsum dolor sit amet, autem dicat aliquam ad ius, cu vel oblique equidem. Ne soleat delicata eos. Quo at eripuit propriae tacimates, enim debet doming an pri. 
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, autem dicat aliquam ad ius, cu vel oblique equidem. Ne soleat delicata eos. Quo at eripuit propriae tacimates, enim debet doming an pri. 
+          </p>
+        </div>
+        <div class="image">
+          <img src="/placeholder.png" alt="">
+        </div>
+      </div>
+      
+    </section>
     <GradientContentStrip>
-      <p class="tag">Some tag</p>
-      <h2 class="heading">Banner test</h2>
+      <p class="tag">Company</p>
+      <h2 class="heading">Who we are</h2>
 
       <p>Ut has commune epicurei perpetua, in sit mazim delenit. Te legere eloquentiam est, duo laudem impetus te. Ea summo feugait nec, noster placerat mea ad, mel et mucius nusquam offendit. Nec an eros molestie, ut nec expetenda efficiantur. Meis commune oportere vim et. Vide vituperata eloquentiam ius id.</p>
 
       <p>Te has repudiare moderatius, pro persius splendide id. Legere sententiae percipitur vim ne. Sit in timeam aliquip, eum pericula vituperatoribus in. Quo ei delicata electram evertitur, habeo quodsi te vel. Qui suas semper labores et, doming probatus pri ei. Quo libris semper doctus te, persius ocurreret definitiones ut eam, magna modus cotidieque eu ius.</p>
 
     </GradientContentStrip>
+    <section class="strip">
+      <section class="card-grid">
+        <Card 
+          heading="Something that will wrap a bit"
+          content="Te has repudiare moderatius, pro persius splendide id. Legere sententiae percipitur vim ne."
+          imageSrc="placeholder-wide.png"
+          imageAlt="Nothing"
+          link="cookies"
+        />
+        <Card 
+          heading="Something that will wrap a bit"
+          content="Te has repudiare moderatius, pro persius splendide id. Legere sententiae percipitur vim ne."
+          imageSrc="placeholder-wide.png"
+          imageAlt="Nothing"
+          link="cookies"
+        />
+      </section>
+    </section>
     <Clients />
   </main>
 </Layout>
