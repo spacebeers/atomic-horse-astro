@@ -1,28 +1,76 @@
 ---
-import WavePlumbing from '../client-logos/WavePlumbing.astro';
-import SophieTanner from '../client-logos/SophieTanner.astro';
-import MortgageStudio from '../client-logos/MortgageStudio.astro';
-import Farleys from '../client-logos/Farleys.astro';
-import LeeMiller from '../client-logos/LeeMiller.astro';
-import SeventhSense from '../client-logos/7thSense.astro';
-import HomeJames from '../client-logos/HomeJames.astro';
-import Eydens from '../client-logos/Eydens.astro';
-import Tck from '../client-logos/Tck.astro';
-import CKS from '../client-logos/CKS.astro';
-import AnotherAStory from '../client-logos/AnotherAStory.astro';
+import "swiper/css";
+import "swiper/css/autoplay";
+import WavePlumbing from "../client-logos/WavePlumbing.astro";
+import SophieTanner from "../client-logos/SophieTanner.astro";
+import MortgageStudio from "../client-logos/MortgageStudio.astro";
+import Farleys from "../client-logos/Farleys.astro";
+import NeonSaw from "../client-logos/NeonSaw.astro";
+import LeeMiller from "../client-logos/LeeMiller.astro";
+import SeventhSense from "../client-logos/7thSense.astro";
+import HomeJames from "../client-logos/HomeJames.astro";
+import Eydens from "../client-logos/Eydens.astro";
+import Tck from "../client-logos/Tck.astro";
+import CKS from "../client-logos/CKS.astro";
+import AnotherAStory from "../client-logos/AnotherAStory.astro";
 
 const clients = [
-	{ name: "Wave Plumbing & Bathrooms", logo: 'WavePlumbing', website: 'https://wave.plumbing' },
-	{ name: "Sophie Tanner", logo: 'SophieTanner', website: 'https://sophietanner.co.uk' },
-	{ name: "Another A Story", logo: 'AnotherAStory', website: 'https://anotherastory.com' },
-	{ name: "Mortgage Studio", logo: 'MortgageStudio', website: 'https://mortgage-studio.co.uk' },
-	{ name: "Farleys House and Gallery", logo: 'Farleys', website: 'https://mortgage-studio.co.uk' },
-	{ name: "Lee Miller Archives", logo: 'LeeMiller', website: 'https://mortgage-studio.co.uk' },
-	{ name: "7thSense", logo: 'SeventhSense', website: 'https://mortgage-studio.co.uk' },
-	{ name: "Home James Cleaning Services", logo: 'HomeJames', website: 'https://mortgage-studio.co.uk' },
-	{ name: "Eydens Auto locksmiths", logo: 'Eydens', website: 'https://mortgage-studio.co.uk' },
-	{ name: "TCK", logo: 'Tck', website: 'https://mortgage-studio.co.uk' },
-	{ name: "Car Keys Solutions", logo: 'CKS', website: 'https://mortgage-studio.co.uk' },
+  {
+    name: "Wave Plumbing & Bathrooms",
+    logo: "WavePlumbing",
+    website: "https://wave.plumbing",
+  },
+  {
+    name: "Sophie Tanner",
+    logo: "SophieTanner",
+    website: "https://sophietanner.co.uk",
+  },
+  {
+    name: "Neon Saw",
+    logo: "NeonSaw",
+    website: "https://neonsaw.co.uk",
+  },
+  {
+    name: "Another A Story",
+    logo: "AnotherAStory",
+    website: "https://anotherastory.com",
+  },
+  {
+    name: "Mortgage Studio",
+    logo: "MortgageStudio",
+    website: "https://mortgage-studio.co.uk",
+  },
+  {
+    name: "Farleys House and Gallery",
+    logo: "Farleys",
+    website: "https://www.farleyshouseandgallery.co.uk",
+  },
+  {
+    name: "Lee Miller Archives",
+    logo: "LeeMiller",
+    website: "https://leemiller.co.uk",
+  },
+  {
+    name: "7thSense",
+    logo: "SeventhSense",
+    website: "https://7thsense.one",
+  },
+  {
+    name: "Home James Cleaning Services",
+    logo: "HomeJames",
+    website: "https://homejamescleaningservices.co.uk",
+  },
+  {
+    name: "Eydens Auto locksmiths",
+    logo: "Eydens",
+    website: "#",
+  },
+  { name: "TCK", logo: "Tck", website: "https://www.tck.co.uk" },
+  {
+    name: "Car Keys Solutions",
+    logo: "CKS",
+    website: "https://vehiclesecurity.carkeyssolutions.co.uk",
+  },
 ];
 
 // Mapping logo names to their respective components
@@ -32,63 +80,85 @@ const logoComponents: Record<string, any> = {
   AnotherAStory,
   MortgageStudio,
   Farleys,
+  NeonSaw,
   LeeMiller,
   SeventhSense,
   HomeJames,
   Eydens,
   Tck,
-  CKS
+  CKS,
 };
 ---
+
 <section class="clients-component full-bleed strip">
-	<div class="wrapper">
-		<p class="tag">Clients</p>
-		<h2 class="heading">Some of our favourite clients</h2>
-		<ul class="scroller-list">
-		{clients.map((client) => {
-			const LogoComponent = logoComponents[client.logo];
-			return (
-			  <li>
-				<a href={client.website} target="_blank">
-					<LogoComponent />
-				</a>
-			  </li>
-			);
-		  })}
-		  </ul>
-	</div>
-</header>
+  <div class="wrapper">
+    <p class="tag">Clients</p>
+    <h2 class="heading">Some of our favourite clients</h2>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {
+          clients.sort(() => Math.random() - 0.5).map((client) => {
+            const LogoComponent = logoComponents[client.logo];
+            return (
+              <div class="swiper-slide">
+                <a href={client.website} target="_blank">
+                  <LogoComponent />
+                </a>
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { Swiper } from "swiper";
+  import { Autoplay } from 'swiper/modules';
+  const swiper = new Swiper(".swiper", {
+	modules: [ Autoplay ],
+    spaceBetween: 40,
+    grabCursor: true,
+    freeMode: true,
+	speed: 11000,
+	loop: true,
+	slidesPerView: "auto",
+	autoplay: {
+		delay: 0.5,
+		disableOnInteraction: false,
+	}
+  });
+</script>
 
 <style>
-	.clients-component {
-		background: var(--palette-highlight);
-		color: var(--palette-contrast);
-		padding: var(--space-m) 0;
+  .clients-component {
+    background: var(--palette-highlight);
+    color: var(--palette-contrast);
+    padding: var(--space-m) 0;
 
-		a {
-			color: currentColor;
-		}
-	}
+    a {
+      color: currentColor;
+    }
+  }
 
-	.scroller-list {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		display: flex;
-		align-items: center;
-		overflow: scroll;
+  .swiper {
+	-webkit-transition-timing-function: linear!important;
+	-o-transition-timing-function: linear!important;
+	transition-timing-function: linear!important;
+	margin-top: var(--space-m);
+  }
 
-		a {
-			display: block;
-		}
+  .swiper-slide {
+	width: auto;
 
-		svg {
-			max-width: 300px;
-        	height: 80px;	
-		}
+    a {
+      display: block;
+    }
 
-		li {
-			margin-right: var(--space-l);
-		}
-	}
+    svg {
+      max-width: 300px;
+      height: 80px;
+    }
+  }
 </style>

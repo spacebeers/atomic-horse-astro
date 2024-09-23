@@ -29,6 +29,10 @@ body {
     transform: translateX(-50%);
 }  
 
+p {
+    margin-bottom: var(--space-xs);
+}
+
 a {
     color: var(--palette-highlight);
     text-decoration: underline;
@@ -81,6 +85,7 @@ a {
 
     + .heading {
         margin-top: 0;
+        margin-bottom: var(--space-m);
     }
 }
 
@@ -132,3 +137,31 @@ a {
     color: currentColor;
     padding: var(--space-2xs);
 }
+
+.mb--2 {
+    margin-bottom: var(--step--2);
+  }
+  
+  .mb--1 {
+    margin-bottom: var(--step--1);
+  }
+  
+  .mb-0 {
+    margin-bottom: var(--step-0);
+  }
+  
+  .mb-1 {
+    margin-bottom: var(--step-1);
+  }
+  
+  .mb-2 {
+    margin-bottom: var(--step-2);
+  }
+  
+  .mb-3 {
+    margin-bottom: var(--step-3);
+  }
+  
+  .mb-4 {
+    margin-bottom: var(--step-4);
+  }

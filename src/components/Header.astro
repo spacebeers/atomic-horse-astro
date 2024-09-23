@@ -1,92 +1,170 @@
 ---
-import { BASE } from '../utils/constants';
-import FullLogo from './FullLogo.astro';
+import { BASE } from "../utils/constants";
+import FullLogo from "./FullLogo.astro";
 const pages = [
-	{
-		name: "Services",
-		path: '/services'
-	},
-	{
-		name: "Work",
-		path: '/work'
-	},
-	{
-		name: "Contact us",
-		path: '/contact-us'
-	},
+  {
+    name: "Services",
+    path: "/services",
+  },
+  {
+    name: "Work",
+    path: "/work",
+  },
+  {
+    name: "Contact us",
+    path: "/contact-us",
+  },
 ];
-
 ---
-<header>
-	<a href={`${BASE}`}>
-		<FullLogo />
-	</a>
-	<nav>
-		<ul>
-			{
-				pages.map((page) => (
-					<li class={Astro.url.pathname === page.path ? "active" : ""}>
-						<a href={ `${BASE}${page.path}` }>{ page.name }</a>
-					</li>
-				))
-			}
-			<li>
-				<button class="toggle-button">
-					<svg width="29" height="22" viewBox="0 0 29 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.5 1.5H27.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-						<path d="M1.5 10.5H27.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-						<path d="M1.5 20.5H27.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-					</svg>						
-				</button>
-			</li>
-		</ul>
-	</nav>
+
+<header data-target="header">
+  <div class="wrapper">
+    <a href={`${BASE}`}>
+      <FullLogo />
+    </a>
+    <nav>
+      <ul>
+        {
+          pages.map((page) => (
+            <li class={Astro.url.pathname === page.path ? "active" : ""}>
+              <a href={`${BASE}${page.path}`}>{page.name}</a>
+            </li>
+          ))
+        }
+        <li>
+          <button class="toggle-button">
+            <svg
+              width="29"
+              height="22"
+              viewBox="0 0 29 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.5 1.5H27.5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"></path>
+              <path
+                d="M1.5 10.5H27.5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"></path>
+              <path
+                d="M1.5 20.5H27.5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"></path>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <style>
+    header {
+      background: transparent;
+      padding: var(--space-xs) 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1;
+      color: var(--palette-contrast);
+      transition: background var(--animation-speed) linear;
+
+      &.stuck {
+        background: var(--palette-dark);
+        color: var(--palette-light);
+
+        .logo {
+          color: var(--palette-light);
+
+          a {
+            color: var(--palette-light);
+          }
+        }
+      }
+
+      .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .logo {
+        color: var(--palette-contrast);
+
+        a {
+          color: var(--palette-contrast);
+        }
+      }
+
+      .toggle-button {
+        display: flex;
+        background: transparent;
+        border: none;
+        color: currentColor;
+        cursor: pointer;
+      }
+
+      nav {
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          text-transform: uppercase;
+        }
+
+        li + li {
+          margin-left: var(--space-m);
+        }
+
+        .active {
+          a {
+            font-weight: var(--fw-bold);
+          }
+        }
+
+        a {
+          font-size: var(--step--1);
+          color: currentColor;
+          display: inline-block;
+          padding-bottom: 2px;
+          background-image: linear-gradient(currentColor 0 0);
+          background-position: 0 100%;
+          background-size: 0% 2px;
+          background-repeat: no-repeat;
+          transition:
+            background-size 0.3s,
+            background-position 0s 0.3s;
+
+          &:hover {
+            background-position: 100% 100%;
+            background-size: 100% 2px;
+          }
+        }
+      }
+    }
+  </style>
+
+  <script>
+    window.addEventListener("scroll", () => {
+      const element = document.querySelector('[data-target="header"]');
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > 75) {
+        element?.classList.add("stuck");
+      } else {
+        element?.classList.remove("stuck");
+      }
+    });
+  </script>
 </header>
-
-<style>
-	header {
-		background: transparent;
-		padding: var(--space-xs) 0;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		
-		a {
-			text-decoration: none;
-		}
-
-		.toggle-button {
-			display: flex;
-			background: transparent;
-			border: none;
-			color: currentColor;
-			cursor: pointer;
-		}
-
-		nav {
-			ul {
-				list-style: none;
-				margin: 0;
-				padding: 0;
-				display: flex;
-				align-items: center;
-				text-transform: uppercase;
-			}
-
-			li + li {
-				margin-left: var(--space-m);
-			}
-
-			.active {
-				a {
-					color: var(--palette-highlight);
-				}
-			}
-
-			a {
-				font-size: var(--step--1);
-				color: var(--palette-light);
-			}
-		}
-	}
-</style>

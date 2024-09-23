@@ -12,6 +12,8 @@
   "dependencies": {
     "@astrojs/check": "^0.5.2",
     "@dotlottie/player-component": "^2.7.8",
+    "@glidejs/glide": "^3.6.2",
+    "@types/glidejs__glide": "^3.6.5",
     "aos": "^3.0.0-beta.6",
     "astro": "^4.3.5",
     "autoprefixer": "^10.4.17",
@@ -19,6 +21,7 @@
     "lottie-react": "^2.4.0",
     "lottie-web": "^5.12.2",
     "sharp": "^0.33.2",
+    "swiper": "^11.1.14",
     "typescript": "^5.3.3"
   }
 }
