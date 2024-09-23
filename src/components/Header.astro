@@ -26,7 +26,7 @@ const pages = [
 			{
 				pages.map((page) => (
 					<li class={Astro.url.pathname === page.path ? "active" : ""}>
-						<a href={ `${page.path}` }>{ page.name }</a>
+						<a href={ `${BASE}${page.path}` }>{ page.name }</a>
 					</li>
 				))
 			}
