@@ -130,7 +130,12 @@ a {
     margin-bottom: var(--space-xl);
 }
 
+p + .button {
+    margin-top: var(--space-s);
+}
+
 .button {
+    display: inline-block;
     border: 1px solid var(--palette-light);
     border-radius: var(--border-radius);
     background: transparent;

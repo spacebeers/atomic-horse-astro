@@ -19,17 +19,17 @@ const { heading, content, imageSrc, imageAlt, link } = Astro.props;
 </section>
 <style>
 	.card {
+		width: 100%;
+
 		img {
 			border-radius: var(--border-radius);
 			margin-bottom: var(--space-s);
+			width: 100%;
+			aspect-ratio: 18 / 9;
 		}
 		
 		h2 {
 			margin-bottom: var(--space-s);
-		}
-
-		p {
-			margin-bottom: var(--space-l);
 		}
 	}
 </style>

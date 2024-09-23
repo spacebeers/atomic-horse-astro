@@ -1,12 +1,12 @@
 ---
 interface Props {
-	theme: "DARK" | "LIGHT";
+	theme: "DARK" | "MID" | "LIGHT";
 }
 
 const { theme } = Astro.props;
 ---
 
-<section class:list={['strip', { dark: theme === 'DARK', light: theme === 'LIGHT' }]}>
+<section class:list={['strip', { dark: theme === 'DARK', mid: theme === 'MID', light: theme === 'LIGHT' }, 'full-bleed']}>
 	<slot />
 </section>
 <style>
@@ -18,6 +18,11 @@ const { theme } = Astro.props;
 
 	.dark {
 		background: var(--palette-dark);
+		color: var(--palette-light);
+	}
+
+	.mid {
+		background: var(--palette-mid);
 		color: var(--palette-light);
 	}
 </style>

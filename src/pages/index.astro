@@ -4,6 +4,8 @@ import Banner from "../components/Banner.astro";
 import GradientContentStrip from "../components/GradientContentStrip.astro";
 import Clients from "../components/Clients.astro";
 import Card from "../components/Card.astro";
+import Strip from "../components/Strip.astro";
+import FeaturedProject from "../components/FeaturedProject.astro";
 ---
 
 <Layout title="Welcome">
@@ -60,6 +62,9 @@ import Card from "../components/Card.astro";
         />
       </section>
     </section>
+    <Strip theme="MID">
+      <FeaturedProject />
+    </Strip>
     <Clients />
   </main>
 </Layout>

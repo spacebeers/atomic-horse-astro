@@ -12,11 +12,12 @@ const { title, showHorse, condense } = Astro.props;
 <section class={`hero full-bleed ${showHorse ? 'showHorse' : ''} ${condense ? 'condense' : ''}`}>
 	<section class="wrapper">
 		<h1>{title}</h1>
+		
 		{
 			showHorse && 
-			<div class="horse">
-				<Horse />
-			</div>
+				<div class="horse">
+					<Horse />
+				</div>
 		}
 		{
 			!condense && 
@@ -49,7 +50,7 @@ const { title, showHorse, condense } = Astro.props;
 
 		&.showHorse {
 			h1 {
-				padding: 0 0 0 270px;
+				padding: 0 0 0 320px;
 			}
 		}
 	}
