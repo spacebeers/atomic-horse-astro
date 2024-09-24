@@ -5,14 +5,22 @@ const pages = [
   {
     name: "Services",
     path: "/services",
+    subPage: false
   },
   {
     name: "Work",
     path: "/work",
+    subPage: false
+  },
+  {
+    name: "Blog",
+    path: "/blog",
+    subPage: true
   },
   {
     name: "Contact us",
     path: "/contact-us",
+    subPage: false
   },
 ];
 ---
@@ -25,7 +33,7 @@ const pages = [
     <nav>
       <ul>
         {
-          pages.map((page) => (
+          pages.filter(p => p.subPage === false).map((page) => (
             <li class={Astro.url.pathname === page.path ? "active" : ""}>
               <a href={`${BASE}${page.path}`}>{page.name}</a>
             </li>
@@ -60,23 +68,35 @@ const pages = [
         </li>
       </ul>
     </nav>
+
+    <nav class="full-menu" aria-hidden="true">
+      <ul>
+        {
+          pages.map((page) => (
+            <li class={Astro.url.pathname === page.path ? "active" : ""}>
+              <a href={`${BASE}${page.path}`}>{page.name}</a>
+            </li>
+          ))
+        }
+      <li>
+    </nav>
   </div>
 
   <style>
     header {
-      background: transparent;
+      background-color: transparent;
+      backdrop-filter: blur(10px);
       padding: var(--space-xs) 0;
       position: fixed;
       top: 0;
       right: 0;
       left: 0;
-      z-index: 1;
+      z-index: 10;
       color: var(--palette-contrast);
-      transition: background var(--animation-speed) linear, opacity var(--animation-speed) linear;
+      transition: background-color var(--animation-speed) linear, backdrop-filter var(--animation-speed) linear;
 
       &.stuck {
-        background: var(--palette-dark);
-		opacity: 0.9;
+        background-color: rgba(0, 0, 0, 0.80);
         color: var(--palette-light);
 
         .logo {
@@ -130,7 +150,7 @@ const pages = [
 
         .active {
           a {
-            font-weight: var(--fw-bold);
+            font-weight: var(--fw-medium);
           }
         }
 
@@ -153,6 +173,18 @@ const pages = [
           }
         }
       }
+    }
+
+    .full-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: var(--palette-blue);
+      color: var(--palette-light);
+      opacity: 1;
+      display: none;
     }
   </style>
 

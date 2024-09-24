@@ -17,57 +17,73 @@ import AnotherAStory from "../client-logos/AnotherAStory.astro";
 const clients = [
   {
     name: "Wave Plumbing & Bathrooms",
+    description: "Logo design, website rebranding and van wrap design for a luxury bathroom company.",
     logo: "WavePlumbing",
     website: "https://wave.plumbing",
   },
   {
     name: "Sophie Tanner",
+    description: "Logo design, branding and website development for a local author, yoga teacher and founding sologamist.",
     logo: "SophieTanner",
     website: "https://sophietanner.co.uk",
   },
   {
     name: "Neon Saw",
+    description: "Website ecommerce support and consultation for master wood worker.",
     logo: "NeonSaw",
     website: "https://neonsaw.co.uk",
   },
   {
     name: "Another A Story",
+    description: "Website development for incredible luxury events company. ",
     logo: "AnotherAStory",
     website: "https://anotherastory.com",
   },
   {
     name: "Mortgage Studio",
+    description: "Website development, hosting and support for family run mortgage advisors.",
     logo: "MortgageStudio",
     website: "https://mortgage-studio.co.uk",
   },
   {
     name: "Farleys House and Gallery",
+    description: "Website development and technical support for surrealist art gallery",
     logo: "Farleys",
     website: "https://www.farleyshouseandgallery.co.uk",
   },
   {
     name: "Lee Miller Archives",
+    description: "Website technical support for the official Lee Miller achive.",
     logo: "LeeMiller",
     website: "https://leemiller.co.uk",
   },
   {
     name: "7thSense",
+    description: "Technical support and improvements for the creators of the Las Vegas Sphere.",
     logo: "SeventhSense",
     website: "https://7thsense.one",
   },
   {
     name: "Home James Cleaning Services",
+    description: "Logo design, branding and website development for West Sussex cleaning company.",
     logo: "HomeJames",
     website: "https://homejamescleaningservices.co.uk",
   },
   {
     name: "Eydens Auto locksmiths",
+    description: "Pricing NextJS application for large auto locksmiths.",
     logo: "Eydens",
-    website: "#",
+    website: "",
   },
-  { name: "TCK", logo: "Tck", website: "https://www.tck.co.uk" },
+  { 
+    name: "TCK", 
+    description: "Website support and amends for specialist executive search firm focussed on the UK and European real estate markets",
+    logo: "Tck", 
+    website: "https://www.tck.co.uk" 
+  },
   {
     name: "Car Keys Solutions",
+    description: "ECommerce website development and support for auto locksmiths and van security company",
     logo: "CKS",
     website: "https://vehiclesecurity.carkeyssolutions.co.uk",
   },
@@ -105,6 +121,7 @@ const logoComponents: Record<string, any> = {
                 <div class="swiper-slide">
                   <a href={client.website} target="_blank">
                     <LogoComponent />
+                    <p class="visually-hidden">{client.description}</p>
                   </a>
                 </div>
               );
@@ -120,7 +137,7 @@ const logoComponents: Record<string, any> = {
   import { Autoplay } from "swiper/modules";
   const swiper = new Swiper(".swiper", {
     modules: [Autoplay],
-    spaceBetween: 40,
+    spaceBetween: 60,
     grabCursor: true,
     freeMode: true,
     speed: 11000,
@@ -131,6 +148,8 @@ const logoComponents: Record<string, any> = {
       disableOnInteraction: false,
     },
   });
+
+  document.addEventListener('astro:after-swap', () => console.log('load'))
 </script>
 
 <style>

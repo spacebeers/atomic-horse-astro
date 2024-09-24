@@ -1,6 +1,6 @@
 ---
 interface Props {
-	theme: "DARK" | "MID" | "LIGHT";
+	theme?: "DARK" | "MID" | "LIGHT";
 }
 
 const { theme } = Astro.props;
@@ -11,9 +11,7 @@ const { theme } = Astro.props;
 </section>
 <style>
 	.strip {
-		background: var(--palette-light);
-		color: var(--palette-dark);
-		padding: 3em 0;
+		background: transparent;
 	}
 
 	.dark {

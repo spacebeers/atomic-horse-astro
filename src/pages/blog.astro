@@ -1,11 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import Card from "../components/Card.astro";
 import Clients from "../components/Clients.astro";
-const allPosts = await Astro.glob('./case-studies/*.md');
----
+import Layout from "../layouts/Layout.astro";
 
+const allPosts = await Astro.glob('./blog/*.md');
+---
 <Layout title="Welcome">
   <main>
     <Banner title="Being useful since 2007" showHorse />
@@ -20,13 +20,13 @@ const allPosts = await Astro.glob('./case-studies/*.md');
     <section class="card-grid">
         {
             allPosts.map((post) => (
-              <Card 
-                  heading={post.frontmatter.title}
-                  content={post.frontmatter.description}
-                  imageSrc={post.frontmatter.image.url as string}
-                  imageAlt={post.frontmatter.image.alt as string}
-                  link={post.url as string}
-              />
+                <Card 
+                    heading={post.frontmatter.title}
+                    content={post.frontmatter.description}
+                    imageSrc={post.frontmatter.image.url as string}
+                    imageAlt={post.frontmatter.image.alt as string}
+                    link={post.url as string}
+                />
             ))
         }
     </section>
@@ -36,7 +36,7 @@ const allPosts = await Astro.glob('./case-studies/*.md');
 
 <style>
   :root {
-    --palette-highlight: var(--palette-pink);
+    --palette-highlight: var(--palette-blue);
     --palette-contrast: var(--palette-light);
   }
 </style>

@@ -1,8 +1,10 @@
 ---
-import { CALENDLY, EMAIL } from "../utils/constants";
+import { CALENDLY, EMAIL, FACEBOOK, LINKEDIN } from "../utils/constants";
 import Calendly from "../icons/Calendly.astro";
 import Email from "../icons/Email.astro";
 import Whatsapp from "../icons/Whatsapp.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import Facebook from "../icons/Facebook.astro";
 
 const year = new Date().getFullYear();
 ---
@@ -11,7 +13,7 @@ const year = new Date().getFullYear();
         <div class="contact-block">
             <div class="contact-block__copy">
                 <p class="tag">Contact</p>
-                <h2 class="heading text-3">Get in touch</h2>
+                <h2 class="heading text-5 fw-medium">Get in touch</h2>
 
                 <p>Lorem ipsum dolor sit amet, ei simul salutatus duo, ea eam dignissim gubergren dissentiet, cum unum definiebas at. Te est vocent appetere concludaturque. Vix ex veritus interesset, in simul solet facete vix. Delectus consetetur mediocritatem est ad. Ei pri modo tantas, esse deleniti eu vel.</p>
             </div>
@@ -41,6 +43,41 @@ const year = new Date().getFullYear();
     </section>
     <section class="footer-main">
         <div class="footer-main__column">
+            <h2>Services</h2>
+            <ul>
+                <li>
+                    <a href="/cookies">
+                        Cookies
+                    </a>
+                </li>
+                <li>
+                    <a href="/privacy">
+                        Privacy policy
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-main__column">
+            <h2>Company</h2>
+            <ul>
+                <li>
+                    <a href="/blog">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="/privacy">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="/contact-us">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-main__column">
             <h2>Legal</h2>
             <ul>
                 <li>
@@ -51,6 +88,22 @@ const year = new Date().getFullYear();
                 <li>
                     <a href="/privacy">
                         Privacy policy
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-main__column">
+            <ul class="icon-list align-end">
+                <li>
+                    <a href={FACEBOOK}>
+                        <Facebook />
+                        Follow us
+                    </a>
+                </li>
+                <li>
+                    <a href={LINKEDIN}>
+                        <LinkedIn />
+                        Work fo us
                     </a>
                 </li>
             </ul>
@@ -87,6 +140,8 @@ const year = new Date().getFullYear();
     .footer-main {
         border-top: 2px solid var(--palette-light);
         padding: var(--space-l) 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
     .footer-main__column {
@@ -103,10 +158,14 @@ const year = new Date().getFullYear();
             a {
                 color: currentColor;
                 text-decoration: none;
+
+                &:hover {
+                    color: var(--palette-highlight);
+                }
             }
 
             li + li {
-                margin: var(--space-xxs) 0 0 0;
+                margin: var(--space-xs) 0 0 0;
             }
         }
     }
