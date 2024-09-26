@@ -1,10 +1,11 @@
 ---
+import { getCollection } from "astro:content";
 import Banner from "../components/Banner.astro";
 import Card from "../components/Card.astro";
 import Clients from "../components/Clients.astro";
 import Layout from "../layouts/Layout.astro";
 
-const allPosts = await Astro.glob('./blog/*.md');
+const allBlogPosts = await getCollection("blog");
 ---
 <Layout title="Welcome">
   <main>
@@ -18,17 +19,16 @@ const allPosts = await Astro.glob('./blog/*.md');
       </p>
     </section>
     <section class="card-grid">
-        {
-            allPosts.map((post) => (
-                <Card 
-                    heading={post.frontmatter.title}
-                    content={post.frontmatter.description}
-                    imageSrc={post.frontmatter.image.url as string}
-                    imageAlt={post.frontmatter.image.alt as string}
-                    link={post.url as string}
-                />
-            ))
-        }
+      {
+        allBlogPosts.map((item: any) => (
+        <Card 
+            heading={item.data.title}
+            content={item.data.description}
+            imageSrc={item.data.image}
+            imageAlt={item.data.alt}
+            link={`/work/${item.slug}`}
+        />
+      ))}
     </section>
     <Clients />
   </main>

@@ -1,17 +1,16 @@
 ---
-layout: "../../layouts/CaseStudyLayout.astro"
-title: 'Wave Plumbing'
+layout: "../../layouts/BlogLayout.astro"
+title: 'My First Blog Post'
 pubDate: 2022-07-01
-description: 'Butt face.'
+description: 'This is the first post of my new Astro blog.'
 author: 'Astro Learner'
-image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro", "successes"]
+image: '/src/assets/placeholder.png'
+alt: 'The Astro logo on a dark background with a pink glow.'
+tags: ["astro", "blogging", "learning in public"]
 ---
 # My First Blog Post
 
-Published on: {frontmatter.pubDate}
+Published on: 2022-07-01
 
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
@@ -26,10 +25,3 @@ Welcome to my _new blog_ about learning Astro! Here, I will share my learning jo
 ## What's next
 
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
-
-<div class="card-grid">
-<h1>test</h1>
-<h1>test</h1>
-<h1>test</h1>
-<h1>test</h1>
-</div>

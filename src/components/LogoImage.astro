@@ -1,0 +1,50 @@
+---
+import WavePlumbing from '../client-logos/WavePlumbing.astro';
+
+interface Props {
+  imageSrc: string;
+  imageAlt: string;
+}
+
+const { imageSrc, imageAlt } = Astro.props;
+---
+
+<div class="logo-image">
+  <div class="content">
+    <img src={imageSrc} alt={imageAlt} />
+    <p>{imageAlt}</p>
+  </div>
+  <svg
+    width="1528"
+    height="1050"
+    viewBox="0 0 1528 1050"
+    fill="none"
+    class="background"
+    role="presentation"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="1527.19" height="1050" fill="url(#paint0_radial_849_3222)"
+    ></rect>
+    <defs>
+      <radialGradient
+        id="paint0_radial_849_3222"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(763.597 1232.11) rotate(-90) scale(895.648 1302.69)"
+      >
+        <stop stop-color="var(--palette-highlight)"></stop>
+        <stop offset="1" stop-color="var(--palette-dark)"></stop>
+      </radialGradient>
+    </defs>
+  </svg>
+</div>
+<style>
+  .logo-image {
+    width: 100%;
+    border-radius: var(--border-radius);
+    height: auto;
+  }
+</style>

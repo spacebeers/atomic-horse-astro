@@ -1,17 +1,22 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
 	heading: string;
 	content: string;
-	imageSrc: string;
+	imageSrc: any;
 	imageAlt: string;
 	link: string;
 }
 
 const { heading, content, imageSrc, imageAlt, link } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif,svg}');
+console.log(images);
+if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
 ---
 
 <section class="card">
-	<img src={imageSrc} alt={imageAlt} />
+	<Image src={imageSrc} alt={imageAlt} width="800" height="400" class="card-image" />
 
 	<h2>{ heading }</h2>
 	<p class="line-clamp">{ content }</p>
@@ -21,11 +26,13 @@ const { heading, content, imageSrc, imageAlt, link } = Astro.props;
 	.card {
 		width: 100%;
 
-		img {
+		.card-image {
 			border-radius: var(--border-radius);
 			margin-bottom: var(--space-s);
 			width: 100%;
-			aspect-ratio: 18 / 9;
+			height: auto;
+			object-fit: cover;
+			aspect-ratio: 16 / 9;
 		}
 		
 		h2 {
