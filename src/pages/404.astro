@@ -1,0 +1,27 @@
+---
+import Banner from "../components/Banner.astro";
+import Strip from "../components/Strip.astro";
+import Layout from "../layouts/Layout.astro";
+import { EMAIL } from "../utils/constants";
+---
+
+<Layout title="404 Page not found">
+  <main class="content-page">
+    <Banner title="This is fine" showHorse />
+    <section class="strip text-center w-clamp-xl intro-section">
+      <h2 class="text-4 fw-normal mb-2">
+        We're very sorry that we cannot find this page
+      </h2>
+
+      <p class="text-0">
+        Which is odd as we built the website and we're pretty sure it should be here. 
+      </p>
+    </section>
+  </main>
+</Layout>
+<style>
+  :root {
+    --palette-highlight: var(--palette-red);
+    --palette-contrast: var(--palette-light);
+  }
+</style>

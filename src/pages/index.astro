@@ -22,25 +22,27 @@ import HorseImage from "../components/HorseImage.astro";
         businesses large and small.
       </p>
     </section>
-    <section class="strip">
-      <div class="grid">
-        <div class="contents">
-          <p class="text-1 fw-medium">
-            Lorem ipsum dolor sit amet, autem dicat aliquam ad ius, cu vel
-            oblique equidem. Ne soleat delicata eos. Quo at eripuit propriae
-            tacimates, enim debet doming an pri.
-          </p>
-          <p class="text-0">
-            Lorem ipsum dolor sit amet, autem dicat aliquam ad ius, cu vel
-            oblique equidem. Ne soleat delicata eos. Quo at eripuit propriae
-            tacimates, enim debet doming an pri.
-          </p>
-        </div>
-        <div class="image">
-          <HorseImage />
+    <Strip theme="DARK">
+      <div class="wrapper">
+        <div class="grid">
+          <div class="contents">
+            <p class="text-1 fw-medium">
+              Lorem ipsum dolor sit amet, autem dicat aliquam ad ius, cu vel
+              oblique equidem. Ne soleat delicata eos. Quo at eripuit propriae
+              tacimates, enim debet doming an pri.
+            </p>
+            <p class="text-0">
+              Lorem ipsum dolor sit amet, autem dicat aliquam ad ius, cu vel
+              oblique equidem. Ne soleat delicata eos. Quo at eripuit propriae
+              tacimates, enim debet doming an pri.
+            </p>
+          </div>
+          <div class="image">
+            <HorseImage />
+          </div>
         </div>
       </div>
-    </section>
+    </Strip>
     <GradientContentStrip>
       <p class="tag">Company</p>
       <h2 class="heading">Who we are</h2>
@@ -61,26 +63,28 @@ import HorseImage from "../components/HorseImage.astro";
         persius ocurreret definitiones ut eam, magna modus cotidieque eu ius.
       </p>
     </GradientContentStrip>
-    <section class="strip">
-      <p class="tag">Services</p>
-      <h2 class="heading">What can we do for you</h2>
-      <section class="card-grid">
-        <Card
-          heading="Something that will wrap a bit"
-          content="Te has repudiare moderatius, pro persius splendide id. Legere sententiae percipitur vim ne."
-          imageSrc="placeholder-wide.png"
-          imageAlt="Nothing"
-          link="cookies"
-        />
-        <Card
-          heading="Something that will wrap a bit"
-          content="Te has repudiare moderatius, pro persius splendide id. Legere sententiae percipitur vim ne."
-          imageSrc="placeholder-wide.png"
-          imageAlt="Nothing"
-          link="cookies"
-        />
-      </section>
-    </section>
+    <Strip theme="DARK">
+      <div class="wrapper">
+        <p class="tag">Services</p>
+        <h2 class="heading">What can we do for you</h2>
+        <section class="card-grid">
+          <Card
+            heading="Something that will wrap a bit"
+            content="Te has repudiare moderatius, pro persius splendide id. Legere sententiae percipitur vim ne."
+            imageSrc="/src/assets/placeholder-wide.png"
+            imageAlt="Nothing"
+            link="cookies"
+          />
+          <Card
+            heading="Something that will wrap a bit"
+            content="Te has repudiare moderatius, pro persius splendide id. Legere sententiae percipitur vim ne."
+            imageSrc="/src/assets/placeholder-wide.png"
+            imageAlt="Nothing"
+            link="cookies"
+          />
+        </section>
+      </div>
+    </Strip>
     <Strip theme="MID">
       <FeaturedProject />
     </Strip>

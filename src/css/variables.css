@@ -5,6 +5,7 @@
     --palette-light: #FFFFFF;
     --palette-blue: #0066FF;
     --palette-pink: #FA198B;
+    --palette-red: #EA2B1F;
     --palette-yellow: #FFD712;
     --palette-highlight: var(--palette-pink);
     --palette-contrast: var(--palette-light);

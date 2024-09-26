@@ -3,27 +3,36 @@ import { Image } from 'astro:assets';
 
 interface Props {
 	heading: string;
-	content: string;
 	imageSrc: any;
 	imageAlt: string;
-	link: string;
 }
 
-const { heading, content, imageSrc, imageAlt, link } = Astro.props;
+const { heading, imageSrc, imageAlt } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif,svg}');
 if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
 ---
 
-<section class="card">
-	<Image src={imageSrc} alt={imageAlt} width="800" height="400" class="card-image" />
+<section class="service-card">
+	<div class="service-card-grid">
+		<div class="service-card-grid__content">
+			<h2>{ heading }</h2>
+			<slot name="card-content" /> 
+		</div>	
+		<div class="service-card-grid__image">
+			<Image src={imageSrc} alt={imageAlt} width="800" height="400" class="card-image" />
+		</div>	
 
-	<h2>{ heading }</h2>
-	<p class="line-clamp">{ content }</p>
-	<a href={link} class="button">Learn more</a>
+	</div>
 </section>
 <style>
-	.card {
+	.service-card {
 		width: 100%;
+
+		.service-card-grid {
+			display: grid;
+			grid-template-columns: 2fr 1fr;
+			gap: var(--space-xl);
+		}
 
 		.card-image {
 			border-radius: var(--border-radius);
@@ -31,7 +40,7 @@ if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "s
 			width: 100%;
 			height: auto;
 			object-fit: cover;
-			aspect-ratio: 16 / 9;
+			aspect-ratio: 1 / 1;
 		}
 		
 		h2 {
