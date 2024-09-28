@@ -1,0 +1,100 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro";
+import GradientContentStrip from "../components/GradientContentStrip.astro";
+import Clients from "../components/Clients.astro";
+import Card from "../components/Card.astro";
+import Strip from "../components/Strip.astro";
+import FeaturedProject from "../components/FeaturedProject.astro";
+import HorseImage from "../components/HorseImage.astro";
+---
+
+<Layout title="Welcome">
+  <main>
+    <Banner title="Being useful since 2007" showHorse />
+    <section class="strip text-center w-clamp-xl intro-section">
+      <h2 class="text-4 fw-normal mb-2">
+        Techincal solutions to human problems
+      </h2>
+
+      <p class="text-0">
+        A technical and creative digital agency supporting the people behind
+        businesses large and small.
+      </p>
+    </section>
+    <Strip theme="DARK">
+      <div class="wrapper">
+        <div class="grid">
+          <div class="contents">
+            <p class="text-1 fw-medium">
+              Lorem ipsum dolor sit amet, autem dicat aliquam ad ius, cu vel
+              oblique equidem. Ne soleat delicata eos. Quo at eripuit propriae
+              tacimates, enim debet doming an pri.
+            </p>
+            <p class="text-0">
+              Lorem ipsum dolor sit amet, autem dicat aliquam ad ius, cu vel
+              oblique equidem. Ne soleat delicata eos. Quo at eripuit propriae
+              tacimates, enim debet doming an pri.
+            </p>
+          </div>
+          <div class="image">
+            <HorseImage />
+          </div>
+        </div>
+      </div>
+    </Strip>
+    <GradientContentStrip>
+      <p class="tag">Company</p>
+      <h2 class="heading">Who we are</h2>
+
+      <p>
+        Ut has commune epicurei perpetua, in sit mazim delenit. Te legere
+        eloquentiam est, duo laudem impetus te. Ea summo feugait nec, noster
+        placerat mea ad, mel et mucius nusquam offendit. Nec an eros molestie,
+        ut nec expetenda efficiantur. Meis commune oportere vim et. Vide
+        vituperata eloquentiam ius id.
+      </p>
+
+      <p>
+        Te has repudiare moderatius, pro persius splendide id. Legere sententiae
+        percipitur vim ne. Sit in timeam aliquip, eum pericula vituperatoribus
+        in. Quo ei delicata electram evertitur, habeo quodsi te vel. Qui suas
+        semper labores et, doming probatus pri ei. Quo libris semper doctus te,
+        persius ocurreret definitiones ut eam, magna modus cotidieque eu ius.
+      </p>
+    </GradientContentStrip>
+    <Strip theme="DARK">
+      <div class="wrapper">
+        <p class="tag">Services</p>
+        <h2 class="heading">What can we do for you</h2>
+        <section class="card-grid">
+          <Card
+            heading="Something that will wrap a bit"
+            content="Te has repudiare moderatius, pro persius splendide id. Legere sententiae percipitur vim ne."
+            imageSrc="/src/assets/placeholder-wide.png"
+            imageAlt="Nothing"
+            link="cookies"
+          />
+          <Card
+            heading="Something that will wrap a bit"
+            content="Te has repudiare moderatius, pro persius splendide id. Legere sententiae percipitur vim ne."
+            imageSrc="/src/assets/placeholder-wide.png"
+            imageAlt="Nothing"
+            link="cookies"
+          />
+        </section>
+      </div>
+    </Strip>
+    <Strip theme="MID">
+      <FeaturedProject />
+    </Strip>
+    <Clients />
+  </main>
+</Layout>
+
+<style>
+  :root {
+    --palette-highlight: var(--palette-blue);
+    --palette-contrast: var(--palette-light);
+  }
+</style>

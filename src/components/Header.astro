@@ -1,5 +1,4 @@
 ---
-import { BASE } from "../utils/constants";
 import FullLogo from "./FullLogo.astro";
 const pages = [
   {
@@ -27,7 +26,7 @@ const pages = [
 
 <header data-target="header">
   <div class="wrapper">
-    <a href={`${BASE}`}>
+    <a href={'/'}>
       <FullLogo />
     </a>
     <nav>
@@ -35,7 +34,7 @@ const pages = [
         {
           pages.filter(p => p.subPage === false).map((page) => (
             <li class={Astro.url.pathname === page.path ? "active" : ""}>
-              <a href={`${BASE}${page.path}`}>{page.name}</a>
+              <a href={page.path}>{page.name}</a>
             </li>
           ))
         }
@@ -74,7 +73,7 @@ const pages = [
         {
           pages.map((page) => (
             <li class={Astro.url.pathname === page.path ? "active" : ""}>
-              <a href={`${BASE}${page.path}`}>{page.name}</a>
+              <a href={page.path}>{page.name}</a>
             </li>
           ))
         }
