@@ -1,7 +1,9 @@
 import sgMail from '@sendgrid/mail';
 
 // Set SendGrid API Key from environment variable
-sgMail.setApiKey(import.meta.env.SENDGRID_API_KEY);
+const sendGridApiKey = import.meta.env.SENDGRID_API_KEY;
+sgMail.setApiKey(sendGridApiKey);
+
 
 // Define the expected form data structure
 // interface FormData {
