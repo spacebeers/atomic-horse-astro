@@ -13,9 +13,9 @@ if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "s
 ---
 
 <section class="service-card">
+	<h2>{ heading }</h2>
 	<div class="service-card-grid">
 		<div class="service-card-grid__content">
-			<h2>{ heading }</h2>
 			<slot name="card-content" /> 
 		</div>	
 		<div class="service-card-grid__image">
@@ -29,18 +29,31 @@ if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "s
 		width: 100%;
 
 		.service-card-grid {
-			display: grid;
-			grid-template-columns: 2fr 1fr;
-			gap: var(--space-xl);
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
+		.service-card-grid__image {
+			flex: 0 0 36%;
+			margin-left: 4%;
+			border-radius: var(--border-radius);
+			margin-bottom: var(--space-s);
+			background: radial-gradient(85.3% 85.3% at 50% 117.34%, var(--palette-highlight) 0%, #282727 100%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			aspect-ratio: 1 / 1;
+			padding: var(--space-l);
+
+			img {
+				border-radius: var(--border-radius);
+			}  
 		}
 
 		.card-image {
-			border-radius: var(--border-radius);
-			margin-bottom: var(--space-s);
-			width: 100%;
+			width: 60%;
 			height: auto;
-			object-fit: cover;
-			aspect-ratio: 1 / 1;
 		}
 		
 		h2 {

@@ -1,14 +1,17 @@
 ---
 layout: "../../layouts/CaseStudyLayout.astro"
-title: 'Mortgage Studio'
-description: 'This is the first post of my new Astro blog.'
-image: '/src/assets/case-studies/website.png'
+title: 'Branding and design'
+description: 'Butt face.'
+author: 'Astro Learner'
+image: '/src/assets/services/branding.svg'
 alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["creative"]
 ---
+
+
 # My First Blog Post
 
-Published on: 2022-07-01
+Published on: {frontmatter.pubDate}
 
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
@@ -23,3 +26,10 @@ Welcome to my _new blog_ about learning Astro! Here, I will share my learning jo
 ## What's next
 
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+
+<div class="card-grid">
+<h1>test</h1>
+<h1>test</h1>
+<h1>test</h1>
+<h1>test</h1>
+</div>

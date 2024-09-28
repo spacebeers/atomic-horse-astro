@@ -4,7 +4,7 @@ import Banner from "../components/Banner.astro";
 import Card from "../components/Card.astro";
 import Clients from "../components/Clients.astro";
 import { getCollection } from "astro:content";
-const allBlogPosts = await getCollection("work");
+const allBlogPosts = await getCollection("case-studies");
 ---
 
 <Layout title="Welcome">

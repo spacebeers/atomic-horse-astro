@@ -5,8 +5,16 @@ import Email from "../icons/Email.astro";
 import Whatsapp from "../icons/Whatsapp.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
 import Facebook from "../icons/Facebook.astro";
+import { getCollection } from "astro:content";
 
 const year = new Date().getFullYear();
+const creativeSercices = await getCollection('service', ({ data }) => {
+  return data.tags.includes('creative');
+});
+
+const digitalServices = await getCollection('service', ({ data }) => {
+  return data.tags.includes('digital');
+});
 ---
 <footer> 
     <section class="contact-strip">
@@ -43,19 +51,30 @@ const year = new Date().getFullYear();
     </section>
     <section class="footer-main">
         <div class="footer-main__column">
-            <h2>Services</h2>
+            <h2>Creative Services</h2>
             <ul>
-                <li>
-                    <a href="/cookies">
-                        Cookies
-                    </a>
-                </li>
-                <li>
-                    <a href="/privacy">
-                        Privacy policy
-                    </a>
-                </li>
-            </ul>
+                {
+                    creativeSercices.map((item: any) => (
+                        <li>
+                            <a href={item.data.link}>
+                                {item.data.title}
+                            </a>
+                        </li>
+                     ))
+                }
+        </div>
+        <div class="footer-main__column">
+            <h2>Digital Services</h2>
+            <ul>
+                {
+                    digitalServices.map((item: any) => (
+                        <li>
+                            <a href={item.data.link}>
+                                {item.data.title}
+                            </a>
+                        </li>
+                     ))
+                }
         </div>
         <div class="footer-main__column">
             <h2>Company</h2>
@@ -141,7 +160,7 @@ const year = new Date().getFullYear();
         border-top: 2px solid var(--palette-light);
         padding: var(--space-l) 0;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 
     .footer-main__column {
