@@ -6,7 +6,7 @@ export default defineConfig({
   site: 'https://spacebeers.github.io',
   base: '/atomic-horse-astro',
   integrations: [sitemap()],
-  render: "hybrid",
+  output: "hybrid",
   image: {
     service: squooshImageService()
   }
