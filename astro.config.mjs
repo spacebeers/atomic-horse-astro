@@ -1,4 +1,4 @@
-import { defineConfig, squooshImageService } from 'astro/config';
+import { defineConfig } from 'astro/config';
 import vercel from '@astrojs/vercel/serverless';
 
 import sitemap from '@astrojs/sitemap';
@@ -9,8 +9,5 @@ export default defineConfig({
   base: '/atomic-horse-astro',
   integrations: [sitemap()],
   output: "hybrid",
-  adapter: vercel(),
-  image: {
-    service: squooshImageService()
-  }
+  adapter: vercel()
 });
