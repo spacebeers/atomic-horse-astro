@@ -4,7 +4,9 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: "https://atomic-horse-astro-lchgumj2n-helloatomichorses-projects.vercel.app/",
-  output: 'serverless',
-  adapter: vercel(),
+  output: 'server',
+  adapter: vercel({
+    isr: true,
+  }),
   integrations: [sitemap()]
 });
