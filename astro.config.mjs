@@ -1,13 +1,10 @@
 import { defineConfig } from 'astro/config';
 import vercel from '@astrojs/vercel/serverless';
-
 import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
 export default defineConfig({
-  site: 'https://spacebeers.github.io',
-  base: '/atomic-horse-astro',
-  integrations: [sitemap()],
-  output: "hybrid",
-  adapter: vercel()
+  site: "https://atomic-horse-astro-lchgumj2n-helloatomichorses-projects.vercel.app/",
+  output: 'server',
+  adapter: vercel(),
+  integrations: [sitemap()]
 });
