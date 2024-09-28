@@ -7,52 +7,102 @@ import Banner from "../components/Banner.astro";
   <main>
     <Banner title="How can we help?" showHorse />
     <section class="container">
-      <h2>A web development studio with a difference</h2>
-
-      <p>
-        Here at Atomic Horse we just want to help you, who ever you are, what
-        ever you do to make the best of your online presence.
-      </p>
-
-      <p>
-        Are you a small business who needs help getting on the internet property
-        ladder?
-      </p>
-
-      <p>
-        Want to update a tired old website with something modern, performant and
-        accessible?
-      </p>
-
-      <p>
-        Tired of paying someone to update your business website and want to do
-        it yourself?
-      </p>
-
-      <p>
-        Are you a designer who needs help turning your ideas into something
-        real?
-      </p>
-
-      <p>
-        Are you an agency looking for developers to get projects across the
-        line?
-      </p>
-
-      <p>
-        Our team of <a href="about.html">highly skilled developers</a> with over
-        15 years of agency and enterprise level experience are available to take
-        the project and run with it or embed themselves in your company until the
-        work is finished.
-      </p>
-
-      <p>
-        Whatever your needs - we would <span aria-label="love">❤️</span> to help
-        you.
-      </p>
+      <form id="form" onsubmit="event => event.preventDefault();return false">
+        <div class="columns">
+          <fieldset>
+            <label for="name">Name<sup>*</sup></label>
+            <input type="text" id="name" value="" />
+          </fieldset>
+          <fieldset>
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" value="" />
+          </fieldset>
+        </div>
+        <fieldset>
+          <label for="email">Email<sup>*</sup></label>
+          <input type="email" id="email" value="" />
+        </fieldset>
+        <fieldset>
+          <label for="subject">Subject<sup>*</sup></label>
+          <input type="text" id="subject" value="" />
+        </fieldset>
+        <fieldset>
+          <label for="message">Message<sup>*</sup></label>
+          <textarea id="message"></textarea>
+        </fieldset>
+        <fieldset>
+          <label for="tel">Phone number</label>
+          <input type="tel" id="tel" value="" />
+        </fieldset>
+        <button type="submit">Submit</button>
+      </form>
     </section>
   </main>
 </Layout>
+
+<script is:inline>
+  const get = (id) => document.getElementById(id) || { value: "" };
+
+  const submitForm = () => {
+    saveInput();
+    sendmail();
+  };
+
+  // save and retrieve generic formdata from localstorage
+  const getFormData = () => {
+    const store = Object.create(null);
+    store.name = get("name")?.value;
+    store.surname = get("surname")?.value;
+    store.email = get("email")?.value;
+    store.tel = get("tel")?.value;
+    store.subject = get("subject")?.value;
+    store.message = get("message")?.value;
+    return store;
+  };
+
+  const saveInput = () => {
+    const { message, subject, ...rest } = getFormData();
+    localStorage.setItem("contactinfo", JSON.stringify(rest));
+  };
+
+  const retrieveInfo = () => {
+    const store = JSON.parse(localStorage.getItem("contactinfo") || "{}");
+    get("name").value = store.name || "";
+    get("surname").value = store.surname || "";
+    get("email").value = store.email || "";
+    get("tel").value = store.tel || "";
+  };
+  // end: localstorage
+
+  // This kicks thing of, should really be on window.onload but...
+  const submitBtn = document.querySelector('[type="submit"]');
+  submitBtn?.addEventListener("click", submitForm);
+  retrieveInfo();
+  [...document.querySelectorAll("input")][0]?.focus();
+  // window.onload = () => {} // don't know why this wont work
+
+  const sendmail = async () => {
+    const { name, surname, email, tel, message, subject } = getFormData();
+    const data = await fetch("/api/sendmail.json", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, surname, email, tel, message, subject }),
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(res.status);
+        }
+        return res.json();
+      })
+      .catch((err) => {
+        console.log("Error", err);
+        throw new Error("Network error.");
+      });
+    console.log(data); // Here is the response from backend
+  };
+</script>
 
 <style>
   :root {
