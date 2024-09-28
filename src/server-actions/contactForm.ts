@@ -27,7 +27,7 @@ export async function sendEmail(request: Request): Promise<{ success: boolean; e
 
     // Create the email object
     const msg = {
-      to: 'your-email@example.com', // Replace with your email
+      to: 'support@atomichorse.agency', // Replace with your email
       from: 'no-reply@yourdomain.com', // Replace with your verified sender email
       subject: `New message from ${name}`,
       text: `You have received a new message from ${name} (${email}):\n\n${message}`,
