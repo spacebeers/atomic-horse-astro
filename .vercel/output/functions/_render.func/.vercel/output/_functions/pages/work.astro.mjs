@@ -2,7 +2,7 @@ import { a as createComponent, r as renderTemplate, e as renderComponent, m as m
 import 'kleur/colors';
 import { a as $$Banner, $ as $$Layout } from '../chunks/Layout_DXyH0pJh.mjs';
 import { $ as $$Card, a as $$Clients } from '../chunks/Clients_B8xkrdjb.mjs';
-import { g as getCollection } from '../chunks/_astro_content_Bkwwh7qG.mjs';
+import { g as getCollection } from '../chunks/_astro_content_BbiEy2Z2.mjs';
 /* empty css                                */
 export { renderers } from '../renderers.mjs';
 

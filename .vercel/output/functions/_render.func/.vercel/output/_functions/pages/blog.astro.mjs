@@ -1,6 +1,6 @@
 import { a as createComponent, r as renderTemplate, e as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_DIk37qPc.mjs';
 import 'kleur/colors';
-import { g as getCollection } from '../chunks/_astro_content_Bkwwh7qG.mjs';
+import { g as getCollection } from '../chunks/_astro_content_BbiEy2Z2.mjs';
 import { a as $$Banner, $ as $$Layout } from '../chunks/Layout_DXyH0pJh.mjs';
 import { $ as $$Card, a as $$Clients } from '../chunks/Clients_B8xkrdjb.mjs';
 /* empty css                                */
