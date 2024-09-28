@@ -136,7 +136,7 @@ const logoComponents: Record<string, any> = {
   import { Swiper } from "swiper";
   import { Autoplay } from "swiper/modules";
   document.addEventListener('astro:page-load', () => {
-    const swiper = new Swiper(".swiper", {
+    new Swiper(".swiper", {
       modules: [Autoplay],
       spaceBetween: 60,
       grabCursor: true,
