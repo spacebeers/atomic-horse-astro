@@ -28,9 +28,9 @@ const digitalServices = await getCollection('service', ({ data }) => {
       </p>
     </section>
     <Strip theme="MID">
-      <div class="wrapper">
+      <div class="wrapper strip-inner">
         <p class="tag">Services</p>
-        <h2 class="heading">Creative Services</h2>
+        <h2 class="heading text-4 fw-normal">Creative Services</h2>
         <div class="services-grid">
           {
             creativeSercices.map((item: any) => (
@@ -50,10 +50,11 @@ const digitalServices = await getCollection('service', ({ data }) => {
           ))}
         </div>
       </div>
-    </Strip><Strip theme="DARK">
-      <div class="wrapper">
+    </Strip>
+    <Strip theme="DARK">
+      <div class="wrapper strip-inner">
         <p class="tag">Services</p>
-        <h2 class="heading">Digital Services</h2>
+        <h2 class="heading text-4 fw-normal">Digital Services</h2>
         <div class="services-grid">
           {
             digitalServices.map((item: any) => (
@@ -79,7 +80,7 @@ const digitalServices = await getCollection('service', ({ data }) => {
 
 <style>
   :root {
-    --palette-highlight: var(--palette-green);
-    --palette-contrast: var(--palette-dark);
+    --palette-highlight: var(--palette-blue);
+    --palette-contrast: var(--palette-light);
   }
 </style>

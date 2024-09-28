@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://spacebeers.github.io/sitemap-index.xml
