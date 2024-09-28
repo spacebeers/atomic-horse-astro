@@ -3,6 +3,8 @@ import { sendEmail } from '../server-actions/contactForm';
 
 // Define the form action
 const handleSubmit = sendEmail;
+const currentUrl = Astro.url.href;
+
 
 let submitted = false;
 
@@ -16,7 +18,7 @@ if (Astro.request.method === 'POST') {
 ---
 
 <!-- Form for submitting the email -->
-<form method="POST" action={Astro.url}>
+<form method="POST" action={currentUrl}>
   <label for="name">Name:</label>
   <input type="text" id="name" name="name" required />
 

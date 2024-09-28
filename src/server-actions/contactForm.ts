@@ -4,11 +4,11 @@ import sgMail from '@sendgrid/mail';
 sgMail.setApiKey(import.meta.env.SENDGRID_API_KEY);
 
 // Define the expected form data structure
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-}
+// interface FormData {
+//   name: string;
+//   email: string;
+//   message: string;
+// }
 
 // Send email function
 export async function sendEmail(request: Request): Promise<{ success: boolean; error?: string }> {
