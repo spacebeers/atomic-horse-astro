@@ -11,7 +11,6 @@
       data-netlify="true"
       netlify-honeypot
       name="contact"
-      method="POST"
       action="/success"
     >
       <p class="hidden">
@@ -29,6 +28,28 @@
       <button type="submit">Submit</button>
     </form>
   </div>
+  <script>
+    const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+    
+    fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+    })
+        .then(() => console.log("Form successfully submitted"))
+        .catch((error) => alert(error));
+    };
+
+    document.addEventListener('astro:page-load', () => {
+        document
+            ?.querySelector("form")
+            ?.addEventListener("submit", handleSubmit);
+    })
+  </script>
   
   <style>
     .feedback-form {
