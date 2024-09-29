@@ -3,9 +3,12 @@
     <body>
         <form name="contact" data-netlify="true" hidden>
             <input type="hidden" name="form-name" value="contact" />
-            <input name="name" type="text" />
-            <input name="email" type="text" />
-            <input name="message" type="text" />
+            <input id="name" type="text" name="name" />
+            <input id="company" type="text" name="company" />
+            <input id="email" type="email" name="email" required />
+            <input id="phone" type="text" name="phone" />
+            <textarea id="message" wrap="soft" name="message" required></textarea>
+            <button type="submit">Submit</button>
         </form>
     </body>
 </html>

@@ -7,6 +7,10 @@ import LinkedIn from "../icons/LinkedIn.astro";
 import Facebook from "../icons/Facebook.astro";
 import { getCollection } from "astro:content";
 
+interface Props {
+	hideContact: boolean
+}
+
 const year = new Date().getFullYear();
 const creativeSercices = await getCollection('service', ({ data }) => {
   return data.tags.includes('creative');

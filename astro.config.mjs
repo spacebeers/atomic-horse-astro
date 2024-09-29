@@ -5,5 +5,8 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   output: 'server',
   adapter: netlify(),
+  image: {
+    domains: ['netlify.app']
+  },
   integrations: [sitemap()]
 });
