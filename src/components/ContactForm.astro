@@ -1,8 +1,11 @@
 ---
-
+let submitted = false;
+if (Astro.request.method === 'POST') {
+  submitted = true;
+}
 ---
-
-<p>
+{!submitted ? (
+  <p>
     Here's an example of a Netlify Form! When you fill this out, the submissions
     can be found in the Netlify Admin site.
   </p>
@@ -11,7 +14,6 @@
       data-netlify="true"
       netlify-honeypot
       name="contact"
-      action="/success"
     >
       <p class="hidden">
         <label>
@@ -28,6 +30,10 @@
       <button type="submit">Submit</button>
     </form>
   </div>
+  ) : (
+    <p>Thank you! You are being redirected...</p>
+  )}
+
   <script>
     const handleSubmit = (event) => {
     event.preventDefault();
@@ -40,7 +46,7 @@
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData as any).toString(),
     })
-        .then(() => Astro.redirect('/success'))
+        .then(() => console.log("Form successfully submitted"))
         .catch((error) => alert(error));
     };
 
