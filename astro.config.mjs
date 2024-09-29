@@ -3,7 +3,6 @@ import netlify from '@astrojs/netlify';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: "https://atomichorsedigital.netlify.app/",
   output: 'server',
   adapter: netlify(),
   integrations: [sitemap()]
