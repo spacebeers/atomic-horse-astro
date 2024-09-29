@@ -6,7 +6,7 @@ import { ImageService } from 'astro';
 export default defineConfig({
   output: 'server',
   adapter: netlify({
-    ImageService: true
+    imageCDN: false,
   }),
   site: "https://atomichorsedigital.netlify.app",
   image: {
