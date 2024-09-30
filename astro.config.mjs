@@ -6,7 +6,7 @@ export default defineConfig({
   output: 'server',
   adapter: netlify({
     imageCDN: false,
-    assetsInclude: ['**/*.svg'],
+    assetsInclude: ['**/*.svg', '**/*.png', '**/*.jpg,', '**/*.jpeg'],
   }),
   site: "https://atomichorsedigital.netlify.app",
   image: {
