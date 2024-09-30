@@ -5,7 +5,6 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   output: 'hybrid',
   adapter: netlify({
-    imageCDN: false,
     assetsInclude: ['**/*.svg', '**/*.png', '**/*.jpg,', '**/*.jpeg'],
   }),
   site: "https://atomichorsedigital.netlify.app",
