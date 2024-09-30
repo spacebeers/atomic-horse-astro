@@ -9,7 +9,9 @@ interface Props {
 
 const { heading, imageSrc, imageAlt } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif,svg}');
-if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
+if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,svg}"`);
+console.log(images);
+console.log(imageSrc);
 ---
 
 <section class="service-card">
