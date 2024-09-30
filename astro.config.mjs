@@ -3,7 +3,7 @@ import netlify from '@astrojs/netlify';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  output: 'server',
+  output: 'hybrid',
   adapter: netlify({
     imageCDN: false,
     assetsInclude: ['**/*.svg', '**/*.png', '**/*.jpg,', '**/*.jpeg'],
