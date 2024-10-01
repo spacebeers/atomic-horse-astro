@@ -19,15 +19,17 @@ const creativeSercices = await getCollection('service', ({ data }) => {
 const digitalServices = await getCollection('service', ({ data }) => {
   return data.tags.includes('digital');
 });
+
+const { hideContact } = Astro.props;
 ---
 <footer> 
     <section class="contact-strip">
-        <div class="contact-block">
+        <div class:list={['contact-block', { 'visually-hidden': hideContact === true }]}>
             <div class="contact-block__copy">
                 <p class="tag">Contact</p>
                 <h2 class="heading text-5 fw-medium">Get in touch</h2>
 
-                <p>Lorem ipsum dolor sit amet, ei simul salutatus duo, ea eam dignissim gubergren dissentiet, cum unum definiebas at. Te est vocent appetere concludaturque. Vix ex veritus interesset, in simul solet facete vix. Delectus consetetur mediocritatem est ad. Ei pri modo tantas, esse deleniti eu vel.</p>
+                <p>Do you have a brief for a project, a website that has you pulling your hair out or a plan you need a technical partner on? If so please get in touch using one of the options provided. We love hearing from new clients and will do our best to get back to you asap. </p>
             </div>
             <div class="contact-block__links">
                 <ul class="icon-list align-end">
@@ -89,7 +91,7 @@ const digitalServices = await getCollection('service', ({ data }) => {
                     </a>
                 </li>
                 <li>
-                    <a href="/privacy">
+                    <a href="/about-us">
                         About
                     </a>
                 </li>
@@ -126,7 +128,7 @@ const digitalServices = await getCollection('service', ({ data }) => {
                 <li>
                     <a href={LINKEDIN}>
                         <LinkedIn />
-                        Work fo us
+                        Work with us
                     </a>
                 </li>
             </ul>

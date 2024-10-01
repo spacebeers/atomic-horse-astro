@@ -33,48 +33,54 @@ const digitalServices = await getCollection('service', ({ data }) => {
         <h2 class="heading text-4 fw-normal">Creative Services</h2>
         <div class="services-grid">
           {
-            creativeSercices.map((item: any) => (
-            <ServiceCard 
-              heading={item.data.title}
-              imageSrc={item.data.image}
-              imageAlt={item.data.alt}
-            >
-              <div slot="card-content">
-                <p>Lorem ipsum dolor sit amet, movet facilisis posidonium an vel, lucilius tacimates petentium eu duo, ei iuvaret insolens disputando sit. Vel minim nonumy labitur ex, vel eu debet facete. Per quas civibus in. Sed an putent pericula reprimique, id pro accusam voluptatibus. Ex veniam ornatus usu.</p>
+            creativeSercices.map((item: any, i: number) => (
+              <Strip theme={i % 2 === 0 ? 'MID' : 'DARK'}>
+                <div class="wrapper strip-inner">
+                  <ServiceCard 
+                    heading={item.data.title}
+                    imageSrc={item.data.image}
+                    imageAlt={item.data.alt}
+                  >
+                    <div slot="card-content">
+                      <p>Lorem ipsum dolor sit amet, movet facilisis posidonium an vel, lucilius tacimates petentium eu duo, ei iuvaret insolens disputando sit. Vel minim nonumy labitur ex, vel eu debet facete. Per quas civibus in. Sed an putent pericula reprimique, id pro accusam voluptatibus. Ex veniam ornatus usu.</p>
 
-                <p>Et sit recusabo eleifend. Scripta platonem reformidans vim eu, vitae dolore cu est. Per altera imperdiet mediocritatem ad. Movet iisque ponderum qui id.</p>
+                      <p>Et sit recusabo eleifend. Scripta platonem reformidans vim eu, vitae dolore cu est. Per altera imperdiet mediocritatem ad. Movet iisque ponderum qui id.</p>
 
-                <a href={`/services/${item.slug}`} class="button">Learn more</a>
-              </div>
-            </ServiceCard>
+                      <a href={`/services/${item.slug}`} class="button">Learn more</a>
+                    </div>
+                  </ServiceCard>
+                </div>
+              </Strip>
           ))}
         </div>
       </div>
     </Strip>
-    <Strip theme="DARK">
-      <div class="wrapper strip-inner">
-        <p class="tag">Services</p>
-        <h2 class="heading text-4 fw-normal">Digital Services</h2>
-        <div class="services-grid">
-          {
-            digitalServices.map((item: any) => (
-            <ServiceCard 
-              heading={item.data.title}
-              imageSrc={item.data.image}
-              imageAlt={item.data.alt}
-            >
-              <div slot="card-content">
-                <p>Lorem ipsum dolor sit amet, movet facilisis posidonium an vel, lucilius tacimates petentium eu duo, ei iuvaret insolens disputando sit. Vel minim nonumy labitur ex, vel eu debet facete. Per quas civibus in. Sed an putent pericula reprimique, id pro accusam voluptatibus. Ex veniam ornatus usu.</p>
+    <div class="wrapper strip-inner">
+      <p class="tag">Services</p>
+      <h2 class="heading text-4 fw-normal">Digital Services</h2>
+      <div class="services-grid">
+        {
+          digitalServices.map((item: any, i: number) => (
+            <Strip theme={i % 2 === 0 ? 'DARK' : 'MID'}>
+              <div class="wrapper strip-inner">
+                <ServiceCard 
+                  heading={item.data.title}
+                  imageSrc={item.data.image}
+                  imageAlt={item.data.alt}
+                >
+                  <div slot="card-content">
+                    <p>Lorem ipsum dolor sit amet, movet facilisis posidonium an vel, lucilius tacimates petentium eu duo, ei iuvaret insolens disputando sit. Vel minim nonumy labitur ex, vel eu debet facete. Per quas civibus in. Sed an putent pericula reprimique, id pro accusam voluptatibus. Ex veniam ornatus usu.</p>
 
-                <p>Et sit recusabo eleifend. Scripta platonem reformidans vim eu, vitae dolore cu est. Per altera imperdiet mediocritatem ad. Movet iisque ponderum qui id.</p>
+                    <p>Et sit recusabo eleifend. Scripta platonem reformidans vim eu, vitae dolore cu est. Per altera imperdiet mediocritatem ad. Movet iisque ponderum qui id.</p>
 
-                <a href={`/services/${item.slug}`} class="button">Learn more</a>
+                    <a href={`/services/${item.slug}`} class="button">Learn more</a>
+                  </div>
+                </ServiceCard>
               </div>
-            </ServiceCard>
-          ))}
-        </div>
+            </Strip>
+        ))}
       </div>
-    </Strip>
+    </div>
   </main>
 </Layout>
 
