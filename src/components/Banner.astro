@@ -50,14 +50,22 @@ const { title, showHorse, condense } = Astro.props;
 
 		&.showHorse {
 			h1 {
-				padding: 0 0 0 320px;
+				padding: var(--space-xl) 0 0 0;
+				text-align: center;
+				@media (min-width: 768px) {
+					padding: var(--space-xl) 0 0 320px;
+					text-align: left;
+				}
 			}
 		}
 	}
 
 	.horse {
 		position: absolute;
-		bottom: 5vw;
+		bottom: 4vw;
+		@media (min-width: 768px) {
+			bottom: 5vw;
+		}
 	}
 
 	.hill {

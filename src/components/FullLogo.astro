@@ -12,7 +12,10 @@ import Logo from "./Logo.astro";
 		display: flex;
 		align-items: center;
 		text-transform: uppercase;
-		font-size: var(--step-0);
+		font-size: var(--step--1);
+		@media (min-width: 768px) {
+			font-size: var(--step-0);
+		}
 
 		span {
 			font-weight: var(--fw-medium);
@@ -20,8 +23,12 @@ import Logo from "./Logo.astro";
 		}
 
 		svg {
-			width: 48px;
-			height: 48px;
+			width: 44px;
+			height: 44px;
+			@media (min-width: 768px) {
+				width: 48px;
+				height: 48px;
+			}
 		}
 	}
 </style>

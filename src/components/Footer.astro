@@ -159,14 +159,21 @@ const { hideContact } = Astro.props;
     }
 
     .contact-block__copy {
-        flex: 0 0 65%;
+        flex: 0 0 100%;
+        @media (min-width: 768px) {
+            flex: 0 0 65%;
+        }
     }    
 
     .footer-main {
         border-top: 2px solid var(--palette-light);
         padding: var(--space-l) 0;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: var(--space-s);
+        grid-template-columns: 1fr 1fr;
+        @media (min-width: 998px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
     }
 
     .footer-main__column {
@@ -199,11 +206,13 @@ const { hideContact } = Astro.props;
         border-top: 2px solid var(--palette-light);
         padding: var(--space-xs) 0 var(--space-m) 0;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
 
         p {
             font-size: var(--step--2);
             text-decoration: none;
+            flex: 0 0 max-content;
         }
     }
 </style>

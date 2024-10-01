@@ -2,6 +2,11 @@
 import FullLogo from "./FullLogo.astro";
 const pages = [
   {
+    name: "About us",
+    path: "/about-us",
+    subPage: true
+  },
+  {
     name: "Services",
     path: "/services",
     subPage: false
@@ -33,51 +38,36 @@ const pages = [
       <ul>
         {
           pages.filter(p => p.subPage === false).map((page) => (
-            <li class={Astro.url.pathname === page.path ? "active" : ""}>
+            <li class:list={['hidden-item', { active: Astro.url.pathname === page.path }]}>
               <a href={page.path}>{page.name}</a>
             </li>
           ))
         }
-        <li hidden>
-          <button class="toggle-button">
-            <svg
-              width="29"
-              height="22"
-              viewBox="0 0 29 22"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1.5 1.5H27.5"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"></path>
-              <path
-                d="M1.5 10.5H27.5"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"></path>
-              <path
-                d="M1.5 20.5H27.5"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"></path>
-            </svg>
+        <li class="menu-button">
+          <button class="toggle-button nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
         </li>
       </ul>
     </nav>
 
-    <nav class="full-menu" aria-hidden="true">
-      <ul>
-        {
-          pages.map((page) => (
-            <li class={Astro.url.pathname === page.path ? "active" : ""}>
-              <a href={page.path}>{page.name}</a>
-            </li>
-          ))
-        }
-      <li>
+    <nav class="nav-menu">
+      <div class="wrapper">
+        <ul>
+          {
+            pages.map((page) => (
+              <li class={Astro.url.pathname === page.path ? "active" : ""}>
+                <a href={page.path}>{page.name}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </nav>
   </div>
 
@@ -95,7 +85,7 @@ const pages = [
       transition: background-color var(--animation-speed) linear, backdrop-filter var(--animation-speed) linear;
 
       &.stuck {
-        background-color: rgba(0, 0, 0, 0.80);
+        background-color: rgba(0, 0, 0, 0.50);
         color: var(--palette-light);
 
         .logo {
@@ -131,6 +121,44 @@ const pages = [
         border: none;
         color: currentColor;
         cursor: pointer;
+        position: relative;
+        z-index: 2;
+      }
+
+      .nav-menu {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: var(--palette-highlight);
+        color: var(--palette-contrast);
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        padding: var(--space-2xl) 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--animation-speed) ease-in-out;
+
+        &.open {
+          opacity: 1;
+          pointer-events: all;
+        }
+
+        ul {
+          display: block;
+
+          li + li {
+            margin-left: 0;
+          }
+        }
+
+        a {
+          font-size: var(--step-4);
+          font-weight: var(--fw-medium);
+        }
       }
 
       nav {
@@ -141,6 +169,12 @@ const pages = [
           display: flex;
           align-items: center;
           text-transform: uppercase;
+        }
+
+        .hidden-item {
+          @media (max-width: 767px) {
+            display: none;
+          }
         }
 
         li + li {
@@ -174,29 +208,107 @@ const pages = [
       }
     }
 
-    .full-menu {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: var(--palette-blue);
-      color: var(--palette-light);
+
+    .nav-toggle {
+      width: 60px;
+      height: 40px;
+      position: relative;
+      transform: scale(0.6) rotate(0deg);
+      transition: .5s ease-in-out;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      display: block;
+      position: absolute;
+      height: 6px;
+      width: 50%;
+      background: var(--palette-contrast);
       opacity: 1;
-      display: none;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+    }
+
+    .nav-toggle span:nth-child(even) {
+      left: 50%;
+      border-radius: 0 9px 9px 0;
+    }
+
+    .nav-toggle span:nth-child(odd) {
+      left: 0px;
+      border-radius: 9px 0 0 9px;
+    }
+
+    .nav-toggle span:nth-child(1), .nav-toggle span:nth-child(2) {
+      top: 0px;
+    }
+
+    .nav-toggle span:nth-child(3), .nav-toggle span:nth-child(4) {
+      top: 18px;
+    }
+
+    .nav-toggle span:nth-child(5), .nav-toggle span:nth-child(6) {
+      top: 36px;
+    }
+
+    .nav-toggle.open span:nth-child(1), .nav-toggle.open span:nth-child(6) {
+      transform: rotate(45deg);
+    }
+
+    .nav-toggle.open span:nth-child(2), .nav-toggle.open span:nth-child(5) {
+      transform: rotate(-45deg);
+    }
+
+    .nav-toggle.open span:nth-child(1) {
+      left: 5px;
+      top: 7px;
+    }
+
+    .nav-toggle.open span:nth-child(2) {
+      left: calc(50% - 5px);
+      top: 7px;
+    }
+
+    .nav-toggle.open span:nth-child(3) {
+      left: -50%;
+      opacity: 0;
+    }
+
+    .nav-toggle.open span:nth-child(4) {
+      left: 100%;
+      opacity: 0;
+    }
+
+    .nav-toggle.open span:nth-child(5) {
+      left: 5px;
+      top: 29px;
+    }
+
+    .nav-toggle.open span:nth-child(6) {
+      left: calc(50% - 5px);
+      top: 29px;
     }
   </style>
 
   <script>
-    window.addEventListener("scroll", () => {
-      const element = document.querySelector('[data-target="header"]');
-      const scrollPosition = window.scrollY;
+    document.addEventListener('astro:page-load', () => {
+      window.addEventListener("scroll", () => {
+        const element = document.querySelector('[data-target="header"]');
+        const scrollPosition = window.scrollY;
 
-      if (scrollPosition > 75) {
-        element?.classList.add("stuck");
-      } else {
-        element?.classList.remove("stuck");
-      }
+        if (scrollPosition > 75) {
+          element?.classList.add("stuck");
+        } else {
+          element?.classList.remove("stuck");
+        }
+      });
+      const navIcon = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.nav-menu');
+    
+      navIcon?.addEventListener('click', function() {
+        this.classList.toggle('open');
+        menu?.classList.toggle('open');
+      });
     });
   </script>
 </header>
