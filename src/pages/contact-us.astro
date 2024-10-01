@@ -2,14 +2,33 @@
 import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import ContactForm from "../components/ContactForm.astro";
+import Strip from "../components/Strip.astro";
 ---
 
 <Layout title="Welcome" hideContact={true}>
   <main>
     <Banner title="How can we help?" showHorse />
-    <section class="container">
-      <ContactForm />
-    </section>
+    <Strip>
+      <div class="wrapper">
+        <div class="contact-grid">
+          <div class="contact-copy">
+            <p class="text-0 fw-medium">
+              Lorem ipsum dolor sit amet, autem dicat aliquam ad ius, cu vel
+              oblique equidem. Ne soleat delicata eos. Quo at eripuit propriae
+              tacimates, enim debet doming an pri.
+            </p>
+            <p class="text-0">
+              Lorem ipsum dolor sit amet, autem dicat aliquam ad ius, cu vel
+              oblique equidem. Ne soleat delicata eos. Quo at eripuit propriae
+              tacimates, enim debet doming an pri.
+            </p>
+          </div>
+          <div class="contact-form">
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </Strip>
   </main>
 </Layout>
 
@@ -17,5 +36,14 @@ import ContactForm from "../components/ContactForm.astro";
   :root {
     --palette-highlight: var(--palette-yellow);
     --palette-contrast: var(--palette-dark);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 2fr;
+    }
+    gap: var(--space-xl);
   }
 </style>

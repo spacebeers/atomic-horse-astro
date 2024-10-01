@@ -44,7 +44,7 @@ const pages = [
           ))
         }
         <li class="menu-button">
-          <button class="toggle-button nav-toggle">
+          <button class="toggle-button nav-toggle" aria-label="Open menu">
             <span></span>
             <span></span>
             <span></span>
@@ -94,6 +94,10 @@ const pages = [
           a {
             color: var(--palette-light);
           }
+        }
+
+        .nav-toggle span {
+          background: var(--palette-light);
         }
       }
 
@@ -213,7 +217,10 @@ const pages = [
       width: 60px;
       height: 40px;
       position: relative;
-      transform: scale(0.6) rotate(0deg);
+      transform: scale(0.5) rotate(0deg);
+      @media (min-width: 768px) {
+        transform: scale(0.6) rotate(0deg);
+      }
       transition: .5s ease-in-out;
       cursor: pointer;
     }
@@ -292,7 +299,7 @@ const pages = [
 
   <script>
     document.addEventListener('astro:page-load', () => {
-      window.addEventListener("scroll", () => {
+      const stick = () => {
         const element = document.querySelector('[data-target="header"]');
         const scrollPosition = window.scrollY;
 
@@ -301,6 +308,10 @@ const pages = [
         } else {
           element?.classList.remove("stuck");
         }
+      }
+      stick();
+      window.addEventListener("scroll", () => {
+        stick();
       });
       const navIcon = document.querySelector('.nav-toggle');
       const menu = document.querySelector('.nav-menu');
