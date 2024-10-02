@@ -2,7 +2,7 @@
 layout: "../../layouts/CaseStudyLayout.astro"
 title: 'Wave Plumbing'
 pubDate: 2022-07-01
-description: 'Butt face.'
+description: 'Some short intro text.'
 author: 'Astro Learner'
 image: '/src/assets/case-studies/wave-plumbing.svg'
 alt: 'The Astro logo on a dark background with a pink glow.'
