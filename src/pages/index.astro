@@ -130,7 +130,7 @@ const services = await getCollection('service');
     new Swiper(".card-swiper", {
       modules: [Navigation, Pagination],
       spaceBetween: 60,
-      slidesPerView: 3,
+      slidesPerView: 3, // Default to 3 slides per view
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -138,6 +138,23 @@ const services = await getCollection('service');
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
+      },
+      breakpoints: {
+        // When the screen is <= 500px
+        200: {
+          slidesPerView: 1, // Show 1 slide
+          spaceBetween: 20, // Reduce space between slides if needed
+        },
+        // When the screen is <= 768px
+        500: {
+          slidesPerView: 2, // Show 2 slides
+          spaceBetween: 40, // Adjust space between slides
+        },
+        // When the screen is > 768px (default behavior)
+        769: {
+          slidesPerView: 3, // Show 3 slides
+          spaceBetween: 60, // Adjust space between slides for large screens
+        },
       },
     });
   });
