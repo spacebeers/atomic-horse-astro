@@ -15,9 +15,17 @@ if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "s
 ---
 
 <section class="card">
-	<Image src={imageSrc} alt={imageAlt} width="800" height="400" class="card-image" />
+	<div class="card__image">
+		<a href={link}>
+			<Image src={imageSrc} alt={imageAlt} width="800" height="400" class="card-image" />
+		</a>
+	</div>
 
-	<h2>{ heading }</h2>
+	<h2>
+		<a href={link}>
+			{ heading }
+		</a>
+	</h2>
 	<p class="line-clamp">{ content }</p>
 	<a href={link} class="button">Learn more</a>
 </section>
@@ -25,13 +33,29 @@ if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "s
 	.card {
 		width: 100%;
 
-		.card-image {
+		.card__image {
 			border-radius: var(--border-radius);
 			margin-bottom: var(--space-s);
-			width: 100%;
-			height: auto;
-			object-fit: cover;
-			aspect-ratio: 16 / 9;
+			background: radial-gradient(85.3% 85.3% at 50% 117.34%, var(--palette-highlight) 0%, #282727 100%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			aspect-ratio: 3 / 2;
+			padding: var(--space-l);
+
+			img {
+				border-radius: var(--border-radius);
+				margin-bottom: var(--space-s);
+				width: 80%;
+				height: auto;
+				object-fit: contain;
+				aspect-ratio: 16 / 9;
+			}  
+		}
+
+		a {
+			color: var(--palette-light);
+			text-decoration: none;
 		}
 		
 		h2 {

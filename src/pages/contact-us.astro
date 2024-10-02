@@ -3,6 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import ContactForm from "../components/ContactForm.astro";
 import Strip from "../components/Strip.astro";
+import Calendly from "../icons/Calendly.astro";
+import Email from "../icons/Email.astro";
+import Whatsapp from "../icons/Whatsapp.astro";
+import { EMAIL, CALENDLY, FACEBOOK, LINKEDIN } from "../utils/constants";
+import Facebook from "../icons/Facebook.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
 ---
 
 <Layout title="Welcome" hideContact={true}>
@@ -13,15 +19,44 @@ import Strip from "../components/Strip.astro";
         <div class="contact-grid">
           <div class="contact-copy">
             <p class="text-0 fw-medium">
-              Lorem ipsum dolor sit amet, autem dicat aliquam ad ius, cu vel
-              oblique equidem. Ne soleat delicata eos. Quo at eripuit propriae
-              tacimates, enim debet doming an pri.
+              We love hearing from new clients. If you have a project in mind, a problem you need solving or just want to tell us about your day, please get in touch using the form. 
             </p>
             <p class="text-0">
-              Lorem ipsum dolor sit amet, autem dicat aliquam ad ius, cu vel
-              oblique equidem. Ne soleat delicata eos. Quo at eripuit propriae
-              tacimates, enim debet doming an pri.
+              If you are too cool for forms then please use any of the methods below and we will do our best to get back to you as soon as we can. 
             </p>
+
+            <ul class="icon-list">
+              <li>
+                  <a href={`mailto:${EMAIL}`}>
+                      <Email />
+                      Email us
+                  </a>
+              </li>
+              <li>
+                  <a href="">
+                      <Whatsapp />
+                      Chat with us
+                  </a>
+              </li>
+              <li>
+                  <a href={CALENDLY} target="_blank">
+                      <Calendly />
+                      Book a meeting
+                  </a>
+              </li>
+              <li>
+                <a href={FACEBOOK}>
+                    <Facebook />
+                    Follow us
+                </a>
+              </li>
+              <li>
+                  <a href={LINKEDIN}>
+                      <LinkedIn />
+                      Work with us
+                  </a>
+              </li>
+          </ul>
           </div>
           <div class="contact-form">
             <ContactForm />
@@ -45,5 +80,9 @@ import Strip from "../components/Strip.astro";
       grid-template-columns: 1fr 2fr;
     }
     gap: var(--space-xl);
+  }
+
+  .icon-list {
+    margin-top: var(--space-l);
   }
 </style>

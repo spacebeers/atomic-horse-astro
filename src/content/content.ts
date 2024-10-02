@@ -43,7 +43,7 @@ const serviceCollection = defineCollection({
 });
 
 export const collections = {
-  'work': workCollection,
+  'case-studies': workCollection,
   'blog': blogCollection,
   'service': serviceCollection,
 };

@@ -1,25 +1,39 @@
 ---
-import MortgageStudio from "../client-logos/MortgageStudio.astro";
+import { getEntry } from "astro:content";
+import WavePlumbing from "../client-logos/WavePlumbing.astro";
+import { getCollection } from 'astro:content';
 
+const allPosts = await getCollection("case-studies");
+console.log(allPosts);
+
+// Filter posts tagged with "featured"
+const featuredPosts = allPosts.filter((post) => post.data.tags.includes('featured'));
 ---
+{
+	featuredPosts.length > 0 ? (
+		featuredPosts.map((post) => (
+			<section class="featured-client wrapper">
+				<p class="tag">Work</p>
+				<h2 class="heading">Featured project</h2>
 
-<section class="featured-client wrapper">
-	<p class="tag">Work</p>
-	<h2 class="heading">Featured project</h2>
+				<div class="grid">
+					<div class="content">
+						<p>Learn more about how we used 19th century Japanese woodblock prints and surf brand logos to help rebrand a local plumbing and bathrooms company who had outgrown their old look and feel.</p>
 
-	<div class="grid">
-		<div class="content">
-			<p>Quis ocurreret pro id. Nec ea reque delicata gloriatur, qui delenit denique te. Tantas molestie iracundia sed eu, vix harum albucius democritum ad. Ea nisl velit his, est etiam oratio dissentiunt eu.</p>
-
-			<a href="" class="button">
-				Learn more
-			</a>
-		</div>
-		<div class="image">
-			<MortgageStudio />
-		</div>
-	</div>
-</section>
+						<a href={`/case-studies/${post.slug}`} class="button">
+							Learn more
+						</a>
+					</div>
+					<div class="image">
+						<WavePlumbing />
+					</div>
+				</div>
+			</section>
+		))
+	) : (
+		<p>No featured posts found.</p>
+	)
+}
 
 <style>
 	.featured-client {

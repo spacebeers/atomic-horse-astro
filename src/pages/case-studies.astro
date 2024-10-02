@@ -25,7 +25,7 @@ const allBlogPosts = await getCollection("case-studies");
               content={item.data.description}
               imageSrc={item.data.image}
               imageAlt={item.data.alt}
-              link={`/work/${item.slug}`}
+              link={`${item.slug}`}
           />
       ))}
     </section>

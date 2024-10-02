@@ -7,6 +7,13 @@ import Card from "../components/Card.astro";
 import Strip from "../components/Strip.astro";
 import FeaturedProject from "../components/FeaturedProject.astro";
 import HorseImage from "../components/HorseImage.astro";
+import { getCollection } from "astro:content";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+const services = await getCollection('service');
 ---
 
 <Layout title="Welcome">
@@ -27,14 +34,10 @@ import HorseImage from "../components/HorseImage.astro";
         <div class="grid">
           <div class="contents">
             <p class="text-1 fw-medium">
-              Lorem ipsum dolor sit amet, autem dicat aliquam ad ius, cu vel
-              oblique equidem. Ne soleat delicata eos. Quo at eripuit propriae
-              tacimates, enim debet doming an pri.
+              Atomic Horse is a digital agency that puts the people ahead of the technology. We understand that the digital world is key to many businesses success and that it can also be overwhelming and scary. 
             </p>
             <p class="text-1">
-              Lorem ipsum dolor sit amet, autem dicat aliquam ad ius, cu vel
-              oblique equidem. Ne soleat delicata eos. Quo at eripuit propriae
-              tacimates, enim debet doming an pri.
+              We are here to help our clients not only find their place online but to thrive there. We offer a range of digital and creative services including: web design, web development and design, branding, logos, consultancy and support packages.
             </p>
           </div>
           <div class="image">
@@ -45,44 +48,51 @@ import HorseImage from "../components/HorseImage.astro";
     </Strip>
     <GradientContentStrip>
       <p class="tag">Company</p>
-      <h2 class="heading">Who we are</h2>
+      <h2 class="heading text-3 fw-medium">Who we are</h2>
 
-      <p>
-        Ut has commune epicurei perpetua, in sit mazim delenit. Te legere
-        eloquentiam est, duo laudem impetus te. Ea summo feugait nec, noster
-        placerat mea ad, mel et mucius nusquam offendit. Nec an eros molestie,
-        ut nec expetenda efficiantur. Meis commune oportere vim et. Vide
-        vituperata eloquentiam ius id.
+      <p class="text-1 fw-medium">
+        Founded in 2007, Atomic Horse has been providing technical solutions to human problems for over a decade. We pride ourselves on our ability to create custom solutions to fit every problem our clients come to us with.
       </p>
 
       <p>
-        Te has repudiare moderatius, pro persius splendide id. Legere sententiae
-        percipitur vim ne. Sit in timeam aliquip, eum pericula vituperatoribus
-        in. Quo ei delicata electram evertitur, habeo quodsi te vel. Qui suas
-        semper labores et, doming probatus pri ei. Quo libris semper doctus te,
-        persius ocurreret definitiones ut eam, magna modus cotidieque eu ius.
+        We were founded on one simple principe - to <em>"be useful"</em>. We believe that technology should be used to make people's lives easier, and we strive to create digital experiences that are both beautiful, functional and for everyone. We are passionate about helping our clients succeed in the often confusing digital world, and like nothing more than watching our clients take our work and run with it.
+      </p>
+
+      <p>
+        We are a small team of diverse professionals united by our goal of being useful. We are always looking for new challenges and interesting problems to solve. If you have a project you think we could help with, please <a href="/contact-us">get in touch</a>.
       </p>
     </GradientContentStrip>
     <Strip theme="DARK">
       <div class="wrapper">
-        <p class="tag">Services</p>
-        <h2 class="heading">What can we do for you</h2>
-        <section class="card-grid">
-          <Card
-            heading="Something that will wrap a bit"
-            content="Te has repudiare moderatius, pro persius splendide id. Legere sententiae percipitur vim ne."
-            imageSrc="/src/assets/placeholder-wide.png"
-            imageAlt="Nothing"
-            link="cookies"
-          />
-          <Card
-            heading="Something that will wrap a bit"
-            content="Te has repudiare moderatius, pro persius splendide id. Legere sententiae percipitur vim ne."
-            imageSrc="/src/assets/placeholder-wide.png"
-            imageAlt="Nothing"
-            link="cookies"
-          />
-        </section>
+        <div class="gallery-header">
+          <div class="gallery-header__title">
+            <p class="tag">Services</p>
+            <h2 class="heading">What can we do for you</h2>
+          </div>
+          <div class="gallery-header__nav">
+            <div class="button swiper-button-next"></div>
+            <div class="button swiper-button-prev"></div>
+          </div>
+        </div>
+        
+        <div class="card-swiper">
+          
+          <div class="swiper-wrapper">
+            {
+              services.map((item: any, i: number) => (
+                <div class="swiper-slide">
+                  <Card
+                    heading={item.data.title}
+                    imageSrc={item.data.image}
+                    imageAlt={item.data.alt}
+                    content="Te has repudiare moderatius, pro persius splendide id. Legere sententiae percipitur vim ne."
+                    link={`/services/${item.slug}`}
+                  />
+                </div>  
+            ))}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
       </div>
     </Strip>
     <Strip theme="MID">
@@ -97,4 +107,38 @@ import HorseImage from "../components/HorseImage.astro";
     --palette-highlight: var(--palette-blue);
     --palette-contrast: var(--palette-light);
   }
+
+  .swiper-pagination {
+    position: relative;
+    margin-top: var(--space-l);
+  }
+
+  .gallery-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .gallery-header__nav {
+    position: relative;
+  }
 </style>
+
+<script>
+  import { Swiper } from "swiper";
+  import { Navigation, Pagination } from "swiper/modules";
+  document.addEventListener('astro:page-load', () => {
+    new Swiper(".card-swiper", {
+      modules: [Navigation, Pagination],
+      spaceBetween: 60,
+      slidesPerView: 3,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  });
+</script>

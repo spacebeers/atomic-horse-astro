@@ -1,12 +1,13 @@
 ---
 layout: "../../layouts/CaseStudyLayout.astro"
 title: 'Wave Plumbing'
+slug: my-custom-slug/supports/slashes
 pubDate: 2022-07-01
 description: 'Some short intro text.'
 author: 'Astro Learner'
 image: '/src/assets/case-studies/wave-plumbing.svg'
 alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro", "successes"]
+tags: ["astro", "featured"]
 ---
 
 

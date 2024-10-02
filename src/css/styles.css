@@ -1,5 +1,7 @@
+
 @import url(./variables.css);
 @import url(./helpers.css);
+
 
 * {
     box-sizing: border-box;
@@ -16,6 +18,10 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+
+    &.no-scroll {
+      overflow: hidden;
+    }
 }
 
 .wrapper {
@@ -197,6 +203,32 @@ p + .button {
     color: currentColor;
     padding: var(--space-2xs);
     text-decoration: none;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: var(--border-radius);
+      transition: .5s;
+      transform: scale(.9);
+      z-index: -1;
+      opacity: 0;
+    }
+    
+    &:hover::before {
+      transform: scale(1);
+      box-shadow: 0 0 15px var(--palette-highlight);
+      opacity: 1;
+    }
+    
+    &:hover {
+      box-shadow: 0 0 5px var(--palette-highlight);
+      border-color: var(--palette-highlight);
+    }
 }
 
 .line-clamp {

@@ -29,7 +29,7 @@ const { hideContact } = Astro.props;
                 <p class="tag">Contact</p>
                 <h2 class="heading text-5 fw-medium">Get in touch</h2>
 
-                <p>Do you have a brief for a project, a website that has you pulling your hair out or a plan you need a technical partner on? If so please get in touch using one of the options provided. We love hearing from new clients and will do our best to get back to you asap. </p>
+                <p class="text-0">Do you have a brief for a project, a website that has you pulling your hair out or a plan you need a technical partner on? If so please get in touch using one of the options provided. We love hearing from new clients and will do our best to get back to you asap. </p>
             </div>
             <div class="contact-block__links">
                 <ul class="icon-list align-end">
@@ -136,7 +136,7 @@ const { hideContact } = Astro.props;
     </section>
     <section class="footer-info">
         <p>&copy; {year} Atomic Horse ltd | Company No: 11279925</p>
-        <p>This page emits just 0.06g of carbon | Eco hosted</p>
+        <p><a href="https://www.websitecarbon.com/website/atomichorse-agency/" target="_blank">This website is emits less carbon than 92% of the web</a> | <a href="https://www.netlify.com/sustainability/" target="_blank">Green hosted</a></p>
     </section>
 </footer>
 <style>
@@ -204,7 +204,7 @@ const { hideContact } = Astro.props;
 
     .footer-info {
         border-top: 2px solid var(--palette-light);
-        padding: var(--space-xs) 0 var(--space-m) 0;
+        padding: var(--space-xs) 0 var(--space-2xl) 0;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -213,6 +213,10 @@ const { hideContact } = Astro.props;
             font-size: var(--step--2);
             text-decoration: none;
             flex: 0 0 max-content;
+        }
+
+        a {
+            color: var(--palette-light);
         }
     }
 </style>
