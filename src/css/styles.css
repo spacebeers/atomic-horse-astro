@@ -204,6 +204,7 @@ p + .button {
     padding: var(--space-2xs);
     text-decoration: none;
     position: relative;
+    transition: .5s;
 
     &::before {
       content: '';
