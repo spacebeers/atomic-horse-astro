@@ -7,9 +7,10 @@
     --palette-pink: #FA198B;
     --palette-red: #EA2B1F;
     --palette-yellow: #FFD712;
+    --palette-green: #AFFC41;
+    --palette-cyan: #048A81;
     --palette-highlight: var(--palette-pink);
     --palette-contrast: var(--palette-light);
-    --palette-green: #AFFC41;
     --side-padding: 5vw;
     --border-radius: 8px;
     --animation-speed: 0.4s;

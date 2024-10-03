@@ -36,7 +36,7 @@ const services = await getCollection('service');
             <p class="text-1 fw-medium">
               Atomic Horse is a digital agency that puts the people ahead of the technology. We understand that the digital world is key to many businesses success and that it can also be overwhelming and scary. 
             </p>
-            <p class="text-1">
+            <p class="text-0">
               We are here to help our clients not only find their place online but to thrive there. We offer a range of digital and creative services including: web design, web development and design, branding, logos, consultancy and support packages.
             </p>
           </div>
@@ -85,6 +85,7 @@ const services = await getCollection('service');
                     heading={item.data.title}
                     imageSrc={item.data.image}
                     imageAlt={item.data.alt}
+                    iconMode={true}
                     content="Te has repudiare moderatius, pro persius splendide id. Legere sententiae percipitur vim ne."
                     link={`/services/${item.slug}`}
                   />
