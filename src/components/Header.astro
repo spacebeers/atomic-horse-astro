@@ -84,7 +84,7 @@ const pages = [
       color: var(--palette-contrast);
       transition: background-color var(--animation-speed) linear, backdrop-filter var(--animation-speed) linear;
 
-      &.stuck {
+      &.stuck:not(.open) {
         background-color: rgba(0, 0, 0, 0.50);
         color: var(--palette-light);
 
@@ -303,14 +303,14 @@ const pages = [
 
   <script>
     document.addEventListener('astro:page-load', () => {
+      const header = document.querySelector('[data-target="header"]');
       const stick = () => {
-        const element = document.querySelector('[data-target="header"]');
         const scrollPosition = window.scrollY;
 
         if (scrollPosition > 75) {
-          element?.classList.add("stuck");
+          header?.classList.add("stuck");
         } else {
-          element?.classList.remove("stuck");
+          header?.classList.remove("stuck");
         }
       }
       stick();
@@ -323,6 +323,7 @@ const pages = [
       navIcon?.addEventListener('click', function() {
         this.classList.toggle('open');
         menu?.classList.toggle('open');
+        header?.classList.toggle('open');
         document.body.classList.toggle('no-scroll');
       });
     });
