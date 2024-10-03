@@ -4,18 +4,18 @@ import Banner from "../components/Banner.astro";
 import Card from "../components/Card.astro";
 import Clients from "../components/Clients.astro";
 import Layout from "../layouts/Layout.astro";
+import CurrentWork from "../components/CurrentWork.astro";
 
 const allBlogPosts = await getCollection("blog");
 ---
 <Layout title="Welcome">
   <main>
-    <Banner title="Being useful since 2007" showHorse />
+    <Banner title="Welcome to our blog" showHorse />
     <section class="strip text-center w-clamp-xl intro-section">
-      <h2 class="text-5 fw-normal mb-2">Techincal solutions to human problems</h2>
+      <h2 class="text-5 fw-normal mb-2">Light reading for fun and pleasure</h2>
 
       <p>
-        Here at Atomic Horse we just want to help you, who ever you are, what
-        ever you do to make the best of your online presence.
+        A collection of our thoughts on life, the universe, and everything. A selection of things we find interesting and hope you do too.
       </p>
     </section>
     <section class="card-grid">
@@ -30,13 +30,12 @@ const allBlogPosts = await getCollection("blog");
         />
       ))}
     </section>
-    <Clients />
   </main>
 </Layout>
 
 <style>
   :root {
-    --palette-highlight: var(--palette-blue);
+    --palette-highlight: var(--palette-orange);
     --palette-contrast: var(--palette-light);
   }
 </style>

@@ -1,0 +1,99 @@
+---
+import "swiper/css";
+import "swiper/css/autoplay";
+import WavePlumbing from "../client-logos/WavePlumbing.astro";
+import SophieTanner from "../client-logos/SophieTanner.astro";
+import MortgageStudio from "../client-logos/MortgageStudio.astro";
+import Farleys from "../client-logos/Farleys.astro";
+import NeonSaw from "../client-logos/NeonSaw.astro";
+import LeeMiller from "../client-logos/LeeMiller.astro";
+import SeventhSense from "../client-logos/7thSense.astro";
+import HomeJames from "../client-logos/HomeJames.astro";
+import Eydens from "../client-logos/Eydens.astro";
+import Tck from "../client-logos/Tck.astro";
+import CKS from "../client-logos/CKS.astro";
+import AnotherAStory from "../client-logos/AnotherAStory.astro";
+
+const items = [
+  {
+    content: "Helping our friends at Farley’s House and Gallery connect their e-commerce website with their IRL till system."
+  },
+  {
+    content: "Adding more woodworking courses to the Neon Saw website"
+  },
+  {
+    content: "Rebuilding a website for a local author and PR guru"
+  }
+];
+---
+
+<section class="clients-component full-bleed strip">
+  <div class="wrapper">
+    <p class="tag">Work</p>
+    <h2 class="heading">What are we up to right now</h2>
+    <div class="card-swiper">          
+      <div class="swiper-wrapper">
+        {
+          items.map((item: any, i: number) => (
+            <div class="swiper-slide">
+              <div class="work-card">
+                <p>{item.content}</p>
+              </div>
+            </div>  
+        ))}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { Swiper } from "swiper";
+  import { Autoplay } from "swiper/modules";
+  document.addEventListener('astro:page-load', () => {
+    new Swiper(".swiper", {
+      modules: [Autoplay],
+      spaceBetween: 60,
+      grabCursor: true,
+      freeMode: true,
+      loop: true,
+      slidesPerView: "auto",
+      autoplay: {
+        delay: 0.5,
+        disableOnInteraction: false,
+      },
+    });
+    });
+</script>
+
+<style>
+  .clients-component {
+    background: var(--palette-highlight);
+    color: var(--palette-contrast);
+    padding: var(--space-m) 0;
+
+    a {
+      color: currentColor;
+    }
+  }
+
+  .swiper-wrapper {
+    -webkit-transition-timing-function: linear !important;
+    -o-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+    margin-top: var(--space-m);
+  }
+
+  .swiper-slide {
+    width: auto;
+
+    a {
+      display: block;
+    }
+
+    svg {
+      max-width: 300px;
+      height: 80px;
+    }
+  }
+</style>

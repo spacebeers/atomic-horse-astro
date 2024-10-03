@@ -10,7 +10,7 @@ import HorseImage from "../components/HorseImage.astro";
 import { getCollection } from "astro:content";
 
 import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/css/navigation"
 import "swiper/css/pagination";
 
 const services = await getCollection('service');
@@ -70,13 +70,12 @@ const services = await getCollection('service');
             <h2 class="heading">What can we do for you</h2>
           </div>
           <div class="gallery-header__nav">
-            <div class="button swiper-button-next"></div>
             <div class="button swiper-button-prev"></div>
+            <div class="button swiper-button-next"></div>
           </div>
         </div>
         
-        <div class="card-swiper">
-          
+        <div class="card-swiper">          
           <div class="swiper-wrapper">
             {
               services.map((item: any, i: number) => (
@@ -121,6 +120,27 @@ const services = await getCollection('service');
 
   .gallery-header__nav {
     position: relative;
+    display: flex;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    position: relative !important;
+    top: unset !important;
+    left: unset !important;
+    right: unset !important;
+    bottom: unset !important;
+    margin: 0 !important;
+    width: 48px;
+    height: 48px;
+    
+    &::after {
+      font-size: 24px;
+      color: var(--palette-light);
+    }
+  }
+
+  .swiper-button-next {
+    margin-left: var(--space-xs) !important;
   }
 </style>
 
@@ -141,20 +161,17 @@ const services = await getCollection('service');
         clickable: true,
       },
       breakpoints: {
-        // When the screen is <= 500px
         200: {
-          slidesPerView: 1, // Show 1 slide
-          spaceBetween: 20, // Reduce space between slides if needed
+          slidesPerView: 1, 
+          spaceBetween: 20, 
         },
-        // When the screen is <= 768px
         500: {
-          slidesPerView: 2, // Show 2 slides
-          spaceBetween: 40, // Adjust space between slides
+          slidesPerView: 2, 
+          spaceBetween: 40, 
         },
-        // When the screen is > 768px (default behavior)
-        769: {
-          slidesPerView: 3, // Show 3 slides
-          spaceBetween: 60, // Adjust space between slides for large screens
+        768: {
+          slidesPerView: 3, 
+          spaceBetween: 60, 
         },
       },
     });

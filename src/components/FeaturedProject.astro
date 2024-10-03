@@ -4,7 +4,6 @@ import WavePlumbing from "../client-logos/WavePlumbing.astro";
 import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection("case-studies");
-console.log(allPosts);
 
 // Filter posts tagged with "featured"
 const featuredPosts = allPosts.filter((post) => post.data.tags.includes('featured'));
