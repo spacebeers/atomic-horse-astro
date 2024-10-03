@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/CaseStudyLayout.astro"
+layout: "../../layouts/ServiceLayout.astro"
 title: 'Branding and design'
 description: 'Butt face.'
 author: 'Astro Learner'

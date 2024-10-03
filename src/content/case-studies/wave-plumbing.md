@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/CaseStudyLayout.astro"
 title: 'Wave Plumbing'
-slug: my-custom-slug/supports/slashes
+slug: wave-plumbing-logo-design
 pubDate: 2022-07-01
 description: 'Some short intro text.'
 author: 'Astro Learner'

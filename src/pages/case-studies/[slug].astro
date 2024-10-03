@@ -1,9 +1,8 @@
 ---
 import { getCollection } from 'astro:content';// For rendering markdown content
-import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('case-studies');
 
   // Generate paths for each blog post
   return posts.map((post) => ({
@@ -17,4 +16,3 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 <Content />
-

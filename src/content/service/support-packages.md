@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/CaseStudyLayout.astro"
+layout: "../../layouts/ServiceLayout.astro"
 title: 'Support packages'
 description: 'This is the first post of my new Astro blog.'
 image: '/src/assets/services/support.svg'

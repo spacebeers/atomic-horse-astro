@@ -1,4 +1,10 @@
 ---
+import Calendly from "../icons/Calendly.astro";
+import Email from "../icons/Email.astro";
+import Facebook from "../icons/Facebook.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import Whatsapp from "../icons/Whatsapp.astro";
+import { EMAIL, CALENDLY, FACEBOOK, LINKEDIN } from "../utils/constants";
 import FullLogo from "./FullLogo.astro";
 const pages = [
   {
@@ -58,15 +64,52 @@ const pages = [
 
     <nav class="nav-menu">
       <div class="wrapper">
-        <ul>
-          {
-            pages.map((page) => (
-              <li class={Astro.url.pathname === page.path ? "active" : ""}>
-                <a href={page.path}>{page.name}</a>
-              </li>
-            ))
-          }
+        <div class="menu-menu">
+          <ul>
+            {
+              pages.map((page) => (
+                <li class={Astro.url.pathname === page.path ? "active" : ""}>
+                  <a href={page.path}>{page.name}</a>
+                </li>
+              ))
+            }
+          </ul>  
+        </div>
+        <div class="menu-contact">
+          <h2>Contact us</h2>
+          <ul class="icon-list align-end">
+            <li>
+                <a href={`mailto:${EMAIL}`}>
+                    <Email />
+                    Email us
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <Whatsapp />
+                    Chat with us
+                </a>
+            </li>
+            <li>
+                <a href={CALENDLY} target="_blank">
+                    <Calendly />
+                    Book a meeting
+                </a>
+            </li>
+            <li>
+              <a href={FACEBOOK}>
+                  <Facebook />
+                  Follow us
+              </a>
+          </li>
+          <li>
+              <a href={LINKEDIN}>
+                  <LinkedIn />
+                  Work with us
+              </a>
+          </li>
         </ul>
+        </div>
       </div>
     </nav>
   </div>
@@ -145,7 +188,8 @@ const pages = [
         width: 100vw;
         height: 100vh;
         overflow: auto;
-        padding: var(--space-3xl) 0;
+        border-top: var(--space-3xl) solid var(--palette-highlight);
+        padding: 0 0 var(--space-3xl) 0;
         opacity: 0;
         pointer-events: none;
         transition: opacity var(--animation-speed) ease-in-out;
@@ -166,6 +210,45 @@ const pages = [
         a {
           font-size: var(--step-4);
           font-weight: var(--fw-medium);
+        }
+
+        .wrapper {
+          align-items: flex-start;
+          flex-wrap: wrap;
+        }
+
+        .icon-list {
+          a {
+            font-size: var(--step-1);
+            text-transform: none;
+            font-weight: var(--fw-medium);
+            display: flex;
+            background: none;
+            @media (min-width: 768px) {
+              justify-content: flex-end;
+            }
+
+            &:hover {
+              color: var(--palette-light);
+            }
+          }
+        }
+      }
+
+      .menu-contact {
+        text-align: left;
+        flex: 0 0 100%;
+
+        @media (min-width: 768px) {
+          text-align: right;
+          flex: 0 0 auto;
+        }
+
+        h2 {
+          margin: var(--space-l) 0;
+          @media (min-width: 768px) {
+            margin: 0 0 var(--space-l) 0;
+          }
         }
       }
 

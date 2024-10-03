@@ -1,6 +1,7 @@
 ---
 layout: "../../layouts/CaseStudyLayout.astro"
 title: 'Mortgage Studio'
+slug: mortgage-studio-web-development
 pubDate: 2022-07-01
 description: 'This is the first post of my new Astro blog.'
 image: '/src/assets/case-studies/website.png'
