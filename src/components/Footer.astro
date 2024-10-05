@@ -62,7 +62,7 @@ const { hideContact } = Astro.props;
                 {
                     creativeSercices.map((item: any) => (
                         <li>
-                            <a href={item.data.link}>
+                            <a href={`/services/${item.slug}`}>
                                 {item.data.title}
                             </a>
                         </li>
@@ -75,7 +75,7 @@ const { hideContact } = Astro.props;
                 {
                     digitalServices.map((item: any) => (
                         <li>
-                            <a href={item.data.link}>
+                            <a href={`/services/${item.slug}`}>
                                 {item.data.title}
                             </a>
                         </li>

@@ -1,9 +1,9 @@
 ---
 layout: "../../layouts/ServiceLayout.astro"
-title: 'Development'
-description: 'This is the first post of my new Astro blog.'
+title: 'Web development'
+description: <p>We have been developing websites since Internet Explorer 6 was around. We were there when Firefox first released and blew our minds. What we're saying is we have been building websites for a <em>long</em> time.</p><p>Over the years we have done everything from static single page websites to control systems for a planetarium to e-commerce websites for leading UK airlines.</p>
 image: '/src/assets/services/development.svg'
-alt: 'The Astro logo on a dark background with a pink glow.'
+alt: 'A robot wearing a school graduation hat'
 tags: ["digital"]
 ---
 # My First Blog Post

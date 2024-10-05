@@ -1,10 +1,9 @@
 ---
 layout: "../../layouts/ServiceLayout.astro"
 title: 'Website design'
-description: 'Butt face.'
-author: 'Astro Learner'
+description: <p>Don't be one of those businesses that fails to get off the ground due to poor design. You can't read a book by it's cover but a website isn't a book and you can (and should) absolutely judge it based on how it looks.</p><p>Our affordable design service will help separate your website from the sea of visual garbage floating around out there.</p>
 image: '/src/assets/services/design.svg'
-alt: 'The Astro logo on a dark background with a pink glow.'
+alt: 'The web design icon on a gradient background'
 tags: ["creative"]
 ---
 

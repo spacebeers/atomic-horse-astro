@@ -1,9 +1,9 @@
 ---
 layout: "../../layouts/ServiceLayout.astro"
 title: 'Support packages'
-description: 'This is the first post of my new Astro blog.'
+description: <p>We've all been there, your website is broken, you haven't touched anything but suddenly it's gone. It's scary and unsettling and in the very futuristic sounding 2024 you shouldn't have to put up with that. </p><p>Taking our company core value of "being useful" we want to take the worry out of your website for you with custom support packages tailored to fit your needs.</p>
 image: '/src/assets/services/support.svg'
-alt: 'The Astro logo on a dark background with a pink glow.'
+alt: 'The support icon on a branded gradient background'
 tags: ["digital"]
 ---
 # My First Blog Post

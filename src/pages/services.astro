@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import Strip from "../components/Strip.astro";
 import ServiceCard from "../components/ServiceCard.astro";
+import Clients from "../components/Clients.astro";
 
 const creativeSercices = await getCollection('service', ({ data }) => {
   return data.tags.includes('creative');
@@ -16,62 +17,54 @@ const digitalServices = await getCollection('service', ({ data }) => {
 
 <Layout title="Welcome">
   <main>
-    <Banner title="What can we do for you?" showHorse />
+    <Banner title="Our services" showHorse />
     <section class="strip text-center w-clamp-xl intro-section">
       <h2 class="text-5 fw-normal mb-2">
-        Techincal solutions to human problems
+        What can we do for you?
       </h2>
 
       <p class="text-1">
-        A technical and creative digital agency supporting the people behind
-        businesses large and small.
+        We ofter a range of creative and digital services to help you and your business succeed.
       </p>
     </section>
-    <Strip theme="MID">
-      <div class="wrapper strip-inner">
-        <p class="tag">Services</p>
-        <h2 class="heading text-4 fw-normal">Creative Services</h2>
-        <div class="services-grid">
-          {
-            creativeSercices.map((item: any, i: number) => (
-              <Strip theme={i % 2 === 0 ? 'MID' : 'DARK'}>
-                <div class="wrapper strip-inner">
-                  <ServiceCard 
-                    heading={item.data.title}
-                    imageSrc={item.data.image}
-                    imageAlt={item.data.alt}
-                  >
-                    <div slot="card-content">
-                      <p>Lorem ipsum dolor sit amet, movet facilisis posidonium an vel, lucilius tacimates petentium eu duo, ei iuvaret insolens disputando sit. Vel minim nonumy labitur ex, vel eu debet facete. Per quas civibus in. Sed an putent pericula reprimique, id pro accusam voluptatibus. Ex veniam ornatus usu.</p>
-
-                      <p>Et sit recusabo eleifend. Scripta platonem reformidans vim eu, vitae dolore cu est. Per altera imperdiet mediocritatem ad. Movet iisque ponderum qui id.</p>
-
-                      <a href={`/services/${item.slug}`} class="button">Learn more</a>
-                    </div>
-                  </ServiceCard>
+    <p class="tag">Services</p>
+    <h2 class="heading text-4 fw-normal">Creative Services</h2>
+    <div class="services-grid">
+      {
+        creativeSercices.map((item: any, i: number) => (
+          <Strip theme={i % 2 === 0 ? 'MID' : 'DARK'}>
+            <div class="wrapper strip-inner">
+              <ServiceCard 
+                tag="Creative"
+                heading={item.data.title}
+                imageSrc={item.data.image}
+                imageAlt={item.data.alt}
+              >
+                <div slot="card-content">
+                  <div set:html={item.data.description}></div>
+                  <a href={`/services/${item.slug}`} class="button">Learn more</a>
                 </div>
-              </Strip>
-          ))}
-        </div>
-      </div>
-    </Strip>
+              </ServiceCard>
+            </div>
+          </Strip>
+      ))}
+    </div>
     <div class="wrapper strip-inner">
       <p class="tag">Services</p>
       <h2 class="heading text-4 fw-normal">Digital Services</h2>
       <div class="services-grid">
         {
           digitalServices.map((item: any, i: number) => (
-            <Strip theme={i % 2 === 0 ? 'DARK' : 'MID'}>
+            <Strip theme={i % 2 === 0 ? 'MID' : 'DARK'}>
               <div class="wrapper strip-inner">
                 <ServiceCard 
+                  tag="Digital"
                   heading={item.data.title}
                   imageSrc={item.data.image}
                   imageAlt={item.data.alt}
                 >
                   <div slot="card-content">
-                    <p>Lorem ipsum dolor sit amet, movet facilisis posidonium an vel, lucilius tacimates petentium eu duo, ei iuvaret insolens disputando sit. Vel minim nonumy labitur ex, vel eu debet facete. Per quas civibus in. Sed an putent pericula reprimique, id pro accusam voluptatibus. Ex veniam ornatus usu.</p>
-
-                    <p>Et sit recusabo eleifend. Scripta platonem reformidans vim eu, vitae dolore cu est. Per altera imperdiet mediocritatem ad. Movet iisque ponderum qui id.</p>
+                    <div set:html={item.data.description}></div>
 
                     <a href={`/services/${item.slug}`} class="button">Learn more</a>
                   </div>
@@ -81,6 +74,7 @@ const digitalServices = await getCollection('service', ({ data }) => {
         ))}
       </div>
     </div>
+    <Clients />
   </main>
 </Layout>
 

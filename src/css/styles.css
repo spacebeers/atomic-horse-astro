@@ -206,6 +206,7 @@ p + .button {
     text-decoration: none;
     position: relative;
     transition: .5s;
+    cursor: pointer;
 
     &::before {
       content: '';

@@ -1,11 +1,12 @@
 ---
 layout: "../../layouts/ServiceLayout.astro"
-title: 'Hosting'
-description: 'This is the first post of my new Astro blog.'
+title: 'Eco Hosting'
+description: <p>The internet consumes more energy per year than the entire United Kingdom. We believe that you can host a on 100% green energy and promote your business while protecting the planet.</p><p>We offer a range of hosting packages across a number of selected partners so we can host your website or app as cleanly as possible.</p>
 image: '/src/assets/services/hosting.svg'
-alt: 'The Astro logo on a dark background with a pink glow.'
+alt: 'The hosting icon on a branded gradient background'
 tags: ["digital"]
 ---
+
 # My First Blog Post
 
 Published on: 2022-07-01

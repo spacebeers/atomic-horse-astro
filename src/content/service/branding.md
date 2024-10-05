@@ -1,10 +1,9 @@
 ---
 layout: "../../layouts/ServiceLayout.astro"
-title: 'Branding and design'
-description: 'Butt face.'
-author: 'Astro Learner'
+title: 'Branding and visual identities'
+description: '<p>Your brand should be a reflection of you and your business. We work closely with our clients to come up with compelling and engaging logos and brand guidelines.</p><p>Whether you need a brand new start or help evolving an established brand then we are here to help.</p>'
 image: '/src/assets/services/branding.svg'
-alt: 'The Astro logo on a dark background with a pink glow.'
+alt: 'The branding icon on a branded gradient background'
 tags: ["creative"]
 ---
 

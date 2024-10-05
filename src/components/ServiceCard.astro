@@ -2,18 +2,20 @@
 import { Image } from 'astro:assets';
 
 interface Props {
+	tag: string;
 	heading: string;
 	imageSrc: any;
 	imageAlt: string;
 }
 
-const { heading, imageSrc, imageAlt } = Astro.props;
+const { tag, heading, imageSrc, imageAlt } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif,svg}');
 if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,svg}"`);
 ---
 
 <section class="service-card">
-	<h2>{ heading }</h2>
+	<p class="tag">{tag}</p>
+	<h2 class="heading">{ heading }</h2>
 	<div class="service-card-grid">
 		<div class="service-card-grid__content">
 			<slot name="card-content" /> 
@@ -32,18 +34,34 @@ if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "s
 			display: flex;
 			justify-content: space-between;
 			align-items: flex-start;
+			flex-wrap: wrap;
+		}
+
+		.service-card-grid__content {
+			flex: 0 0 100%;
+			@media (min-width: 768px) {
+				flex: 1;
+			}
 		}
 
 		.service-card-grid__image {
-			flex: 0 0 36%;
-			margin-left: 4%;
+			flex: 0 0 100%;
+			order: -1;
+			@media (min-width: 768px) {
+				flex: 0 0 26%;
+				margin-left: 4%;
+				order: 1;
+			}
 			border-radius: var(--border-radius);
 			margin-bottom: var(--space-s);
 			background: radial-gradient(85.3% 85.3% at 50% 117.34%, var(--palette-highlight) 0%, #111 100%);
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			aspect-ratio: 1 / 1;
+			aspect-ratio: 16 / 9;
+			@media (min-width: 768px) {
+				aspect-ratio: 1 / 1;
+			}
 			padding: var(--space-l);
 
 			img {
@@ -53,11 +71,19 @@ if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "s
 
 		.card-image {
 			width: 60%;
-			height: auto;
+			height: 60%;
 		}
 		
 		h2 {
 			margin-bottom: var(--space-s);
+		}
+
+		.button {
+			@media (max-width: 767px) {
+				width: 100%;
+				text-align: center;
+				margin-top: var(--space-s);
+			}
 		}
 	}
 </style>
