@@ -85,7 +85,7 @@ const services = await getCollection('service');
                     imageSrc={item.data.image}
                     imageAlt={item.data.alt}
                     iconMode={true}
-                    content="Te has repudiare moderatius, pro persius splendide id. Legere sententiae percipitur vim ne."
+                    content={item.data.shortDescription}
                     link={`/services/${item.slug}`}
                   />
                 </div>  
@@ -120,7 +120,10 @@ const services = await getCollection('service');
 
   .gallery-header__nav {
     position: relative;
-    display: flex;
+    display: none;
+    @media (min-width: 768px) {
+      display: flex;
+    }
   }
 
   .swiper-button-prev, .swiper-button-next {

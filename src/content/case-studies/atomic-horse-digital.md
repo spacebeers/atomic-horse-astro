@@ -1,13 +1,13 @@
 ---
-layout: "../../layouts/ServiceLayout.astro"
-title: 'Eco Hosting'
-shortDescription: Website hosting on 100% renewable energy is the new black
-description: <p>The internet consumes more energy per year than the entire United Kingdom. We believe that you can host a on 100% green energy and promote your business while protecting the planet.</p><p>We offer a range of hosting packages across a number of selected partners so we can host your website or app as cleanly as possible.</p>
-image: '/src/assets/services/hosting.svg'
-alt: 'The hosting icon on a branded gradient background'
-tags: ["digital"]
+layout: "../../layouts/CaseStudyLayout.astro"
+title: Atomic Horse (yes, that is us)
+slug: atomic-horse-website-design-and-development
+pubDate: 2024-10-05
+description: 'Come and see how we helped ourselves to a new brand identity and website'
+image: '/src/assets/case-studies/atomic-horse.svg'
+alt: 'The Astro logo on a dark background with a pink glow.'
+tags: ["branding", "development", "logo-design"]
 ---
-
 # My First Blog Post
 
 Published on: 2022-07-01

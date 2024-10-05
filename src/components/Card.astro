@@ -18,7 +18,7 @@ if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "s
 <section class="card">
 	<div class:list={['card__image', { iconMode: iconMode === true}]}>
 		<a href={link}>
-			<Image src={imageSrc} alt={imageAlt} width="800" height="400" class="card-image" />
+			<Image src={imageSrc} alt={imageAlt} loading="lazy" width="800" height="400" class="card-image" />
 		</a>
 	</div>
 

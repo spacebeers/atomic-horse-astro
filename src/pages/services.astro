@@ -29,6 +29,9 @@ const digitalServices = await getCollection('service', ({ data }) => {
     </section>
     <p class="tag">Services</p>
     <h2 class="heading text-4 fw-normal">Creative Services</h2>
+
+    <p class="w-clamp-xl text-1 fw-medium">Our creative work centers around you and your business, producing designs and brands that are eye catching and memorable.</p>
+    
     <div class="services-grid">
       {
         creativeSercices.map((item: any, i: number) => (
@@ -52,6 +55,7 @@ const digitalServices = await getCollection('service', ({ data }) => {
     <div class="wrapper strip-inner">
       <p class="tag">Services</p>
       <h2 class="heading text-4 fw-normal">Digital Services</h2>
+      <p class="w-clamp-xl text-1 fw-medium">Useful technical work with humans at the center of it is our bread and butter.</p>
       <div class="services-grid">
         {
           digitalServices.map((item: any, i: number) => (
