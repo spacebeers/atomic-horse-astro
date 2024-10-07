@@ -3,8 +3,9 @@ import Calendly from "../icons/Calendly.astro";
 import Email from "../icons/Email.astro";
 import Facebook from "../icons/Facebook.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
+import Messenger from "../icons/Messenger.astro";
 import Whatsapp from "../icons/Whatsapp.astro";
-import { EMAIL, CALENDLY, FACEBOOK, LINKEDIN } from "../utils/constants";
+import { EMAIL, CALENDLY, FACEBOOK, LINKEDIN, MESSENGER } from "../utils/constants";
 import FullLogo from "./FullLogo.astro";
 const pages = [
   {
@@ -85,10 +86,10 @@ const pages = [
                 </a>
             </li>
             <li>
-                <a href="">
-                    <Whatsapp />
-                    Chat with us
-                </a>
+              <a href={MESSENGER}>
+                  <Messenger />
+                  Chat with us
+              </a>
             </li>
             <li>
                 <a href={CALENDLY} target="_blank">

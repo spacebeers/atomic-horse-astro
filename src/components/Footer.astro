@@ -1,11 +1,12 @@
 ---
-import { CALENDLY, EMAIL, FACEBOOK, LINKEDIN } from "../utils/constants";
+import { CALENDLY, EMAIL, FACEBOOK, LINKEDIN, MESSENGER } from "../utils/constants";
 import Calendly from "../icons/Calendly.astro";
 import Email from "../icons/Email.astro";
 import Whatsapp from "../icons/Whatsapp.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
 import Facebook from "../icons/Facebook.astro";
 import { getCollection } from "astro:content";
+import Messenger from "../icons/Messenger.astro";
 
 interface Props {
 	hideContact: boolean
@@ -40,8 +41,8 @@ const { hideContact } = Astro.props;
                         </a>
                     </li>
                     <li>
-                        <a href="">
-                            <Whatsapp />
+                        <a href={MESSENGER}>
+                            <Messenger />
                             Chat with us
                         </a>
                     </li>
