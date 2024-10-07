@@ -1,12 +1,12 @@
 ---
 interface Props {
-	theme?: "DARK" | "MID" | "LIGHT";
+	theme?: "DARK" | "MID" | "THEME";
 }
 
 const { theme } = Astro.props;
 ---
 
-<section class:list={['strip', { dark: theme === 'DARK', mid: theme === 'MID', light: theme === 'LIGHT' }, 'full-bleed']}>
+<section class:list={['strip', { dark: theme === 'DARK', mid: theme === 'MID' }, 'full-bleed']}>
 	<slot />
 </section>
 <style>

@@ -1,20 +1,21 @@
 ---
 import horse_looking from '../animations/horse_looking.json';
-// import horse_looking from '../animations/horse_eating.json';
+import horse_eating from '../animations/horse_eating.json';
 
 interface Props {
 	theme?: "DARK" | "LIGHT";
+	horse?: 'LOOKING' | 'EATING';
 }
 
-const { theme } = Astro.props;
+const { theme, horse = 'LOOKING' } = Astro.props;
 ---
 
-<section class:list={['gradient-strip', { dark: theme === 'DARK', light: theme === 'LIGHT' }, 'full-bleed', 'strip']}>
+<section class:list={['gradient-strip', { dark: theme === 'DARK', light: theme === 'LIGHT' },  { eating: horse === 'EATING', looking: horse === 'LOOKING' }, 'full-bleed', 'strip']}>
 	<div class="wrapper">
 		<div class="content">
 			<slot />
 		</div>
-		<dotlottie-player class="horse" src={JSON.stringify(horse_looking)} background="transparent" speed="1" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+		<dotlottie-player class="horse" src={JSON.stringify(horse === 'LOOKING' ? horse_looking : horse_eating)} background="transparent" speed="1" direction="1" playMode="normal" loop autoplay></dotlottie-player>
 	</div>
 </section>
 <style>
@@ -60,8 +61,14 @@ const { theme } = Astro.props;
 		position: absolute;
 		bottom: -30px;
 		right: 5vw;
-		transform: scaleX(-1);
 		z-index: 2;
 		filter: contrast(1.5);
+	}
+
+	.looking {
+		.horse {
+			transform: scaleX(-1);
+			bottom: -15px;
+		}
 	}
 </style>

@@ -1,0 +1,64 @@
+---
+layout: "../../layouts/ServiceLayout.astro"
+title: 'Eco Hosting'
+shortDescription: Website hosting on 100% renewable energy is the new black
+description: <p>The internet consumes more energy per year than the entire United Kingdom. We believe that you can host a on 100% green energy and promote your business while protecting the planet.</p><p>We offer a range of hosting packages across a number of selected partners so we can host your website or app as cleanly as possible.</p>
+image: '/src/assets/services/hosting.svg'
+alt: 'The hosting icon on a branded gradient background'
+tags: ["digital"]
+---
+import GradientContentStrip from "../../components/GradientContentStrip.astro";
+import Strip from "../../components/Strip.astro";
+import { Image } from 'astro:assets';
+
+<section class="strip text-center w-clamp-xl intro-section">
+<h2 class="text-5 fw-normal mb-2">
+    100% renewable energy website hosting
+</h2>
+
+<p class="text-1">
+    The internet consumes more energy per year than <a href="https://www.websitecarbon.com/" target="_blank">the entire United Kingdom</a>. We believe that you can host a on 100% green energy and promote your business while protecting the planet.
+</p>
+</section>
+<Strip theme="MID">
+    <div class="wrapper">
+        <div class="strip-inner">
+            <div class="grid">
+                <div class="contents">
+                    <p class="text-1 fw-medium">We are proud that we host on partners who only use renewable energy. We provide fast, efficient and green website hosting for all your needs from static websites to CMS driven systems.</p>
+                    <p class="text-0">We have a range of hosting packages to suit your needs and believe that there is one available to suit your needs. Having a website shouldn't come at the expense of the planet. All our hosting packages are powered by the wind, sun and sea. There's no carbon offsets behind the scenes, just pure lovely renewable energy sources working away to get our clients online.</p>
+                </div>
+                <div class="image">
+                    <div class="card-fancy-image">
+                        <Image src={frontmatter.image} alt={frontmatter.alt} loading="lazy" width="800" height="400" class="card-image" />
+                    </div>	
+                </div>
+            </div>
+        </div>
+    </div>
+</Strip>
+<Strip theme="DARK">
+    <div class="wrapper">
+        <div class="strip-inner">
+            <div class="w-clamp-xl">
+                <h2 class="heading">
+                    Our hosting packages
+                </h2>
+                    
+                More details on our hosting packages will be coming soon. If you're interested in hosting with us then please [get in touch](/contact-us) and we can discuss your needs and come up with a solution that suits you and your business.
+
+                We are happy to host existing websites as well as ones we have built for clients. We also offer [support packages](/services/support-packages) to keep your website ticking along smoothly month by month.
+            </div>
+        </div>
+    </div>
+</Strip>
+
+<GradientContentStrip horse="EATING">
+    <h2 class="heading">
+        Host your website with us today
+    </h2>
+
+    If you're interested in setting up a hosting with us then please get in touch. We can discuss your needs and come up with a solution that suits you and your business.
+
+    <a href="/contact-us" class="button">Get in touch</a>
+</GradientContentStrip>

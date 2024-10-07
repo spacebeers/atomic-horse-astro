@@ -264,7 +264,7 @@ p+.button {
     background: transparent;
     color: currentColor;
     padding: var(--space-2xs);
-    text-decoration: none;
+    text-decoration: none !important;
     position: relative;
     transition: .5s;
     cursor: pointer;
@@ -347,6 +347,15 @@ p+.button {
     }
 }
 
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    gap: var(--space-xl);
+}
+
 .card-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -364,4 +373,23 @@ p+.button {
     }
     z-index: 1;
     position: relative;
+}
+
+.card-fancy-image {
+    border-radius: var(--border-radius);
+    margin-bottom: var(--space-s);
+    background: radial-gradient(85.3% 85.3% at 50% 117.34%, var(--palette-highlight) 0%, #111 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 9;
+    @media (min-width: 768px) {
+        aspect-ratio: 1 / 1;
+    }
+    padding: var(--space-l);
+    img {
+        border-radius: var(--border-radius);
+        width: 60%;
+        height: 60%;
+    }
 }

@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config';
 import netlify from '@astrojs/netlify';
 import sitemap from '@astrojs/sitemap';
 
+import mdx from '@astrojs/mdx';
+
 export default defineConfig({
   output: 'hybrid',
   adapter: netlify({
@@ -11,5 +13,5 @@ export default defineConfig({
   image: {
     domains: ['netlify.app']
   },
-  integrations: [sitemap()]
+  integrations: [sitemap(), mdx()]
 });

@@ -1,0 +1,102 @@
+---
+layout: "../../layouts/ServiceLayout.astro"
+title: 'Web development'
+shortDescription: Let us use our decades of collective experience to support create the perfect website for you and your business
+description: <p>We have been developing websites since Internet Explorer 6 was around. We were there when Firefox first released and blew our minds. What we're saying is we have been building websites for a <em>long</em> time.</p><p>Over the years we have done everything from static single page websites to control systems for a planetarium to e-commerce websites for leading UK airlines.</p>
+image: '/src/assets/services/development.svg'
+alt: 'A robot wearing a school graduation hat'
+tags: ["digital"]
+---
+
+import GradientContentStrip from "../../components/GradientContentStrip.astro";
+import Strip from "../../components/Strip.astro";
+import { Image } from 'astro:assets';
+import FeaturedProject from "../../components/FeaturedProject.astro";
+import Clients from "../../components/Clients.astro";
+
+<section class="strip text-center w-clamp-xl intro-section">
+    <h2 class="text-5 fw-normal mb-2">
+       We cover all aspects of web development from new projects to refreshing old ones
+    </h2>
+
+    <p class="text-1">
+        We build websites. This is where we started and it's what we do best. We have a wealth of experience in building websites for a wide range of clients and industries and can help you with your project no matter how big or small.
+    </p>
+</section>
+<Strip theme="MID">
+    <div class="wrapper">
+        <div class="strip-inner">
+            <div class="grid">
+                <div class="contents">
+                    <p class="text-1 fw-medium">We have been building websites for a very long time and we are very good at it by now. We have loved watching the web grow over the years and growing along side it. It has never been a more exciting time to be building and developing online.</p>
+                    <p class="text-0">We offer a range of solutions from small to large using the right technology for the job. Just need a simple static site? We've got you covered. Need a full Content Management System? We're on your side. After a custom web application? We've got your back.</p>
+                </div>
+                <div class="image">
+                    <div class="card-fancy-image">
+                        <Image src={frontmatter.image} alt={frontmatter.alt} loading="lazy" width="800" height="400" class="card-image" />
+                    </div>	
+                </div>
+            </div>
+        </div>
+    </div>
+</Strip>
+<Strip theme="DARK">
+    <div class="wrapper">
+        <div class="strip-inner">
+             <h2 class="heading">
+                WordPress development
+            </h2>
+            <div class="content-grid">
+                <div class="contents">
+                    
+                    WordPress is our Content Management System (CMS) of choice and we're very good at using it. We can help you set up a pre existing theme if budget is tight or build a full custom block theme from scratch when you need something more bespoke.
+
+                    We work to both the web and WordPress best practices to ensure your website is fast, easy to manage and 
+                    secure.
+
+
+                </div>
+                <div class="contents">
+                    We also offer [eco hosting](/services/eco-hosting) and [website support packages](/services/support-packages) so your new website has somewhere to live and will keep on going so you can concentrate on the more important stuff.
+
+                    If you have a project in mind and want us to help or just discuss it then please [contact us](/contact-us). We can discuss your needs and come up with a solution that suits you and your business.
+                </div>
+            </div>
+        </div>
+    </div>
+</Strip>
+<Strip theme="MID">
+    <FeaturedProject />
+</Strip>
+<Strip theme="DARK">
+    <div class="wrapper">
+        <div class="strip-inner">
+             <h2 class="heading">
+                Development partnerships
+            </h2>
+            <div class="content-grid">
+                <div class="contents">                    
+                    We love to share of teams skills and knowledge with other agencies and freelancers. We can work with you to help you deliver your projects on time and on budget. We can work with you to deliver the whole project or just the parts you need help with.
+
+                    We have been working with various agencies and freelance designers since the beginning and while we love [designing](/services/website-design) and building the project from end to end we also love working with other people to help them deliver their projects.
+
+
+                </div>
+                <div class="contents">
+                    If you are a freelance designer needing front end development to bring your clients dreams to life, or an agency who just needs some extra pairs of hands then please [get in touch](/contact-us). We can discuss your needs and come up with a solution to suit you. 
+                </div>
+            </div>
+        </div>
+    </div>
+</Strip>
+<GradientContentStrip horse="LOOKING">
+    <h2 class="heading">
+       Work with us today
+    </h2>
+
+    If you're interested in setting up a support package with us then please get in touch. We can discuss your needs and come up with a package that suits you and your business.
+
+    <a href="/contact-us" class="button">Get in touch</a>
+</GradientContentStrip>
+
+<Clients />
