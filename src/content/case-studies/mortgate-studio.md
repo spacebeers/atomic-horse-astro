@@ -3,7 +3,7 @@ layout: "../../layouts/CaseStudyLayout.astro"
 title: 'Mortgage Studio'
 slug: mortgage-studio-web-development
 pubDate: 2022-07-01
-description: 'This is the first post of my new Astro blog.'
+description: 'Read more about our approach building a content driven website for a wonderful mortgage advisor'
 image: '/src/assets/case-studies/website.png'
 alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["astro", "blogging", "learning in public"]

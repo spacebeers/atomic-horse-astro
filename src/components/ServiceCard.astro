@@ -3,17 +3,18 @@ import { Image } from 'astro:assets';
 
 interface Props {
 	tag: string;
+	order: "ODD" | "EVEN";
 	heading: string;
 	imageSrc: any;
 	imageAlt: string;
 }
 
-const { tag, heading, imageSrc, imageAlt } = Astro.props;
+const { tag, order, heading, imageSrc, imageAlt } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif,svg}');
 if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,svg}"`);
 ---
 
-<section class="service-card">
+<section class:list={['service-card', { odd: order === 'ODD', even: order === 'EVEN' }]}>
 	<p class="tag">{tag}</p>
 	<h2 class="heading">{ heading }</h2>
 	<div class="service-card-grid">
@@ -30,8 +31,15 @@ if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "s
 	.service-card {
 		width: 100%;
 
+		&.odd {
+			.service-card-grid {
+				flex-direction: row-reverse;
+			}
+		}
+
 		.service-card-grid {
 			display: flex;
+			flex-direction: row;
 			justify-content: space-between;
 			align-items: flex-start;
 			flex-wrap: wrap;
@@ -49,7 +57,13 @@ if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "s
 			order: -1;
 			@media (min-width: 768px) {
 				flex: 0 0 26%;
+
+				.odd & {
+					margin-right: 4%;
+					margin-left: 0;
+				}
 				margin-left: 4%;
+				margin-right: 0;
 				order: 1;
 			}
 			border-radius: var(--border-radius);

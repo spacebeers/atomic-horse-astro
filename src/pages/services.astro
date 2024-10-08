@@ -39,6 +39,7 @@ const digitalServices = await getCollection('service', ({ data }) => {
             <div class="wrapper strip-inner">
               <ServiceCard 
                 tag="Creative"
+                order={i % 2 === 0 ? 'ODD' : 'EVEN'}
                 heading={item.data.title}
                 imageSrc={item.data.image}
                 imageAlt={item.data.alt}
@@ -63,6 +64,7 @@ const digitalServices = await getCollection('service', ({ data }) => {
               <div class="wrapper strip-inner">
                 <ServiceCard 
                   tag="Digital"
+                  order={i % 2 === 0 ? 'ODD' : 'EVEN'}
                   heading={item.data.title}
                   imageSrc={item.data.image}
                   imageAlt={item.data.alt}
