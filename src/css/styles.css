@@ -162,6 +162,10 @@ a {
     text-align: end;
 }
 
+p+p {
+    margin-top: var(--space-s);
+}
+
 .w-clamp-xs {
     @media (min-width: 768px) {
         width: clamp(100px, 10vw, 200px);
