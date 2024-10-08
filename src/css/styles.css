@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    width: 100vw;
+}
+
 body {
     font-family: var(--brand-font);
     background: var(--palette-dark);
@@ -16,6 +20,7 @@ body {
     padding: 0;
     overflow-x: hidden;
     width: 100vw;
+    max-width: 100vw;
     &.no-scroll {
         overflow: hidden;
     }
@@ -268,6 +273,7 @@ p+.button {
     background: transparent;
     color: currentColor;
     padding: var(--space-2xs);
+    margin-top: var(--space-s);
     text-decoration: none !important;
     position: relative;
     transition: .5s;
