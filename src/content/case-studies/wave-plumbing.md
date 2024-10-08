@@ -1,37 +1,12 @@
 ---
 layout: "../../layouts/CaseStudyLayout.astro"
-title: 'Wave Plumbing'
+title: 'Logo design for Wave Plumbing & Bathrooms ltd'
 slug: wave-plumbing-logo-design
 pubDate: 2022-07-01
-description: 'Some short intro text.'
-author: 'Astro Learner'
+description: '19th century Japanese woodblock prints and surf brand logos combined.'
+author: '@design'
 image: '/src/assets/case-studies/wave-plumbing.svg'
-alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro", "featured"]
+alt: 'The Wave Plumbing & Bathrooms logo'
+tags: ["design", "branding", "logo", "featured"]
 ---
 
-
-# My First Blog Post
-
-Published on: {frontmatter.pubDate}
-
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
-
-## What I've accomplished
-
-1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
-
-2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
-
-3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
-
-## What's next
-
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
-
-<div class="card-grid">
-<h1>test</h1>
-<h1>test</h1>
-<h1>test</h1>
-<h1>test</h1>
-</div>

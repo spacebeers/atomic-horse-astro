@@ -1,13 +1,14 @@
 ---
 layout: "../../layouts/BlogLayout.astro"
-title: 'My First Blog Post'
+title: 'AI should be doing the boring work'
 pubDate: 2022-07-01
-description: 'Butt face.'
-author: 'Astro Learner'
+description: We've all seen what generative AI can do, but why does it get to have all the fun?
+author: '@development'
 image: '/src/assets/placeholder.png'
 alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro", "successes"]
+tags: ["ai", "development"]
 ---
+
 # My First Blog Post
 
 Published on: 2022-07-01
