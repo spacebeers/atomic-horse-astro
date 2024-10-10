@@ -7,7 +7,7 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
     output: 'hybrid',
     adapter: netlify({
-        imageCDN: true
+        imageCDN: false,
     }),
     site: "https://atomichorsedigital.netlify.app",
     image: {
