@@ -10,8 +10,6 @@ interface Props {
 }
 
 const { tag, order, heading, imageSrc, imageAlt } = Astro.props;
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif,svg}');
-if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,svg}"`);
 ---
 
 <section class:list={['service-card', { odd: order === 'ODD', even: order === 'EVEN' }]}>
@@ -22,7 +20,7 @@ if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "s
 			<slot name="card-content" /> 
 		</div>	
 		<div class="service-card-grid__image">
-			<Image src={import(imageSrc)} alt={imageAlt} loading="lazy" width="800" height="400" class="card-image" />
+			<Image src={imageSrc} alt={imageAlt} loading="lazy" width="800" height="400" class="card-image" />
 		</div>	
 
 	</div>
