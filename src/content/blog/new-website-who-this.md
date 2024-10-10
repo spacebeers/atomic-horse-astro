@@ -10,8 +10,6 @@ alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["work", "blogging", "new"]
 ---
 
-# It's our new website day
+# It's our new website day so we're having a sandwich
 
-I once lived nextdoor to a gardener. He was a lovely man with the best work ethic of anyone I have ever met. He would work rain or shine to go out in his van and make other people's gardens better. He worked on public gardens, private gardens and sports fields. This wonderful man knew how to put a shift in.
-
-Basically the point of this is after years of working on other people's projects we've taken some time out to do our own. 
+We're pleased to announce the launch of new website and product offering. It's been a long time coming and full case study is on it's way. 

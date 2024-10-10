@@ -8,7 +8,7 @@ const allPosts = await getCollection("case-studies");
 // Filter posts tagged with "featured"
 const featuredPosts = allPosts.filter((post) => post.data.tags.includes('featured'));
 ---
-{
+<!-- {
 	featuredPosts.length > 0 ? (
 		featuredPosts.map((post) => (
 			<section class="featured-client wrapper">
@@ -39,4 +39,4 @@ const featuredPosts = allPosts.filter((post) => post.data.tags.includes('feature
 		padding-top: var(--space-l);
 		padding-bottom: var(--space-l);
 	}
-</style>
+</style> -->
