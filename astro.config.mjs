@@ -10,7 +10,6 @@ export default defineConfig({
     adapter: netlify({
         imageCDN: false,
     }),
-    site: "https://atomichorsedigital.netlify.app",
     image: {
         domains: ['netlify.app'],
     },
