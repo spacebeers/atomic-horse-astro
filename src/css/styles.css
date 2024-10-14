@@ -403,3 +403,65 @@ p+.button {
         height: 60%;
     }
 }
+
+.service-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-m);
+    margin-top: var(--space-xl);
+}
+
+.service-card {
+    background: #0D161F;
+    border: 1px solid #353434;
+    border-radius: var(--border-radius);
+    padding: var(--space-m) var(--space-s);
+    &:not(.selected) {
+        margin: var(--space-m) 0;
+    }
+    h2 {
+        margin-bottom: var(--space-s);
+    }
+}
+
+.recommended {
+    background: var(--palette-highlight);
+    color: var(--palette-contrast);
+    display: inline-block;
+    border-radius: 4px;
+    font-size: var(--step--1);
+    font-weight: var(--fw-medium);
+    padding: var(--space-3xs) var(--space-2xs);
+    float: right;
+}
+
+.tick-list {
+    list-style: none;
+    margin: 0 0 var(--space-s) 0;
+    padding: 0;
+    li {
+        position: relative;
+        padding-left: 30px;
+        &::before {
+            content: "";
+            background-image: url(/tick.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 22px;
+            height: 22px;
+            display: block;
+            position: absolute;
+            top: 6px;
+            left: 0;
+        }
+    }
+    li+li {
+        margin-top: 8px;
+    }
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}

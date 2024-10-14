@@ -13,13 +13,13 @@ import Strip from "../../components/Strip.astro";
 import { Image } from 'astro:assets';
 
 <section class="strip text-center w-clamp-xl intro-section">
-<h2 class="text-5 fw-normal mb-2">
-    Self care for websites
-</h2>
+    <h2 class="text-5 fw-normal mb-2">
+        Self care for websites
+    </h2>
 
-<p class="text-1">
-    Let us take care of your website for you and remove the stress of running a business in today's rapidly changing internet.
-</p>
+    <p class="text-1">
+        Let us take care of your website for you and remove the stress of running a business in today's rapidly changing internet.
+    </p>
 </section>
 <Strip theme="MID">
     <div class="wrapper">
@@ -41,27 +41,76 @@ import { Image } from 'astro:assets';
 <Strip theme="DARK">
     <div class="wrapper">
         <div class="strip-inner">
-            <h2 class="heading">
-                Our support packages and maintenance services
-            </h2>
-            <div class="content-grid">
-                <div class="contents">
-                    <p class="text-1 fw-normal">Our fixed-cost packages will keep your website ticking along smoothly month by month. We make sure your website is cared for in the background, meaning you can focus on more important things.</p>
-                </div>
-                <div class="contents">
-                    As standard our support packages include:
+            <section class="text-center w-clamp-xl intro-section">
+                <h2 class="text-4 fw-normal mb-2">
+                    Our support packages and maintenance services
+                </h2>
 
-                    - WordPress core and plugin updates*
-                    - Dependancy management
-                    - Backup management
-                    - Security updates
-                    - CMS training
-                    - General troubleshooting and advice
-                    - A human at the end of the phone or email
+                <p class="text-1">
+                    Our fixed-cost packages will keep your website ticking along smoothly month by month. We make sure your website is cared for in the background, meaning you can focus on more important things.
+                </p>
+            </section>
+            <div class="service-cards">
+                <article class="service-card">
+                    <h2 class="text-1 fw-normal2">Basic</h2>
+                    <p>Best for a static website.</p>
 
-                    _* Where applicable. We cover any other CMS including Drupal, OctoberCMS and Ghost_
-                </div>
-            </div>
+                    <ul class="tick-list">
+                        <li>Quarterly site review</li>
+                        <li>Quarterly updates</li>
+                        <li>Backup management</li>
+                        <li>Annual site report</li>
+                        <li>0.5 hours of dedicated time per month</li>
+                    </ul>
+
+                    <p class="price">From £75 per month</p>
+
+                    <footer>
+                        <a href="/contact-us">Get in touch</a>
+                    </footer>
+                </article>
+                <article class="service-card selected">
+                    <div class="clearfix">
+                        <p class="recommended">Most popular</p>
+                    </div>
+                    <h2 class="text-1 fw-normal2">Standard</h2>
+                    <p>Best for dynamic sites what require attention.</p>
+
+                    <ul class="tick-list">
+                        <li>Monthly site review</li>
+                        <li>Backup management</li>
+                        <li>Monthly updates</li>
+                        <li>Annual site report</li>
+                        <li>Strategic consultation</li>
+                        <li>2 hours of dedicated time per month</li>
+                    </ul>
+
+                    <p class="price">From £250 per month</p>
+
+                    <footer>
+                        <a href="/contact-us">Get in touch</a>
+                    </footer>
+                </article>
+                <article class="service-card">
+                    <h2 class="text-1 fw-normal2">Plus</h2>
+                    <p>Best for business users that require constant attention.</p>
+
+                    <ul class="tick-list">
+                        <li>Monthly site review</li>
+                        <li>Backup management</li>
+                        <li>Regular updates</li>
+                        <li>Monthly site report</li>
+                        <li>Ongoing site feature additions</li>
+                        <li>4 hours of dedicated time per month</li>
+                    </ul>
+
+                    <p class="price">From £500 per month</p>
+
+                    <footer>
+                        <a href="/contact-us">Get in touch</a>
+                    </footer>
+                </article>
+            </div>  
         </div>
     </div>
 </Strip>
