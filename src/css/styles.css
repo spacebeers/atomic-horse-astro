@@ -404,20 +404,23 @@ p+.button {
     }
 }
 
-.service-cards {
+.compare-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: var(--space-m);
     margin-top: var(--space-xl);
 }
 
-.service-card {
+.compare-card {
     background: #0D161F;
     border: 1px solid #353434;
     border-radius: var(--border-radius);
     padding: var(--space-m) var(--space-s);
     position: relative;
     margin: var(--space-m) 0;
+    &:not(.selected) {
+        margin-top: var(--space-xl);
+    }
 }
 
 h2 {
