@@ -416,12 +416,12 @@ p+.button {
     border: 1px solid #353434;
     border-radius: var(--border-radius);
     padding: var(--space-m) var(--space-s);
-    &:not(.selected) {
-        margin: var(--space-m) 0;
-    }
-    h2 {
-        margin-bottom: var(--space-s);
-    }
+    position: relative;
+    margin: var(--space-m) 0;
+}
+
+h2 {
+    margin-bottom: var(--space-s);
 }
 
 .recommended {
@@ -432,7 +432,10 @@ p+.button {
     font-size: var(--step--1);
     font-weight: var(--fw-medium);
     padding: var(--space-3xs) var(--space-2xs);
-    float: right;
+    position: absolute;
+    top: 0;
+    right: 24px;
+    transform: translateY(-50%);
 }
 
 .tick-list {
