@@ -406,9 +406,12 @@ p+.button {
 
 .compare-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    @media (min-width: 850px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
     gap: var(--space-m);
-    margin-top: var(--space-xl);
+    margin: var(--space-xl) 0;
 }
 
 .compare-card {
@@ -419,7 +422,9 @@ p+.button {
     position: relative;
     margin: var(--space-m) 0;
     &:not(.selected) {
-        margin-top: var(--space-xl);
+        @media (min-width: 850px) {
+            margin-top: var(--space-xl);
+        }
     }
 }
 
@@ -470,4 +475,22 @@ h2 {
     content: "";
     display: table;
     clear: both;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    gap: var(--space-m);
+    margin-top: var(--space-xl);
+}
+
+.faq {
+    h3 {
+        border-bottom: 1px solid var(--palette-light);
+        padding: var(--space-xs) 0;
+        margin-bottom: var(--space-xs);
+    }
 }
