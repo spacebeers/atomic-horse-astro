@@ -2,3 +2,18 @@
   command = "npm run build"
   functions = ".netlify/functions-internal"
   publish = "dist"
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/about-us.html"
+  to = "/about-us/"
+  status = 301
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact-us/"
+  status = 301
