@@ -1,7 +1,14 @@
 ---
 import Banner from '../components/Banner.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from "astro:content";
+import Strip from "../components/Strip.astro";
 import Layout, { type MetaTags } from './Layout.astro';
 const { frontmatter } = Astro.props;
+
+const services = await getCollection('service', ({ data }) => {
+  return data.id !== frontmatter.id;
+});
 
 const meta: MetaTags = {
   title: frontmatter.metaTitle,
@@ -12,10 +19,70 @@ const meta: MetaTags = {
 <Layout meta={meta}>
   <Banner showHorse title={frontmatter.title} />
   <slot />
+  <Strip theme={'DARK'}>
+    <div class="wrapper">
+      <p class="tag">Services</p>
+      <h2 class="heading">Other digital services we offer</h2>
+      <ul class="service-sub-grid">
+        {
+          services.map((item: any, i: number) => (
+            <li class="sub-grid-card">
+              <h3 class="text-0">{item.data.title}</h3>
+              <a href={`/services/${item.slug}`} class="sub-card-grid__image">
+                <Image src={item.data.image} alt={item.data.alt} loading="lazy" width="800" height="400" class="card-image" />
+              </a>
+
+              <p class="text--1">{item.data.shortDescription}</p>
+              <a href={`/services/${item.slug}`} class="button text--1">Learn more</a>
+            </li> 
+          ))}
+      </ul>
+    </div>
+  </Strip>
 </Layout>
 <style>
   :root {
     --palette-highlight: var(--palette-orange);
     --palette-contrast: var(--palette-light);
   }
+
+  .service-sub-grid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--space-m);
+  }
+
+  .sub-grid-card {
+    h3 {
+      margin-bottom: var(--space-s);
+    }
+  }
+
+  .sub-card-grid__image {
+			flex: 0 0 100%;
+			order: -1;
+			@media (min-width: 768px) {
+				flex: 0 0 26%;
+			}
+			border-radius: var(--border-radius);
+			margin-bottom: var(--space-s);
+			background: radial-gradient(85.3% 85.3% at 50% 117.34%, var(--palette-highlight) 0%, #111 100%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			aspect-ratio: 16 / 9;
+			padding: var(--space-s);
+
+			img {
+				border-radius: var(--border-radius);
+			}  
+		}
+
+		.card-image {
+			width: 60%;
+			height: 60%;
+		}
 </style>
