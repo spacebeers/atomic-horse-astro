@@ -27,22 +27,27 @@ const meta: MetaTags = {
       <h2 class="text-5 fw-normal mb-2">
         Technical solutions to human problems
       </h2>
-
-      <p class="text-1">
-        A technical and creative digital agency supporting the people behind
-        businesses large and small.
-      </p>
     </section>
     <Strip theme="DARK">
       <div class="wrapper">
         <div class="grid">
           <div class="contents">
             <p class="text-1 fw-medium">
-              Atomic Horse is a digital agency that puts the people ahead of the technology. We understand that the digital world is key to many businesses success and that it can also be overwhelming and scary. 
+              We’re a Brighton-based digital agency that puts people first. We take time to understand you and your business and provide technical solutions to human problems.
             </p>
             <p class="text-0">
-              We are here to help our clients not only find their place online but to thrive there. We offer a range of digital and creative services including: web design, web development and design, branding, logos, consultancy and support packages.
+              The digital landscape is key to business success and we understand how it works. We’re here to help our clients not only to find their place online but to thrive there too. We offer a range of digital and creative solutions:
             </p>
+
+            <ul class="text-0">
+              {
+                services.map((item: any, i: number) => (
+                  <li>
+                    <a href={`/services/${item.slug}`}>{item.data.title}</a>
+                  </li> 
+                ))
+              }
+            </ul>
           </div>
           <div class="image">
             <HorseImage />
@@ -58,20 +63,22 @@ const meta: MetaTags = {
         Founded in 2018, Atomic Horse has been providing technical solutions to human problems for over a decade. We pride ourselves on our ability to create custom solutions to fit every problem our clients come to us with.
       </p>
 
-      <p>
-        We were founded on one simple principle - to <em>"be useful"</em>. We believe that technology should be used to make people's lives easier, and we strive to create digital experiences that are both beautiful, functional and for everyone. We are passionate about helping our clients succeed in the often confusing digital world, and like nothing more than watching our clients take our work and run with it.
-      </p>
+      <p>We’re guided by one simple principle: <em>"be useful"</em>. We believe that technology should be used to
+      make people's lives easier. This is why we create digital experiences that are beautiful, functional
+      and for everyone.</p>
 
-      <p>
-        We are a small team of diverse professionals united by our goal of being useful. We are always looking for new challenges and interesting problems to solve. If you have a project you think we could help with, please <a href="/contact-us">get in touch</a>.
-      </p>
+      <p>We’re passionate about creating tailored solutions for our clients that enable them to take our work
+      and run with it.</p>
+
+      <p>We’ve been providing digital solutions to human problems for over 15 years. We’re small and
+      diverse professionals, always looking for a new challenge.</p>
     </GradientContentStrip>
     <Strip theme="DARK">
       <div class="wrapper">
         <div class="gallery-header">
           <div class="gallery-header__title">
             <p class="tag">Services</p>
-            <h2 class="heading">What can we do for you</h2>
+            <h2 class="heading">What we can do for you and your business</h2>
           </div>
           <div class="gallery-header__nav">
             <div class="button swiper-button-prev"></div>

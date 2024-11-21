@@ -143,8 +143,16 @@ a {
     font-weight: var(--fw-black, 900);
 }
 
-.text-left {
-    text-align: left;
+.mb-s {
+    margin-bottom: var(--space-s);
+}
+
+.mb-m {
+    margin-bottom: var(--space-m);
+}
+
+.mb-l {
+    margin-bottom: var(--space-l);
 }
 
 .text-right {
