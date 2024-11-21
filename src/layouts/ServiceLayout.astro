@@ -1,9 +1,15 @@
 ---
 import Banner from '../components/Banner.astro';
-import Layout from './Layout.astro';
+import Layout, { type MetaTags } from './Layout.astro';
 const { frontmatter } = Astro.props;
+
+const meta: MetaTags = {
+  title: frontmatter.metaTitle,
+  description: frontmatter.metaDescription
+};
 ---
-<Layout title={frontmatter.title}>
+
+<Layout meta={meta}>
   <Banner showHorse title={frontmatter.title} />
   <slot />
 </Layout>

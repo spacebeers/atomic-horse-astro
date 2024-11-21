@@ -1508,6 +1508,11 @@ astro-google-fonts-optimizer@^0.2.2:
   resolved "https://registry.yarnpkg.com/astro-google-fonts-optimizer/-/astro-google-fonts-optimizer-0.2.2.tgz#93eff2a5c17713064675f70bce4c6f2fc4c2c50f"
   integrity sha512-YQxp/ExF3NzUomAGuu1VKecO7/ETRnhnE50gqwAqfpbGPZFj4MYa4XxK1ukBg3R63QmKuE5uurOiKmXiLzttuw==
 
+astro-seo-metadata@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/astro-seo-metadata/-/astro-seo-metadata-0.6.0.tgz#1652a04f7996e0b83610efb32d429f40dc7d97b9"
+  integrity sha512-2wN3kHy4KOorieZxvzYdnXl8h3imUrZdKE+N5xLA3T9/fxHXqNXtXEuJSYFSLU+EfpUcdS6jMncuBC4nQpAIuA==
+
 astro@*:
   version "4.15.9"
   resolved "https://registry.yarnpkg.com/astro/-/astro-4.15.9.tgz#b7835126a53296f6a5b11352f3e1e31197f8640e"

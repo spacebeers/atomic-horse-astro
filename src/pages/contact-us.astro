@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout, { type MetaTags } from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import ContactForm from "../components/ContactForm.astro";
 import Strip from "../components/Strip.astro";
@@ -9,11 +9,16 @@ import Whatsapp from "../icons/Whatsapp.astro";
 import { EMAIL, CALENDLY, FACEBOOK, LINKEDIN } from "../utils/constants";
 import Facebook from "../icons/Facebook.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
+
+const meta: MetaTags = {
+  title: "Contact Our Brighton Website Agency",
+  description: "Contact us so we can chat through your website design and development needs. We can get to know each other better and agree best plan of action to solve you digital business problems."
+};
 ---
 
-<Layout title="Welcome" hideContact={true}>
+<Layout meta={meta}>
   <main>
-    <Banner title="How can we help?" showHorse />
+    <Banner title="Get in touch" showHorse />
     <Strip>
       <div class="wrapper">
         <div class="contact-grid">

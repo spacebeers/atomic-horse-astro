@@ -22,6 +22,7 @@
     "aos": "^3.0.0-beta.6",
     "astro": "*",
     "astro-google-fonts-optimizer": "^0.2.2",
+    "astro-seo-metadata": "^0.6.0",
     "autoprefixer": "^10.4.17",
     "less": "^4.2.0",
     "lottie-react": "^2.4.0",

@@ -1,11 +1,16 @@
 ---
 import Banner from "../components/Banner.astro";
 import Strip from "../components/Strip.astro";
-import Layout from "../layouts/Layout.astro";
+import Layout, { type MetaTags } from "../layouts/Layout.astro";
 import { EMAIL } from "../utils/constants";
+
+const meta: MetaTags = {
+  title: "Our Privacy Policy",
+  description: "Read our privacy policy. It's not the most exciting but every website needs to have one."
+};
 ---
 
-<Layout title="Privacy Policy">
+<Layout meta={meta}>
   <main class="content-page">
     <Banner title="Privacy Policy" condense />
     <Strip>

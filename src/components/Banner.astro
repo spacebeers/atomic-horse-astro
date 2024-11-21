@@ -3,16 +3,23 @@ import Horse from './Horse.astro';
 
 interface Props {
 	title: string;
+	subtitle?: string;
 	showHorse?: boolean;
 	condense?: boolean;
 }
 
-const { title, showHorse, condense } = Astro.props;
+const { title, showHorse, condense, subtitle } = Astro.props;
 ---
 <section class={`hero full-bleed ${showHorse ? 'showHorse' : ''} ${condense ? 'condense' : ''}`}>
 	<section class="wrapper">
 		<h1>{title}</h1>
 		
+		{
+			subtitle && 
+				<p class="subtitle">
+					{ subtitle }
+				</p>
+		}
 		{
 			showHorse && 
 				<div class="horse">
@@ -48,12 +55,27 @@ const { title, showHorse, condense } = Astro.props;
 			padding: 0;
 		}
 
+		.subtitle {
+			font-size: var(--step-1);
+			padding: var(--space-m) 0 0 320px;
+			text-align: left;
+			font-weight: 500;
+		}
+
 		&.showHorse {
 			h1 {
-				padding: var(--space-xl) 0 0 0;
+				padding: var(--space-l) 0 0 0;
 				text-align: center;
 				@media (min-width: 768px) {
 					padding: var(--space-xl) 0 0 320px;
+					text-align: left;
+				}
+			}
+			.subtitle {
+				padding: var(--space-s) 0 0 0;
+				text-align: center;
+				@media (min-width: 768px) {
+					padding: var(--space-s) 0 0 320px;
 					text-align: left;
 				}
 			}

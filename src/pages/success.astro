@@ -3,10 +3,15 @@ import Banner from "../components/Banner.astro";
 import Clients from "../components/Clients.astro";
 import FeaturedProject from "../components/FeaturedProject.astro";
 import Strip from "../components/Strip.astro";
-import Layout from "../layouts/Layout.astro";
+import Layout, { type MetaTags } from "../layouts/Layout.astro";
+
+const meta: MetaTags = {
+  title: "Thank you for your enquiry",
+  description: "Thank you for getting in touch with us. Our team will be in touch with you shortly to discuss your project."
+};
 ---
 
-<Layout title="Success" hideContact>
+<Layout meta={meta} hideContact>
   <main class="content-page">
     <Banner title="Great success" showHorse />
     <section class="strip text-center w-clamp-xl intro-section">
