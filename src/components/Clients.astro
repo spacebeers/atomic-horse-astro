@@ -110,24 +110,24 @@ const logoComponents: Record<string, any> = {
   <div class="wrapper">
     <p class="tag">Clients</p>
     <h2 class="heading">Some of our favourite clients</h2>
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        {
-          clients
-            .sort(() => Math.random() - 0.5)
-            .map((client) => {
-              const LogoComponent = logoComponents[client.logo];
-              return (
-                <div class="swiper-slide">
-                  <a href={client.website} target="_blank">
-                    <LogoComponent />
-                    <p class="visually-hidden">{client.description}</p>
-                  </a>
-                </div>
-              );
-            })
-        }
-      </div>
+  </div>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {
+        clients
+          .sort(() => Math.random() - 0.5)
+          .map((client) => {
+            const LogoComponent = logoComponents[client.logo];
+            return (
+              <div class="swiper-slide">
+                <a href={client.website} target="_blank">
+                  <LogoComponent />
+                  <p class="visually-hidden">{client.description}</p>
+                </a>
+              </div>
+            );
+          })
+      }
     </div>
   </div>
 </section>
