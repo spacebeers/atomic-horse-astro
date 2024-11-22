@@ -128,9 +128,26 @@ const pages = [
       color: var(--palette-contrast);
       transition: background-color var(--animation-speed) linear, backdrop-filter var(--animation-speed) linear;
 
+      &::before {
+        content: "";
+        background: linear-gradient(180deg, var(--palette-dark), transparent);
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 38px;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity var(--animation-speed) ease-in-out;
+      }
+
       &.stuck:not(.open) {
         background-color: rgba(0, 0, 0, 0.50);
         color: var(--palette-light);
+
+        &::before {
+          opacity: 1;
+        }
 
         .logo {
           color: var(--palette-light);
@@ -412,6 +429,7 @@ const pages = [
         menu?.classList.toggle('open');
         header?.classList.toggle('open');
         document.body.classList.toggle('no-scroll');
+        setTheme('highlight');
       });
     });
   </script>
