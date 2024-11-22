@@ -90,3 +90,7 @@ const meta: MetaTags = {
 			height: 60%;
 		}
 </style>
+<script>
+	import { setTheme } from '../utils/theme';
+	document.addEventListener('astro:page-load', () => setTheme());
+</script>

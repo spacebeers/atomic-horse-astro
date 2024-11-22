@@ -18,3 +18,7 @@ const { frontmatter } = Astro.props;
     --palette-contrast: var(--palette-dark);
   }
 </style>
+<script>
+	import { setTheme } from '../utils/theme';
+	document.addEventListener('astro:page-load', () => setTheme());
+</script>
