@@ -1,5 +1,5 @@
 export const setTheme = () => {
-    const themeMetaTag = document.querySelector('meta[name="theme"]');
+    const themeMetaTag = document.querySelector('meta[name="theme-color"]');
     
     if (themeMetaTag) {
       const rootStyles = getComputedStyle(document.documentElement);
