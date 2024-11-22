@@ -386,6 +386,7 @@ const pages = [
   </style>
 
   <script>
+    import { setTheme } from '../utils/theme';
     document.addEventListener('astro:page-load', () => {
       const header = document.querySelector('[data-target="header"]');
       const stick = () => {
@@ -393,8 +394,10 @@ const pages = [
 
         if (scrollPosition > 75) {
           header?.classList.add("stuck");
+          setTheme('dark')
         } else {
           header?.classList.remove("stuck");
+          setTheme('highlight')
         }
       }
       stick();

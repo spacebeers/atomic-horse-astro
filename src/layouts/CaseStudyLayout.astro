@@ -19,5 +19,5 @@ const { frontmatter } = Astro.props;
 </style>
 <script>
 	import { setTheme } from '../utils/theme';
-	document.addEventListener('astro:page-load', () => setTheme());
+	document.addEventListener('astro:page-load', () => setTheme('highlight'));
 </script>
