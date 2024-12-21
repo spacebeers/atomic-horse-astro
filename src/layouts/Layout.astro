@@ -17,6 +17,7 @@ interface Props {
 	hideContact?: boolean;
 }
 
+const isProd = import.meta.env.PROD;
 const { title, hideContact = false, meta } = Astro.props;
 ---
 
@@ -40,15 +41,19 @@ const { title, hideContact = false, meta } = Astro.props;
 		</GoogleFontsOptimizer>
 		<link href="" rel="stylesheet">
  		<title>{meta?.title ?? title} | Atomic Horse Digital</title>
-		<meta name="description" content={meta?.description ?? "Atomic Horse is an agency for designers who need expert web development for their projects."}>
+		<meta name="description" content={meta?.description ?? "Atomic Horse is an agency for businesses or designers who need expert web development for their projects."}>
 		<link rel="sitemap" href="/sitemap-index.xml" />
-		<script type="text/javascript">
-			(function(c,l,a,r,i,t,y){
-				c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-				t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-				y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-			})(window, document, "clarity", "script", "p5b3685dzq");
-		</script>
+		{
+			isProd && (
+				<script type="text/javascript">
+					(function(c,l,a,r,i,t,y){
+						c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+						t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+						y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+					})(window, document, "clarity", "script", "p5b3685dzq");
+				</script>
+			)
+		}
 	</head>
 	<body>
 		<section class="wrapper">
@@ -58,15 +63,19 @@ const { title, hideContact = false, meta } = Astro.props;
 		</section>
 		<script is:inline src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 		<script is:inline src="https://cdn.jsdelivr.net/gh/manucaralmo/GlowCookies@3.1.8/src/glowCookies.min.js"></script>
-		<script is:inline>
-			glowCookies.start('en', {
-				style: 1,
-				analytics: 'UA-3539496-7',
-				border: 'none',
-				position: 'left',
-				policyLink: '/cookies'
-			});
-		</script>
+		{
+			!isProd && (
+				<script is:inline>
+					glowCookies.start('en', {
+						style: 1,
+						analytics: 'UA-3539496-7',
+						border: 'none',
+						position: 'left',
+						policyLink: '/cookies'
+					});
+				</script>
+			)
+		}
 	</body>
 </html>
 <script>

@@ -14,7 +14,7 @@ const allBlogPosts = await getCollection("case-studies");
       <h2 class="text-5 fw-normal mb-2">Technical solutions to human problems</h2>
 
       <p>
-        Take a look at some of your problems and see how we solved them. See how we've helped our clients with their digital problems by reading our case studies. These are an in-depth look at our approach to our work and some of the results we've achieved.
+        Check out the challenges our clients faced and how we tackled them. Our case studies offer a detailed glimpse into our problem-solving approach and the impressive results we've achieved. Discover how Atomic Horse Digital has helped businesses overcome their digital hurdles.
       </p>
     </section>
     <section class="card-grid">
@@ -25,6 +25,7 @@ const allBlogPosts = await getCollection("case-studies");
               imageSrc={item.data.image}
               imageAlt={item.data.alt}
               link={`/case-studies/${item.slug}`}
+              noImageBackground
           />
       ))}
     </section>

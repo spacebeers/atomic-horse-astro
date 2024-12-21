@@ -18,11 +18,11 @@ const pages = [
     path: "/services",
     subPage: false
   },
-  // {
-  //   name: "Work",
-  //   path: "/case-studies",
-  //   subPage: false
-  // },
+  {
+    name: "Work",
+    path: "/case-studies",
+    subPage: false
+  },
   // {
   //   name: "Blog",
   //   path: "/blog",
@@ -404,6 +404,7 @@ const pages = [
 
   <script>
     import { setTheme } from '../utils/theme';
+    const open = false;
     document.addEventListener('astro:page-load', () => {
       const header = document.querySelector('[data-target="header"]');
       const stick = () => {

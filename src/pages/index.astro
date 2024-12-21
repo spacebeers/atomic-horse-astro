@@ -3,6 +3,7 @@ import Layout, { type MetaTags } from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import GradientContentStrip from "../components/GradientContentStrip.astro";
 import Clients from "../components/Clients.astro";
+import { Image } from 'astro:assets';
 import Card from "../components/Card.astro";
 import Strip from "../components/Strip.astro";
 import FeaturedProject from "../components/FeaturedProject.astro";
@@ -50,7 +51,7 @@ const meta: MetaTags = {
             </ul>
           </div>
           <div class="image">
-            <HorseImage />
+            <Image src={'/src/assets/services/branding.svg'} alt={'Our logo'} loading="lazy" width="200" height="200" />
           </div>
         </div>
       </div>
@@ -117,6 +118,23 @@ const meta: MetaTags = {
   :root {
     --palette-highlight: var(--palette-pink);
     --palette-contrast: var(--palette-light);
+  }
+
+  .image {
+    background: var(--palette-highlight);
+    border-radius: var(--border-radius);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-l);
+    align-self: start;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
   
   .card-swiper {

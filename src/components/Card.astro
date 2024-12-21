@@ -8,15 +8,16 @@ interface Props {
 	imageAlt: string;
 	iconMode?: boolean;
 	link: string;
+	noImageBackground?: boolean;
 }
 
-const { heading, content, imageSrc, imageAlt, link, iconMode = false } = Astro.props;
+const { heading, content, imageSrc, imageAlt, link, iconMode = false, noImageBackground = false } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif,svg}');
 if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
 ---
 
 <section class="card">
-	<div class:list={['card__image', { iconMode: iconMode === true}]}>
+	<div class:list={['card__image', { iconMode: iconMode === true}, { noBackground: noImageBackground === true}]}>
 		<a href={link}>
 			<Image src={imageSrc} alt={imageAlt} loading="lazy" width="800" height="400" class="card-image" />
 		</a>
@@ -37,11 +38,15 @@ if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "s
 		.card__image {
 			border-radius: var(--border-radius);
 			margin-bottom: var(--space-s);
-			background: radial-gradient(85.3% 85.3% at 50% 117.34%, var(--palette-highlight) 0%, #111 100%);
+			background: var(--palette-highlight);
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			aspect-ratio: 3 / 2;
+
+			&.noBackground {
+				background: transparent;
+			}
 			
 			a {
 				display: block;
