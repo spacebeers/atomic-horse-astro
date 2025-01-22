@@ -43,11 +43,16 @@ const people = [
 		return (
 			<div class="profile" style={`--profile-color: var(${p.color});`}>
 				<div class="profile--image">
-					<Image src={p.image} alt={p.name} loading="lazy" width="800" height="400" class="card-image" />
+					<Image 
+						src={p.image} 
+						alt={p.name} 
+						loading="lazy" 
+						width="800" 
+						height="400" 
+						onmouseover={`this.src='${p.alt}'`} 
+						onmouseout={`this.src='${p.image}'`} 
+					/>
 				</div>
-				{/* <div class="profile--image" style={`background-image: url(${p.image});`} onmouseover={`this.style.backgroundImage='url(${p.alt})'`} onmouseout={`this.style.backgroundImage='url(${p.image})'`}>
-					<img src={p.image} alt={p.name} loading="lazy" style="opacity: 0;" />
-				</div> */}
 				<div class="profile--content">
 					<h3 class="profile--content__name">{p.name}</h3>
 					<p class="profile--content__role">{p.role}</p>
