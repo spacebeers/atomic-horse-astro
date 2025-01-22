@@ -5,6 +5,7 @@ import GradientContentStrip from "../components/GradientContentStrip.astro";
 import Clients from "../components/Clients.astro";
 import Strip from "../components/Strip.astro";
 import FeaturedProject from "../components/FeaturedProject.astro";
+import MeetTheTeam from "../components/MeetTheTeam.astro";
 
 const meta: MetaTags = {
   title: "Our Story And Digital Background",
@@ -16,7 +17,7 @@ const meta: MetaTags = {
   <main>
     <Banner title="Our digital story" showHorse />
     <section class="strip text-center w-clamp-xl intro-section">
-      <h2 class="text-5 fw-normal mb-2">
+      <h2 class="text-5 fw-bold mb-2">
         "Be useful"
       </h2>
 
@@ -38,7 +39,12 @@ const meta: MetaTags = {
       
       <p>With over 15 years experience in web development we have an extensive network of copywriters, designers and other experts to call on if we can't provide the service you need. </p>
     </GradientContentStrip>
-    <Strip theme="MID">
+    <Strip theme="DARK">
+      <div class="wrapper">
+        <MeetTheTeam />
+      </div>
+    </Strip>
+    <Strip theme="THEME">
       <FeaturedProject />
     </Strip>
     <Clients />

@@ -2,9 +2,7 @@
 import { getCollection } from "astro:content";
 import Banner from "../components/Banner.astro";
 import Card from "../components/Card.astro";
-import Clients from "../components/Clients.astro";
 import Layout, { type MetaTags } from "../layouts/Layout.astro";
-import CurrentWork from "../components/CurrentWork.astro";
 
 const allBlogPosts = await getCollection("blog");
 
@@ -18,7 +16,7 @@ const meta: MetaTags = {
   <main>
     <Banner title="Brighton digital news" showHorse />
     <section class="strip text-center w-clamp-xl intro-section">
-      <h2 class="text-5 fw-normal mb-2">Light reading for fun and pleasure</h2>
+      <h2 class="text-5 fw-bold mb-2">Light reading for fun and pleasure</h2>
 
       <p>
         A collection of our thoughts on life, the universe, and everything. A selection of things we find interesting and hope you do too.

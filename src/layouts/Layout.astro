@@ -3,6 +3,7 @@ import { ViewTransitions } from 'astro:transitions';
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 import '../css/reset.css';
 import '../css/styles.css';
+// import 'aos/dist/aos.css';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 
@@ -43,17 +44,6 @@ const { title, hideContact = false, meta } = Astro.props;
  		<title>{meta?.title ?? title} | Atomic Horse Digital</title>
 		<meta name="description" content={meta?.description ?? "Atomic Horse is an agency for businesses or designers who need expert web development for their projects."}>
 		<link rel="sitemap" href="/sitemap-index.xml" />
-		{
-			isProd && (
-				<script type="text/javascript">
-					(function(c,l,a,r,i,t,y){
-						c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-						t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-						y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-					})(window, document, "clarity", "script", "p5b3685dzq");
-				</script>
-			)
-		}
 	</head>
 	<body>
 		<section class="wrapper">
@@ -79,6 +69,8 @@ const { title, hideContact = false, meta } = Astro.props;
 	</body>
 </html>
 <script>
+	// import AOS from "aos";
 	import { setTheme } from '../utils/theme';
 	document.addEventListener('astro:page-load', () => setTheme('highlight'));
+	// AOS.init();
 </script>
