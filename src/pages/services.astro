@@ -50,7 +50,9 @@ const meta: MetaTags = {
               >
                 <div slot="card-content">
                   <div set:html={item.data.description}></div>
-                  <a href={`/services/${item.slug}`} class="button">Learn more</a>
+                  <a href={`/services/${item.slug}`} class="button">
+                    Learn more <span class="visually-hidden">about { item.data.title }</span>
+                  </a>
                 </div>
               </ServiceCard>
             </div>
@@ -76,7 +78,9 @@ const meta: MetaTags = {
                   <div slot="card-content">
                     <div set:html={item.data.description}></div>
 
-                    <a href={`/services/${item.slug}`} class="button">Learn more</a>
+                    <a href={`/services/${item.slug}`} class="button">
+                      Learn more <span class="visually-hidden">about { item.data.title }</span>
+                    </a>
                   </div>
                 </ServiceCard>
               </div>

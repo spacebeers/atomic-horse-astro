@@ -33,7 +33,9 @@ const meta: MetaTags = {
               </a>
 
               <p class="text--1">{item.data.shortDescription}</p>
-              <a href={`/services/${item.slug}`} class="button text--1">Learn more</a>
+              <a href={`/services/${item.slug}`} class="button text--1">
+                Learn more <span class="visually-hidden">about { item.data.title }</span>
+              </a>
             </li> 
           ))}
       </ul>
