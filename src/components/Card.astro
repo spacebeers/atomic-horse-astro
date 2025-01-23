@@ -29,7 +29,9 @@ if (!images[imageSrc]) throw new Error(`"${imageSrc}" does not exist in glob: "s
 		</a>
 	</h2>
 	<p class="line-clamp">{ content }</p>
-	<a href={link} class="button" aria-label={`Learn more about ${heading}`}>Learn more</a>
+	<a href={link} class="button">
+		Learn more <span class="visually-hidden">about { heading }</span>
+	</a>
 </section>
 <style>
 	.card {
