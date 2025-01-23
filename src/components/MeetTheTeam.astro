@@ -1,118 +1,152 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 const people = [
   {
-	name: 'Andy',
-	role: 'Tech Whisperer / Director / Lead Stable Boy',
-	image: '/src/assets/people/andy.webp',
-	alt: '/src/assets/people/andy-alt.webp',
-	color: '--palette-pink',
-	description: `
+    name: "Andy",
+    role: "Tech Whisperer / Director / Lead Stable Boy",
+    image: "/src/assets/people/andy.webp",
+    alt: "/src/assets/people/andy-alt.webp",
+    color: "--palette-pink",
+    description: `
 		<p>With over 20 years at the digital frontier, Andy is the driving force behind Atomic Horse’s visionary innovation. From blazing through fast-paced agency work to crafting enterprise-level websites, he’s done it all. Andy’s mission is simple yet powerful: <strong>“Be Useful”</strong>. It’s this ethos that fuels his passion for creating a <strong>human-centered internet</strong> – web experiences built for people, <em>not</em> machines, delivering real value to users and businesses alike.</p>
 
-		<p>When he’s not revolutionising the digital world, you’ll find Andy making waves in the sea, scaling new heights on a climbing wall, or breaking a sweat at the gym — often accompanied by his four-legged best friend, Indiana Bones.</p>`
+		<p>When he’s not revolutionising the digital world, you’ll find Andy making waves in the sea, scaling new heights on a climbing wall, or breaking a sweat at the gym — often accompanied by his four-legged best friend, Indiana Bones.</p>`,
   },
   {
-	name: 'Sophie',
-	role: 'Branding Bard',
-	image: '/src/assets/people/sophie.webp',
-	alt: '/src/assets/people/sophie-alt.webp',
-	color: '--palette-yellow',
-	description: `
-		<p>Sophie is a storytelling powerhouse and your ultimate guide to crafting brand narratives that pack a punch. With an insatiable curiosity and a talent for transforming the ordinary into the extraordinary, she brings explosive creativity to every project. Over her 20-year career, Sophie has delivered dynamic content and communications across industries including food and drink, travel and tourism, and health and fitness. Whether it’s print or digital, she knows how to spark conversations and ignite impressive results. When she’s not working, Sophie loves to spend her time writing her second novel, teaching dog yoga or romping along the Sussex coastline with her bumptious Labrador, Ella.</p>`
+    name: "Sophie",
+    role: "Branding Bard",
+    image: "/src/assets/people/sophie.webp",
+    alt: "/src/assets/people/sophie-alt.webp",
+    color: "--palette-yellow",
+    description: `
+		<p>Sophie is a storytelling powerhouse and your ultimate guide to crafting brand narratives that pack a punch. With an insatiable curiosity and a talent for transforming the ordinary into the extraordinary, she brings explosive creativity to every project. Over her 20-year career, Sophie has delivered dynamic content and communications across industries including food and drink, travel and tourism, and health and fitness. Whether it’s print or digital, she knows how to spark conversations and ignite impressive results. When she’s not working, Sophie loves to spend her time writing her second novel, teaching dog yoga or romping along the Sussex coastline with her bumptious Labrador, Ella.</p>`,
   },
   {
-	name: 'Marta',
-	role: 'SEO Dynamo',
-	image: '/src/assets/people/marta.webp',
-	alt: '/src/assets/people/marta-alt.webp',
-	color: '--palette-green',
-	description: `
-		<p>With over 7 years of experience making brands impossible to ignore, Marta blends technical wizardry with user-first strategies that dazzle search engines and delight audiences. From transforming financial services giants to powering up utilities and local businesses, Marta is a master of turning clicks into connections. Before specialising in SEO, she crafted and launched bold marketing strategies across industries like finance, travel, and utilities. When it comes to making an impact online, Marta doesn’t just optimise—she electrifies. Spare time?</p>`
+    name: "Marta",
+    role: "SEO Dynamo",
+    image: "/src/assets/people/marta.webp",
+    alt: "/src/assets/people/marta-alt.webp",
+    color: "--palette-green",
+    description: `
+		<p>With over 7 years of experience making brands impossible to ignore, Marta blends technical wizardry with user-first strategies that dazzle search engines and delight audiences. From transforming financial services giants to powering up utilities and local businesses, Marta is a master of turning clicks into connections. Before specialising in SEO, she crafted and launched bold marketing strategies across industries like finance, travel, and utilities. When it comes to making an impact online, Marta doesn’t just optimise—she electrifies. Spare time?</p>`,
   },
-]
+];
 ---
+
 <div class="wrapper strip-inner">
   <p class="tag">About us</p>
   <h2 class="heading">Meet the team</h2>
 </div>
 
 {
-	people.map(p => {
-		return (
-			<div class="profile" style={`--profile-color: var(${p.color});`}>
-				<div class="profile--image">
-					<Image 
-						src={p.image} 
-						alt={p.name} 
-						loading="lazy" 
-						width="800" 
-						height="400" 
-						onmouseover={`this.src='${p.alt}'`} 
-						onmouseout={`this.src='${p.image}'`} 
-					/>
-				</div>
-				<div class="profile--content">
-					<h3 class="profile--content__name">{p.name}</h3>
-					<p class="profile--content__role">{p.role}</p>
-					<div class="profile--content__desc" set:html={p.description}></div>
-				</div>
-			</div>
-		)
-	})
+  people.map((p) => {
+    return (
+      <div class="profile" style={`--profile-color: var(${p.color});`}>
+        <div class="profile--image">
+          <Image
+            src={p.image}
+            alt={p.name}
+            loading="lazy"
+            width="800"
+            height="400"
+            class="profile-image main-image"
+          />
+          <Image
+            src={p.alt}
+            alt={p.name}
+            loading="lazy"
+            width="800"
+            height="400"
+            class="profile-image hover-image"
+          />
+        </div>
+        <div class="profile--content">
+          <h3 class="profile--content__name">{p.name}</h3>
+          <p class="profile--content__role">{p.role}</p>
+          <div class="profile--content__desc" set:html={p.description} />
+        </div>
+      </div>
+    );
+  })
 }
 
 <style>
-	.profile {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-items: center;
+  .profile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 
-		&:nth-child(even) {
-			margin-right: var(--space-xl);
+    &:nth-child(even) {
+		@media (min-width: 768px) {	
+      		margin-right: var(--space-xl);
 		}
+    }
 
-		&:nth-child(odd) {
-			margin-left: var(--space-xl);
+    &:nth-child(odd) {
+		@media (min-width: 768px) {	
+		margin-left: var(--space-xl);
 		}
+    }
+  }
+
+  .profile--image {
+	flex: 0 0 100%;
+	@media (min-width: 768px) {	
+    	flex: 0 0 30%;
+	}
+    border-radius: 12px;
+    background-color: var(--profile-color);
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.3s ease;
+    aspect-ratio: 1 / 1;
+	position: relative;
+
+	&:hover .hover-image {
+		opacity: 1;
+	}
+	&:hover .main-image {
+		opacity: 0;
 	}
 
-	.profile--image {
-		flex: 0 0 30%;
+    .profile-image {
 		border-radius: 12px;
-		background-color: var(--profile-color);
-		background-size: cover;
-		background-position: center;
-		transition: background-image 0.3s ease;
-
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: contain;
-			border-radius: 12px;
-		}
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: opacity 0.3s ease;
 	}
-
-	.profile--content {
-		flex: 0 0 65%;
-		padding: var(--space-l) 0;
+	.hover-image {
+		opacity: 0;
 	}
+  }
 
-	.profile--content__name {
-		font-size: var(--step-5);
-		text-transform: uppercase;
-		font-weight: var(--fw-black);
-		color: var(--profile-color);
+  .profile--content {
+	flex: 0 0 100%;
+	@media (min-width: 768px) {	
+    	flex: 0 0 65%;
 	}
+    padding: var(--space-l) 0;
+  }
 
-	.profile--content__role {
-		font-size: var(--step-1);
-		font-weight: var(--fw-bold);
-	}
+  .profile--content__name {
+    font-size: var(--step-5);
+    text-transform: uppercase;
+    font-weight: var(--fw-black);
+    color: var(--profile-color);
+  }
 
-	.profile--content__desc {
-		font-size: var(--step--1);
-	}
+  .profile--content__role {
+    font-size: var(--step-1);
+    font-weight: var(--fw-bold);
+  }
+
+  .profile--content__desc {
+    font-size: var(--step--1);
+  }
 </style>
