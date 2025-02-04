@@ -6,12 +6,16 @@ import Strip from "../components/Strip.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 import Clients from "../components/Clients.astro";
 
-const creativeSercices = await getCollection('service', ({ data }) => {
-  return data.tags.includes('creative');
+const strategyServices = await getCollection('service', ({ data }) => {
+  return data.tags.includes('strategy');
 });
 
 const digitalServices = await getCollection('service', ({ data }) => {
   return data.tags.includes('digital');
+});
+
+const contentServices = await getCollection('service', ({ data }) => {
+  return data.tags.includes('content');
 });
 
 const meta: MetaTags = {
@@ -29,16 +33,17 @@ const meta: MetaTags = {
       </h2>
 
       <p class="text-1">
-        We ofter a range of creative and digital services to help you and your business succeed.
+        At Atomic Horse, we believe in working together to bring your vision to life. Whether you’re laying the groundwork with strategy and branding, crafting a standout online presence, or spreading your message far and wide, we have the expertise to get you across the finish line.
       </p>
     </section>
-    <p class="tag">Services</p>
-    <h2 class="heading text-4 fw-normal">Digital Services</h2>
-    <p class="w-clamp-xl text-1 fw-medium">Useful technical work with humans at the center of it is our bread and butter.</p>
+
+    <p class="tag">Set the course for success</p>
+    <h2 class="heading text-4 fw-normal">Strategy and Branding</h2>
+    <p class="w-clamp-xl text-0 fw-medium">Every great journey starts with a solid plan, and that's where we come in. Our Strategy and Branding services help you define your vision, chart your path, and stand out in a competitive landscape.</p>
     
     <div class="services-grid">
       {
-        digitalServices.map((item: any, i: number) => (
+        strategyServices.map((item: any, i: number) => (
           <Strip theme={i % 2 === 0 ? 'MID' : 'DARK'}>
             <div class="wrapper strip-inner">
               <ServiceCard 
@@ -50,9 +55,12 @@ const meta: MetaTags = {
               >
                 <div slot="card-content">
                   <div set:html={item.data.description}></div>
-                  <a href={`/services/${item.slug}`} class="button">
-                    Learn more <span class="visually-hidden">about { item.data.title }</span>
-                  </a>
+                  { 
+                    item.data.hasPage &&
+                      <a href={`/services/${item.slug}`} class="button">
+                        Learn more <span class="visually-hidden">about { item.data.title }</span>
+                      </a>
+                  }
                 </div>
               </ServiceCard>
             </div>
@@ -60,12 +68,43 @@ const meta: MetaTags = {
       ))}
     </div>
     <div class="wrapper strip-inner">
-      <p class="tag">Services</p>
-      <h2 class="heading text-4 fw-normal">Creative Services</h2>
-    <p class="w-clamp-xl text-1 fw-medium">Our creative work centers around you and your business, producing designs and brands that are eye catching and memorable.</p>
+      <p class="tag">Showcase your talents</p>
+      <h2 class="heading text-4 fw-normal">Digital Design and Development</h2>
+      <p class="w-clamp-xl text-0 fw-medium">Your digital presence is often the first impression you make, so let’s make it unforgettable. Our Digital Design & Development services focus on creating user-friendly, impactful solutions that show off your brand and captivate your audience.
+      </p>
       <div class="services-grid">
         {
-          creativeSercices.map((item: any, i: number) => (
+          digitalServices.map((item: any, i: number) => (
+            <Strip theme={i % 2 === 0 ? 'MID' : 'DARK'}>
+              <div class="wrapper strip-inner">
+                <ServiceCard 
+                  tag="Digital"
+                  order={i % 2 === 0 ? 'ODD' : 'EVEN'}
+                  heading={item.data.title}
+                  imageSrc={item.data.image}
+                  imageAlt={item.data.alt}
+                >
+                  <div slot="card-content">
+                    <div set:html={item.data.description}></div>
+
+                    <a href={`/services/${item.slug}`} class="button">
+                      Learn more <span class="visually-hidden">about { item.data.title }</span>
+                    </a>
+                  </div>
+                </ServiceCard>
+              </div>
+            </Strip>
+        ))}
+      </div>
+    </div>
+    <div class="wrapper strip-inner">
+      <p class="tag">Broadcast your brilliance</p>
+      <h2 class="heading text-4 fw-normal">Content and Communication</h2>
+      <p class="w-clamp-xl text-0 fw-medium">The right words and messaging can inspire, engage, and convert. With our Content and Communication services, we’ll help you create a narrative that resonates across all channels.
+      </p>
+      <div class="services-grid">
+        {
+          contentServices.map((item: any, i: number) => (
             <Strip theme={i % 2 === 0 ? 'MID' : 'DARK'}>
               <div class="wrapper strip-inner">
                 <ServiceCard 
