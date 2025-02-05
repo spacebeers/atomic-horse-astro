@@ -13,10 +13,11 @@ const { tag, order, heading, imageSrc, imageAlt } = Astro.props;
 ---
 
 <section class:list={['service-card', { odd: order === 'ODD', even: order === 'EVEN' }]}>
-	<p class="tag">{tag}</p>
-	<h2 class="heading">{ heading }</h2>
 	<div class="service-card-grid">
 		<div class="service-card-grid__content">
+			<p class="tag">{tag}</p>
+			<h2 class="heading">{ heading }</h2>
+			
 			<slot name="card-content" /> 
 		</div>	
 		<div class="service-card-grid__image">

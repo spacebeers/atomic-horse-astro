@@ -22,15 +22,16 @@ const meta: MetaTags = {
   <Strip theme={'DARK'}>
     <div class="wrapper">
       <p class="tag">Services</p>
-      <h2 class="heading">Other digital services we offer</h2>
+      <h2 class="heading">Other services we offer</h2>
       <ul class="service-sub-grid">
         {
           services.map((item: any, i: number) => (
             <li class="sub-grid-card">
-              <h3 class="text-0">{item.data.title}</h3>
               <a href={`/services/${item.slug}`} class="sub-card-grid__image">
                 <Image src={item.data.image} alt={item.data.alt} loading="lazy" width="800" height="400" class="card-image" />
               </a>
+
+              <h3 class="text-0">{item.data.title}</h3>
 
               <p class="text--1">{item.data.shortDescription}</p>
               <a href={`/services/${item.slug}`} class="button text--1">
