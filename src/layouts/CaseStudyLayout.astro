@@ -1,15 +1,37 @@
 ---
 import Banner from '../components/Banner.astro';
 import Layout from './Layout.astro';
+import Strip from "../components/Strip.astro";
+import User from "../icons/User.astro";
+import Clock from "../icons/Clock.astro";
+import dayjs from 'dayjs';
+
 const { frontmatter } = Astro.props;
+const formattedDate = dayjs(frontmatter.pubDate).format('MMMM D, YYYY');
+
 ---
 <Layout title={frontmatter.title}>
   <Banner showHorse title={frontmatter.title} />
-  <h1>{frontmatter.title}</h1>
-  <p><em>{frontmatter.description}</em></p>
-  <p>Written by: {frontmatter.author}</p>
-  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-  <slot />
+  <section class="strip text-center w-clamp-2xl intro-section">
+    <h2 class="text-4 fw-normal mb-2">
+      { frontmatter.description }
+    </h2>
+  </section>
+  <Strip theme="DARK">
+    <div class="wrapper">
+      <div class="post-meta">
+        <p class="meta-item">
+          <User /> {frontmatter.author}
+        </p>
+        <p class="meta-item">
+          <Clock /> {formattedDate}
+        </p>
+      </div>
+    </div>
+  </Strip>
+  <div class="w-clamp-3xl">
+    <slot />
+  </div>
 </Layout>
 <style>
   :root {

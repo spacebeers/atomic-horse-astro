@@ -247,7 +247,7 @@ const pages = [
             }
 
             &:hover {
-              color: var(--palette-contast);
+              color: var(--palette-contrast);
             }
           }
         }
@@ -404,6 +404,7 @@ const pages = [
 
   <script>
     import { setTheme } from '../utils/theme';
+    const open = false;
     document.addEventListener('astro:page-load', () => {
       const header = document.querySelector('[data-target="header"]');
       const stick = () => {

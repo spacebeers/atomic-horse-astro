@@ -3,6 +3,7 @@ import Layout, { type MetaTags } from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import GradientContentStrip from "../components/GradientContentStrip.astro";
 import Clients from "../components/Clients.astro";
+import { Image } from 'astro:assets';
 import Card from "../components/Card.astro";
 import Strip from "../components/Strip.astro";
 import FeaturedProject from "../components/FeaturedProject.astro";
@@ -24,7 +25,7 @@ const meta: MetaTags = {
   <main>
     <Banner title="Brighton website agency" subtitle="Being useful since 2018" showHorse />
     <section class="strip text-center w-clamp-xl intro-section">
-      <h2 class="text-5 fw-normal mb-2">
+      <h2 class="text-5 fw-bold mb-2">
         Technical solutions to human problems
       </h2>
     </section>
@@ -39,7 +40,7 @@ const meta: MetaTags = {
               The digital landscape is key to business success and we understand how it works. We’re here to help our clients not only to find their place online but to thrive there too. We offer a range of digital and creative solutions:
             </p>
 
-            <ul class="text-0">
+            <ul class="text-0 service-ul">
               {
                 services.map((item: any, i: number) => (
                   <li>
@@ -50,7 +51,7 @@ const meta: MetaTags = {
             </ul>
           </div>
           <div class="image">
-            <HorseImage />
+            <Image src={'/src/assets/services/branding.svg'} alt={'Our logo'} loading="lazy" width="200" height="200" />
           </div>
         </div>
       </div>
@@ -118,6 +119,23 @@ const meta: MetaTags = {
     --palette-highlight: var(--palette-pink);
     --palette-contrast: var(--palette-light);
   }
+
+  .image {
+    background: var(--palette-highlight);
+    border-radius: var(--border-radius);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-l);
+    align-self: start;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
   
   .card-swiper {
     max-width: 100vw;
@@ -139,6 +157,12 @@ const meta: MetaTags = {
     display: none;
     @media (min-width: 768px) {
       display: flex;
+    }
+  }
+
+  .service-ul {
+    @media (min-width: 768px) {
+      column-count: 2;
     }
   }
 

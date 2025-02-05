@@ -13,10 +13,11 @@ const { tag, order, heading, imageSrc, imageAlt } = Astro.props;
 ---
 
 <section class:list={['service-card', { odd: order === 'ODD', even: order === 'EVEN' }]}>
-	<p class="tag">{tag}</p>
-	<h2 class="heading">{ heading }</h2>
 	<div class="service-card-grid">
 		<div class="service-card-grid__content">
+			<p class="tag">{tag}</p>
+			<h2 class="heading">{ heading }</h2>
+			
 			<slot name="card-content" /> 
 		</div>	
 		<div class="service-card-grid__image">
@@ -66,7 +67,8 @@ const { tag, order, heading, imageSrc, imageAlt } = Astro.props;
 			}
 			border-radius: var(--border-radius);
 			margin-bottom: var(--space-s);
-			background: radial-gradient(85.3% 85.3% at 50% 117.34%, var(--palette-highlight) 0%, #111 100%);
+			/* background: radial-gradient(85.3% 85.3% at 50% 117.34%, var(--palette-highlight) 0%, #111 100%); */
+			background: var(--palette-highlight);
 			display: flex;
 			align-items: center;
 			justify-content: center;

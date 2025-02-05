@@ -1,6 +1,7 @@
 ---
 import "swiper/css";
 import "swiper/css/autoplay";
+import RDA from "../client-logos/RDA.astro";
 import WavePlumbing from "../client-logos/WavePlumbing.astro";
 import SophieTanner from "../client-logos/SophieTanner.astro";
 import MortgageStudio from "../client-logos/MortgageStudio.astro";
@@ -15,6 +16,11 @@ import CKS from "../client-logos/CKS.astro";
 import AnotherAStory from "../client-logos/AnotherAStory.astro";
 
 const clients = [
+  {
+    name: "Riding for the Disabled Association",
+    description: "Digital consultation and training for a local chapter of the national charity.",
+    logo: "RDA",
+  },
   {
     name: "Wave Plumbing & Bathrooms",
     description: "Logo design, website rebranding and van wrap design for a luxury bathroom company.",
@@ -91,6 +97,7 @@ const clients = [
 
 // Mapping logo names to their respective components
 const logoComponents: Record<string, any> = {
+  RDA,
   WavePlumbing,
   SophieTanner,
   AnotherAStory,

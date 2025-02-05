@@ -32,6 +32,7 @@ const blogCollection = defineCollection({
 const serviceCollection = defineCollection({
   type: 'content', // v2.5.0 and later
   schema: ({ image }) => z.object({
+    hasPage: z.boolean(),
     title: z.string(),
     tags: z.array(z.string()),
     image: image().refine((img) => img.width >= 1080, {
@@ -39,6 +40,8 @@ const serviceCollection = defineCollection({
     }),
     imageAlt: z.string(),
     description: z.string(),
+    metaTitle: z.string(),
+    metaDescription: z.string(),
   }),
 });
 

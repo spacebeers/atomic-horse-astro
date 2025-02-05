@@ -41,7 +41,7 @@ const { hideContact } = Astro.props;
                         </a>
                     </li>
                     <li>
-                        <a href={MESSENGER}>
+                        <a href={MESSENGER} target="_blank">
                             <Messenger />
                             Chat with us
                         </a>
@@ -86,14 +86,14 @@ const { hideContact } = Astro.props;
         <div class="footer-main__column">
             <h2>Company</h2>
             <ul>
-                <li hidden>
-                    <a href="/blog">
-                        Blog
+                <!-- <li>
+                    <a href="/case-studies">
+                        Our work
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="/about-us">
-                        About
+                        About us
                     </a>
                 </li>
                 <li>
@@ -121,13 +121,13 @@ const { hideContact } = Astro.props;
         <div class="footer-main__column">
             <ul class="icon-list align-end">
                 <li>
-                    <a href={FACEBOOK}>
+                    <a href={FACEBOOK} target="_blank">
                         <Facebook />
                         Follow us
                     </a>
                 </li>
                 <li>
-                    <a href={LINKEDIN}>
+                    <a href={LINKEDIN} target="_blank">
                         <LinkedIn />
                         Work with us
                     </a>
