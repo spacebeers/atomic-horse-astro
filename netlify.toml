@@ -20,10 +20,10 @@
 
 [[redirects]]
   from = "/services/support-packages"
-  to = "/services/services/wordpress-hosting-support"
+  to = "/services/wordpress-hosting-support"
   status = 301
 
 [[redirects]]
   from = "/services/eco-hosting"
-  to = "/services/services/wordpress-hosting-support"
+  to = "/services/wordpress-hosting-support"
   status = 301
