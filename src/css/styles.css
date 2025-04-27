@@ -468,6 +468,7 @@ p + .button {
 
         &.annual-price {
             position: relative;
+            width: fit-content;
 
             &::after {
                 content: "2 months free";
@@ -479,8 +480,8 @@ p + .button {
                 font-weight: var(--fw-light);
                 padding: 4px;
                 position: absolute;
-                top: 0;
-                right: 24px;
+                top: -7px;
+                right: -44px;
                 transform: translateY(-50%);
             }
         }
