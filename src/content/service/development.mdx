@@ -16,6 +16,8 @@ import Strip from "../../components/Strip.astro";
 import { Image } from 'astro:assets';
 import FeaturedProject from "../../components/FeaturedProject.astro";
 import Clients from "../../components/Clients.astro";
+import { CALENDLY } from "../../utils/constants";
+import Calendly from "../../icons/Calendly.astro";
 
 <section class="strip text-center w-clamp-xl intro-section">
     <h2 class="text-5 fw-normal mb-2">
@@ -99,7 +101,10 @@ import Clients from "../../components/Clients.astro";
 
     If you're interested in setting up a support package with us then please get in touch. We can discuss your needs and come up with a package that suits you and your business.
 
-    <a href="/contact-us" class="button">Get in touch</a>
+    <div class="button-group">
+        <a href="/contact-us" class="button">Get in touch</a>
+        <a href={CALENDLY} class="button icon-button" target="_blank"><Calendly /> Book a meeting</a>
+    </div>
 </GradientContentStrip>
 
 <Clients />

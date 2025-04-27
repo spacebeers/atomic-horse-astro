@@ -235,6 +235,28 @@ p+p {
     }
 }
 
+.button-group {
+    a {
+        margin-right: var(--space-s);
+    }
+}
+
+.button.icon-button {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    padding-left: var(--space-xl);
+
+    svg {
+        position: absolute;
+        top: var(--space-2xs);
+        left: var(--space-s);
+        width: var(--step-2);
+        height: auto;
+        margin-right: var(--space-xs);
+    }
+}
+
 .icon-list {
     list-style: none;
     margin: 0;
@@ -270,7 +292,7 @@ p+p {
     }
 }
 
-p+.button {
+p + .button {
     margin-top: var(--space-s);
 }
 
@@ -280,7 +302,7 @@ p+.button {
     border-radius: var(--border-radius);
     background: transparent;
     color: currentColor;
-    padding: var(--space-2xs);
+    padding: var(--space-2xs) var(--space-s);
     margin-top: var(--space-s);
     text-decoration: none !important;
     position: relative;
@@ -419,7 +441,7 @@ p+.button {
         grid-template-columns: 1fr 1fr 1fr;
     }
     gap: var(--space-m);
-    margin: var(--space-xl) 0;
+    margin: var(--space-xl) 0 0 0;
 }
 
 .compare-card {
@@ -439,6 +461,34 @@ p+.button {
     footer {
         padding-top: var(--space-s);
         margin-top: auto;
+    }
+
+    .price {
+        margin: 0;
+
+        &.annual-price {
+            position: relative;
+
+            &::after {
+                content: "2 months free";
+                background: var(--palette-highlight);
+                color: var(--palette-contrast);
+                display: inline-block;
+                border-radius: 4px;
+                font-size: 12px;
+                font-weight: var(--fw-light);
+                padding: 4px;
+                position: absolute;
+                top: 0;
+                right: 24px;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    .button {
+       width: 100%;
+       text-align: center;
     }
 }
 

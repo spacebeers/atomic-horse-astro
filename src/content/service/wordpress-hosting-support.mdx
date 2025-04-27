@@ -1,0 +1,141 @@
+---
+id: 4
+layout: "../../layouts/ServiceLayout.astro"
+title: "Wordpress hosting & support"
+shortDescription: Let us take the stress out of managing your website with tailored WordPress hosting and support plans built around your business.
+description: <p>Your website shouldn’t be a source of stress. At Atomic Horse, we offer tailored WordPress hosting and support for a single website — yours — hosted on eco-friendly UK servers and backed by real human help. Whether you’re a small business, freelancer, or online shop owner, we’ll keep your site secure, fast, and worry-free so you can focus on what you do best.</p>
+image: "/src/assets/services/support.svg"
+alt: "The hosting and support icon on a branded gradient background"
+tags: ["digital"]
+metaTitle: "Managed WordPress Hosting & Support UK"
+metaDescription: "Eco-friendly, UK-based WordPress hosting with expert support. Secure, fast, and fully managed — perfect for small businesses & ecommerce. Start today."
+---
+
+import GradientContentStrip from "../../components/GradientContentStrip.astro";
+import Strip from "../../components/Strip.astro";
+import { Image } from 'astro:assets';
+import { CALENDLY, FAQS } from "../../utils/constants";
+import Calendly from "../../icons/Calendly.astro";
+
+<section class="strip text-center w-clamp-xl intro-section">
+    <h2 class="text-5 fw-normal mb-2">
+        Managed Wordpress hosting & support
+    </h2>
+
+    <p class="text-1">
+        Fast, secure, eco-friendly UK hosting paired with expert support for your one website. Choose a plan that fits your business and never worry about maintenance again.
+    </p>
+</section>
+<Strip theme="MID">
+    <div class="wrapper">
+        <div class="strip-inner">
+            <div class="grid">
+                <div class="contents">
+                    <h3 class="text-2 fw-medium mb-m">Why choose our hosting & support packages?</h3>
+                    <p class="text-1 fw-medium">
+                        Whether you're running a portfolio, small business site, or online store, your website deserves proactive care.
+                    </p>
+                    <p class="text-0">
+                        Our Wordpress hosting & support packages are designed for a single website per client — so you get focused, premium service and zero bloat. We handle updates, backups, performance and security, so you never need to stress about your site.
+                    </p>
+                </div>
+                <div class="image">
+                    <h3 class="text-2 fw-medium mb-m">Every plan includes:</h3>
+                    <ul class="tick-list text--1">
+                        <li>Eco-friendly, UK-based managed WordPress hosting</li>
+                        <li>Daily backups and uptime monitoring</li>
+                        <li>Plugin and theme management</li>
+                        <li>Security hardening and performance tuning</li>
+                        <li>Email-based UK support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</Strip>
+<Strip theme="DARK">
+  <div class="wrapper">
+    <div class="strip-inner">
+      <section class="text-center w-clamp-xl intro-section">
+        <h2 class="text-4 fw-normal mb-2">Our WordPress Hosting & Support Plans</h2>
+        <p class="text-1">
+          Choose a monthly or annual plan that gives you complete peace of mind. These are built around *your* one website — no reselling, no overload.
+        </p>
+      </section>
+      
+      <div class="compare-cards">
+        <article class="compare-card">
+          <h2 class="text-1 fw-normal2">Essential</h2>
+          <p>Perfect for small business or brochure-style sites.</p>
+          <ul class="tick-list text--1">
+            <li>1 managed WordPress install</li>
+            <li>UK-based eco hosting</li>
+            <li>Daily backups & free SSL included</li>
+            <li>Core + plugin auto-updates</li>
+            <li>Monthly plugin / theme audit</li>
+            <li>Email support (UK hours)</li>
+          </ul>
+          <footer>
+            <p class="price text-1 fw-medium annual-price">£350 per year</p>
+            <p class="price text-1 fw-medium">£35 per month</p>
+            <a class="button" href="/contact-us">Get in touch</a>
+          </footer>
+        </article>
+
+        <article class="compare-card selected">
+          <div class="clearfix"><p class="recommended">Most popular</p></div>
+          <h2 class="text-1 fw-normal2">Growth</h2>
+          <p>Ideal for ecommerce and regularly updated sites.</p>
+          <ul class="tick-list text--1">
+            <li>Everything in Essential</li>
+            <li>WooCommerce-ready hosting</li>
+            <li>Advanced speed tuning</li>
+            <li>Monthly security reports</li>
+            <li>Monthly performance reports</li>
+            <li>Site Scanner</li>
+            <li>30 minutes content / admin updates</li>
+            <li>Priority support response</li>
+          </ul>
+          <footer>
+            <p class="price text-1 fw-medium annual-price">£550 per year</p>
+            <p class="price text-1 fw-medium">£55 per month</p>
+            <a class="button" href="/contact-us">Get in touch</a>
+          </footer>
+        </article>
+
+        <article class="compare-card">
+          <h2 class="text-1 fw-normal2">Care+</h2>
+          <p>For high-traffic, SEO-driven or mission-critical websites.</p>
+          <ul class="tick-list text--1">
+            <li>Everything in Growth</li>
+            <li>Security & malware scanning</li>
+            <li>Broken link monitoring</li>
+            <li>Site Scanner+</li>
+            <li>60 minutes admin/content time</li>
+            <li>Slack or WhatsApp channel (optional)</li>
+          </ul>
+          <footer>
+            <p class="price text-1 fw-medium annual-price">£850 per year</p>
+            <p class="price text-1 fw-medium">£85 per month</p>
+            <a class="button" href="/contact-us">Get in touch</a>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </div>
+</Strip>
+
+<GradientContentStrip horse="EATING">
+    <h2 class="heading">
+        Ready to never worry about your website again?
+    </h2>
+
+    <p>
+        If you're interested in setting up a hosting and support package with us then please get in touch. We can discuss your needs and come up with a package that suits you and your business.
+    </p>
+
+    <div class="button-group">
+        <a href="/contact-us" class="button">Get in touch</a>
+        <a href={CALENDLY} class="button icon-button" target="_blank"><Calendly /> Book a meeting</a>
+    </div>
+</GradientContentStrip>
